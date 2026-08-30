@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FREEDOM - Afrikan Warriors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .accent-glow {
+            box-shadow: 0 0 30px 0px rgba(212, 175, 55, 0.15);
+        }
+        .accent-glow:hover {
+            box-shadow: 0 0 40px 5px rgba(212, 175, 55, 0.25);
+        }
+
+        .vignette-overlay {
+            background: radial-gradient(circle, transparent 40%, #0B0B0B 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2ca50",
+                        "background": "#0B0B0B", /* Adjusted for strict design system */
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-container": "#454545",
+                        "on-secondary": "#313030",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#d0cecd",
+                        "tertiary-container": "#b4b2b2",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-container": "#171717", /* Adjusted for strict design system */
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#4a4949",
+                        "surface": "#121414",
+                        "on-secondary-container": "#bab8b7",
+                        "on-background": "#e2e2e2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "inverse-primary": "#735c00",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-lowest": "#0c0f0f",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#313030",
+                        "surface-bright": "#38393a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-variant": "#333535",
+                        "primary-container": "#d4af37",
+                        "outline": "#99907c",
+                        "on-surface": "#e2e2e2",
+                        "surface-dim": "#121414",
+                        "on-surface-variant": "#d0c5af",
+                        "secondary": "#c9c6c5",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-highest": "#333535",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary-container": "#554300",
+                        "primary-fixed-dim": "#e9c349",
+                        "outline-variant": "#4d4635",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#574500"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px", /* Enforcing brutalist sharp corners */
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1440px",
+                        "margin-mobile": "24px",
+                        "stack-lg": "48px",
+                        "stack-xl": "80px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "label-caps": ["Space Grotesk"],
+                        "headline-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "display-lg": ["Anybody"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Anybody"]
+                    },
+                    fontSize: {
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden selection:bg-primary selection:text-background">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-primary/20 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 transition-all duration-300" id="navbar">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary uppercase">
+            AFRIKAN WARRIORS
+        </div>
+<!-- Desktop Nav Links -->
+<ul class="hidden md:flex items-center gap-8">
+<li><a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">Performances</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_12}}">Workshops</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="{{DATA:SCREEN:SCREEN_8}}">Gallery</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Packages</a></li>
+<li><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Inquiry</a></li>
+</ul>
+<!-- Trailing Action -->
+<button class="hidden md:block font-label-caps text-label-caps bg-primary-container text-background px-8 py-4 uppercase tracking-widest hover:bg-primary transition-colors active:scale-95 duration-200 accent-glow border border-transparent hover:border-white">
+            Book Now
+        </button>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-screen min-h-[700px] flex items-center justify-center pt-24">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A dramatic, cinematic shot of a powerful African dancer in mid-leap on a dark, stark stage. The dancer is illuminated by a single, sharp overhead spotlight that creates intense, high-contrast shadows. Subtle gold dust particles float in the air, catching the light. The aesthetic is premium, raw, and athletic, embodying the 'Cinematic Heritage' style with a deep black background and striking golden highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3hDTbhbYNUwSetVIiRe5Jj0eCN6z4f60YKeZpKMt_Ql19DpRSN1qpA6s8V-2l_dMIRPF_8VduHEUQ95SVN9P4ndzm_kmHjey1r-Dz17RVQnYxHSF3fzjkYplvBaXaNiKfv3mLtzNLpXDvj-rbyL1qzoM03Ig_kX13-OcIBJUQxTd4GsusNqbKU6DSHEwL6iwI2yAMPZM35Xj9COHWvsayLf0-f5fbuoYjnm-jDxLhHE8L9neVXug6ng')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply opacity-90"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center flex flex-col items-center">
+<div class="flex items-center justify-center gap-4 mb-6 w-full">
+<div class="h-[1px] w-16 md:w-32 bg-primary/40 relative"><div class="absolute right-0 top-[-3px] w-1.5 h-1.5 bg-primary rotate-45"></div></div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em]">The Premier Experience</span>
+<div class="h-[1px] w-16 md:w-32 bg-primary/40 relative"><div class="absolute left-0 top-[-3px] w-1.5 h-1.5 bg-primary rotate-45"></div></div>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface uppercase mb-6 tracking-tighter leading-none">
+<span class="block text-primary">FREEDOM</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                A visceral celebration of movement, rhythm, and ancestral prestige. Experience the pinnacle of physical storytelling, forged through decades of global performance.
+            </p>
+<button class="font-label-caps text-label-caps bg-transparent border border-primary text-primary px-10 py-5 uppercase hover:bg-primary hover:text-background transition-all duration-300 accent-glow flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Watch Trailer
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative z-20 bg-background">
+<!-- Heritage Divider -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="h-[1px] w-full bg-primary/20 flex items-center justify-center">
+<div class="w-3 h-3 border border-primary rotate-45 bg-background"></div>
+</div>
+</div>
+<!-- The Expression Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg md:py-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 flex flex-col items-start gap-6">
+<span class="font-label-caps text-label-caps text-primary uppercase">The Origin</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-tight">
+                        The Expression <br/>Of <span class="text-primary italic font-light">Heritage</span>
+</h2>
+<div class="w-12 h-[2px] bg-primary mb-2"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        'FREEDOM' is more than a performance; it is a cinematic journey through the essence of human expression. Rooted deeply in the rhythmic traditions of Africa, this show has been meticulously honed across international stages to deliver an adrenaline-fueled masterclass in agility and passion.
+                    </p>
+<p class="font-body-md text-body-md text-outline">
+                        Witness a stage where gravity is challenged, and ancient narratives are reborn through high-performance athleticism.
+                    </p>
+</div>
+<div class="md:col-span-6 md:col-start-7 relative mt-12 md:mt-0">
+<div class="aspect-[4/5] relative border-l border-t border-primary/30 p-4">
+<div class="w-full h-full bg-surface-container relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 opacity-80 mix-blend-luminosity" data-alt="A close-up, highly textural photograph of a tribal drum being played by strong, muscular hands in mid-strike. The scene is shot in a moody, low-light environment with razor-sharp focus on the impact point and motion blur on the sticks. The color grading features deep, rich blacks and vibrant, glowing gold highlights reflecting off sweat and worn leather. The composition is geometric and asymmetrical, conveying raw energy and ancient rhythm within a modern, minimalist context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYl7ogBsguBMgrpjxVvgTzcdk3MRvZqpLRl5lYhsb4hZQFbvFf_gpimpuNu3c63gRXKfqn4TDYijhsAk130IqU8O5YbubY-Xx-PXsHnypt00kAqs3pEJ20YZW91eqgpRZEaoeXyRpCV-2H0SFUcijZhnBBjYFd8YYGG6L_gIU_NrKJxUHwY4LS9f2AsrsZWWb0T-j9I8MaZOMV9O8qWQHedqNH89WTITCwqu0AMFOR3YNEN4yzFCdMIA"/>
+</div>
+<!-- Decorative brutalist corner -->
+<div class="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Trailer Embed Placeholder -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-container-lowest">
+<div class="flex flex-col items-center mb-12">
+<span class="font-label-caps text-label-caps text-primary mb-4 uppercase">Immerse</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-center uppercase tracking-tight">Witness The Spectacle</h2>
+</div>
+<div class="relative w-full aspect-video border border-primary/20 bg-black flex items-center justify-center group cursor-pointer overflow-hidden accent-glow">
+<!-- Fallback background image for the trailer placeholder -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-500" data-alt="A wide, epic stage shot from the 'FREEDOM' performance. Multiple performers are silhouetted against a massive, glowing golden LED screen displaying abstract tribal geometry. Smoke machines create a thick, atmospheric haze on the stage floor. The lighting is intensely dramatic, focusing entirely on high-contrast black and gold tones. The atmosphere is that of a premium, high-stakes global stadium tour." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnvd53t7d4feLiv6pNQNRlhha4ef4UvddX6SQQXnLIWskjAH15LJ96Fxd3IOKAvj1bmAIvfekBDyBGoXKCpKwRUGva6vYoE1v7C7-FcQwjZYu-hSz01hc5Kq3PeNHUh-qC-Us2AtnvF4cHG5K1mtpiOG30iDGV-D2op8ljm6LLZwVMMCMVYpKMSe1HnaD4jRzWlfTg-s9z1P0m29eq7vBN__gA-I4k6gByd44naz8S4t5S7TWxwRRdzQ')"></div>
+<div class="relative z-10 w-24 h-24 border-2 border-primary rounded-full flex items-center justify-center bg-background/50 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary" style="font-size: 48px; font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<div class="absolute bottom-6 left-6 z-10 flex gap-4 items-center">
+<div class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
+<span class="font-label-caps text-label-caps text-white">Live Recording • London 2023</span>
+</div>
+</div>
+</section>
+<!-- Artistic Highlights (Bento Grid) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-xl">
+<div class="mb-12 flex justify-between items-end border-b border-primary/20 pb-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-tight">
+                        Core Pillars
+                    </h2>
+</div>
+<div class="hidden md:block w-32 h-[1px] bg-primary relative"><div class="absolute right-0 top-[-3px] w-1.5 h-1.5 bg-primary rotate-45"></div></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container border-t border-primary/30 p-8 flex flex-col group hover:bg-surface-container-high transition-colors duration-300">
+<div class="mb-8 flex justify-between items-start">
+<span class="material-symbols-outlined text-primary" style="font-size: 40px; font-variation-settings: 'wght' 200;">graphic_eq</span>
+<span class="font-label-caps text-label-caps text-outline-variant">01</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 uppercase">Ancestral Rhythm</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        A sonic landscape built on traditional polyrhythms, elevated with modern, cinematic sound design that vibrates through the auditorium.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container border-t border-primary p-8 flex flex-col group hover:bg-surface-container-high transition-colors duration-300 relative overflow-hidden">
+<!-- Subtle glow for the primary pillar -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full"></div>
+<div class="mb-8 flex justify-between items-start relative z-10">
+<span class="material-symbols-outlined text-primary" style="font-size: 40px; font-variation-settings: 'wght' 200;">theater_comedy</span>
+<span class="font-label-caps text-label-caps text-primary">02</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 uppercase relative z-10">Visual Storytelling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow relative z-10">
+                        Narratives woven not through words, but through intense physical expression, synchronized lighting, and stark geometric stage design.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container border-t border-primary/30 p-8 flex flex-col group hover:bg-surface-container-high transition-colors duration-300">
+<div class="mb-8 flex justify-between items-start">
+<span class="material-symbols-outlined text-primary" style="font-size: 40px; font-variation-settings: 'wght' 200;">fitness_center</span>
+<span class="font-label-caps text-label-caps text-outline-variant">03</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 uppercase">Peak Acrobatics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                        Defying human limits. Our performers undergo rigorous training to execute breathtaking aerial and grounded acrobatic sequences.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Booking CTA Section -->
+<section class="border-t border-b border-primary/20 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-xl flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="flex-1 text-center md:text-left">
+<span class="font-label-caps text-label-caps text-primary uppercase mb-4 block">Secure Your Date</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-display-lg uppercase tracking-tighter leading-none mb-4 text-on-surface">
+                        Bring Freedom <br/><span class="text-outline">To Your Stage</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
+                        Available for exclusive international bookings, cultural festivals, and premium private showcases.
+                    </p>
+</div>
+<div class="flex-none">
+<button class="font-label-caps text-label-caps bg-primary text-background px-12 py-6 uppercase tracking-widest hover:bg-primary-container transition-colors active:scale-95 duration-200 accent-glow text-lg flex items-center gap-4">
+                        Inquire Now
+                        <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-lowest border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto">
+<div class="md:col-span-2 flex flex-col items-start gap-4">
+<div class="font-display-lg text-headline-md text-primary uppercase tracking-tighter">
+                    AFRIKAN WARRIORS
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-4">
+                    © 2024 AFRIKAN WARRIORS. CINEMATIC HERITAGE &amp; ANCESTRAL PRESTIGE.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Information</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Connect</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for navbar background
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-background/90', 'shadow-md');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('bg-background/90', 'shadow-md');
+                nav.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body></html>

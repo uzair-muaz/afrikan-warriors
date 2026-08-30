@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TOKOMILE SHOW — ZARAMU KINGDOM | AFRIKAN WARRIORS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffe088",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-container": "#d4af37",
+                        "on-tertiary": "#313030",
+                        "surface-bright": "#38393a",
+                        "primary": "#f2ca50",
+                        "inverse-primary": "#735c00",
+                        "on-secondary-container": "#bab8b7",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary": "#3c2f00",
+                        "on-primary-container": "#554300",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-dim": "#121414",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#99907c",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary": "#d0cecd",
+                        "secondary-container": "#4a4949",
+                        "inverse-on-surface": "#2f3131",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#454545",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "background": "#121414",
+                        "surface-variant": "#333535",
+                        "tertiary-container": "#b4b2b2",
+                        "surface-container-high": "#282a2b",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-tint": "#e9c349",
+                        "error-container": "#93000a",
+                        "on-background": "#e2e2e2",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary": "#c9c6c5",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary": "#313030",
+                        "surface": "#121414",
+                        "outline-variant": "#4d4635",
+                        "surface-container": "#1e2020",
+                        "surface-container-highest": "#333535",
+                        "on-primary-fixed": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "stack-xl": "80px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Anybody"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "display-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0B0B0B; color: #e2e2e2; }
+        
+        /* Heritage Divider */
+        .heritage-divider {
+            position: relative;
+            height: 1px;
+            background-color: #D4AF37;
+            opacity: 0.5;
+            width: 100%;
+            margin: 2rem 0;
+        }
+        .heritage-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: 7px;
+            height: 7px;
+            background-color: #D4AF37;
+            transform: rotate(45deg);
+        }
+
+        /* Gold Aura Glow */
+        .gold-aura:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            border-color: #ffffff !important;
+        }
+
+        /* Image Vignette */
+        .vignette-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, transparent 50%, #0B0B0B 100%);
+            pointer-events: none;
+        }
+
+        /* Cinematic Gradient */
+        .cinematic-gradient {
+            background: linear-gradient(to top, #0B0B0B 0%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-[#0B0B0B] text-on-surface antialiased overflow-x-hidden selection:bg-primary-container selection:text-black">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-primary/20 flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary truncate hover:opacity-80 transition-opacity" href="{{DATA:SCREEN:SCREEN_4}}">
+            AFRIKAN WARRIORS
+        </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200" href="{{DATA:SCREEN:SCREEN_4}}">Performances</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="{{DATA:SCREEN:SCREEN_7}}">Workshops</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="{{DATA:SCREEN:SCREEN_8}}">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="{{DATA:SCREEN:SCREEN_7}}">Packages</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="{{DATA:SCREEN:SCREEN_7}}#inquiry">Inquiry</a>
+</div>
+<a class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-6 py-3 rounded-none hover:bg-primary transition-colors gold-aura active:scale-95 duration-200 whitespace-nowrap inline-block text-center" href="{{DATA:SCREEN:SCREEN_7}}#inquiry">
+            Book Now
+        </a>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex flex-col justify-end items-center md:items-start text-center md:text-left px-margin-mobile md:px-margin-desktop pb-stack-xl max-w-container-max mx-auto pt-32">
+<div class="absolute inset-0 z-[-1]">
+<div class="w-full h-full bg-cover bg-center bg-no-repeat opacity-40" data-alt="Dramatic, high-contrast silhouette of African acrobats in mid-air against a stark, theatrical spotlight in a matte black stage setting. The lighting is intense and golden, casting sharp shadows and highlighting athletic forms. The aesthetic is premium, cinematic, and brutalist luxury. The mood is powerful and awe-inspiring, embodying athletic performance and cultural heritage." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJuAvaCBOcU7PdeQuFMh80AoMNaeQghkcZ8z67A2sGxxtuDFWDzKVIGQiYltynq8BcebMimExXmYyxEQZx5-mOrcDx85ugoMIWWDXweT_AUrIsI9Uz3uR1vdse-vqNjU5PVGN5LUtbGO7o25CEI0og-ksnLT57TIyjB-6GKJVUZB8HvcyjD9Kt4x1YOfPf_2bww3wxWTh-YpGXp34JFlOKIDP4hXHw9Hk5D0NCzXD7uyQk0HkFYK33TQ')"></div>
+<div class="vignette-overlay"></div>
+<div class="absolute inset-0 cinematic-gradient"></div>
+</div>
+<div class="z-10 w-full md:w-2/3">
+<h1 class="font-display-lg text-display-lg text-primary uppercase leading-none mb-6">TOKOMILE SHOW</h1>
+<p class="font-headline-lg text-headline-md text-on-surface-variant mb-4 uppercase tracking-widest">Zaramu Kingdom</p>
+<div class="heritage-divider"></div>
+<p class="font-body-lg text-body-lg text-on-surface mb-8 max-w-2xl">
+                A cinematic fusion of high-performance athleticism and ancestral prestige. Experience the fierce rivalry of the Zaramu Kingdom brought to life through breathtaking acrobatics and traditional rhythm.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<button class="bg-primary-container text-black font-label-caps text-label-caps px-8 py-4 rounded-none border border-transparent gold-aura transition-all duration-300 active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Watch the Full Show
+                </button>
+<button class="bg-transparent text-primary font-label-caps text-label-caps px-8 py-4 rounded-none border border-primary hover:bg-primary/10 transition-colors active:scale-95">
+                    Book the Show
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-xl space-y-stack-xl">
+<!-- Video Embed Section -->
+<section class="w-full relative group">
+<div class="aspect-video w-full bg-[#171717] relative border-l border-primary/20 overflow-hidden">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="absolute top-0 left-0 w-full h-full z-10" frameborder="0" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp;rel=0&amp;modestbranding=1" title="Tokomile Show Trailer"></iframe>
+<!-- Placeholder underlying the iframe for visual robustness -->
+<div class="absolute inset-0 bg-cover bg-center opacity-30" data-alt="A cinematic, wide-angle stage shot of a theatrical performance featuring traditional African dancers in elaborate costumes under striking golden spotlights. The stage is enveloped in deep, luxurious shadows, contrasting sharply with the bright, kinetic energy of the performers. The scene is dramatic, intense, and highly polished, suitable for a premium entertainment brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKI4aHh5vd658m6wmz9Fk0wYJXeiU9SUQNwdAkT89QjOrCQqQcIPIqmYGa1cAGfK5HZD7lUSjpcPuohjpYSa7bSel0z4TxzkKdW5OCmRhYKOqcii4JvHibcV8Ba8eYtAr1emOHzPu2UmUd3lirJx1c-VzaWyJreqn3QSx_gznOiadRqkIsONXpFGrIR39QMM_mBYVADmtVt_B2yzBb2LYww2rqz98LFaw2NKrffW_v4Ea1ojZoLeYeIQ')"></div>
+<div class="vignette-overlay z-0"></div>
+</div>
+<!-- Decorative corner brackets -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary z-20 pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary z-20 pointer-events-none"></div>
+</section>
+<!-- The Story & Credits -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 relative">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6 uppercase">The Story</h2>
+<div class="heritage-divider"></div>
+<div class="w-full aspect-[4/5] bg-cover bg-center grayscale contrast-125 mb-6 relative border-t border-primary/30" data-alt="A powerful, close-up portrait of two majestic African warriors engaged in an intense, dramatic stare-down. They are illuminated by harsh, angular, golden stage lighting against a pitch-black background. Their expressions convey deep rivalry and regal presence. The style is raw, high-contrast, and cinematic, reflecting a premium tribal aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIzEsiSpQKhvkmR8kXWL3a5s73F4JTu4Jyxt6tBljrtwOr-_iF-lGctxVC0ysLLljkzpUZJ8Fkb2YL7IkGnXJzzCOf-03830__Pj4Mgp6Gk3q7lAldI32A7nNvXTSr9Sis0qPOEIZ2bdcEKYd9LBU3jcRp-QRRcwzcwyXBe4ComK0CzM-Ujq_Zj2uhJUxdVIDZ34Cd_8NhsSTUViVvJaL3AuEJUgKNanB5dq9VlTQTDLiPc3WzhA7I8Q')">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] to-transparent"></div>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col justify-center">
+<div class="bg-[#171717] p-8 border-l border-primary">
+<p class="font-body-lg text-body-lg text-on-surface mb-6 leading-relaxed">
+                        Set in the fictional African kingdom of Zaramu, inspired by rich Tanzanian traditions. The Tokomile Show chronicles the fierce and captivating rivalry between Prince Zagayo and Prince Zomola. As their father, Chief Zuwadiswa, prepares for succession, the brothers clash in a test of strength, wit, and ancestral right.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Written &amp; Directed By</p>
+<p class="font-headline-md text-headline-md text-primary text-xl">Rahim Saphy</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Choreography</p>
+<p class="font-headline-md text-headline-md text-primary text-xl">AW-Team</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Cast Size</p>
+<p class="font-headline-md text-headline-md text-primary text-xl">30 Warriors</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Running Time</p>
+<p class="font-headline-md text-headline-md text-primary text-xl">85 Minutes</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- What to Expect (Features) -->
+<section class="py-stack-lg">
+<div class="text-center md:text-left mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase">What to Expect</h2>
+<div class="heritage-divider mx-auto md:mx-0 w-32"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<!-- Feature Items -->
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">bolt</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">African Acrobatics</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">celebration</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Traditional Dance</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">accessibility_new</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Contemporary Dance</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">music_note</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Live Percussion</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">mic</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Singing</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">mood</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Physical Comedy</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">theater_comedy</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Drama</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">sports_gymnastics</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Tumbling</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">sports_martial_arts</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Tokomile Fight Dance</h3>
+</div>
+<div class="bg-[#171717] p-6 border-t border-primary/20 hover:border-primary transition-colors group cursor-default">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">groups</span>
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Audience Interaction</h3>
+</div>
+</div>
+</section>
+<!-- Booking & Flexibility -->
+<section class="bg-[#171717] border-l-2 border-primary p-8 md:p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 opacity-10 p-8 pointer-events-none">
+<span class="material-symbols-outlined text-[12rem]">event_seat</span>
+</div>
+<div class="relative z-10 max-w-3xl">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-4">Adaptable Prestige</h2>
+<p class="font-body-lg text-body-lg text-on-surface mb-8">
+                    While the full Tokomile Show runs for a spectacular 85 minutes with our complete 30-warrior cast, we understand that exceptional venues require exceptional flexibility. The performance can be tailored in running time, cast size, and budget to perfectly suit your specific event requirements without compromising the cinematic impact.
+                </p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="bg-[#050505] border-0 border-b-2 border-primary/50 focus:border-primary text-on-surface font-body-md px-4 py-3 w-full sm:w-2/3 transition-colors focus:ring-0" placeholder="Enter your email for a custom quote" type="email"/>
+<button class="bg-primary-container text-black font-label-caps text-label-caps px-8 py-3 rounded-none gold-aura transition-all active:scale-95 whitespace-nowrap" type="button">
+                        Inquire Now
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t-2 border-primary w-full mt-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop py-stack-xl max-w-container-max mx-auto px-margin-mobile">
+<div class="md:col-span-1">
+<a class="font-display-lg text-headline-md text-primary tracking-tighter" href="#">AFRIKAN WARRIORS</a>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 opacity-70">CINEMATIC HERITAGE &amp; ANCESTRAL PRESTIGE.</p>
+</div>
+<div class="md:col-span-2 flex flex-col md:flex-row gap-8 justify-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors active:opacity-70" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors active:opacity-70" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors active:opacity-70" href="#">Press Kit</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors active:opacity-70" href="#">Contact</a>
+</div>
+<div class="md:col-span-1 text-left md:text-right">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 AFRIKAN WARRIORS.</p>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AFRIKAN WARRIORS - Cinematic Heritage Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e2e2e2",
+                        "on-surface": "#e2e2e2",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-container": "#554300",
+                        "tertiary": "#d0cecd",
+                        "surface-bright": "#38393a",
+                        "tertiary-container": "#b4b2b2",
+                        "secondary-container": "#4a4949",
+                        "surface-dim": "#121414",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-variant": "#333535",
+                        "on-error": "#690005",
+                        "on-tertiary": "#313030",
+                        "on-secondary": "#313030",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1e2020",
+                        "on-secondary-fixed-variant": "#474646",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#bab8b7",
+                        "surface": "#121414",
+                        "surface-container-high": "#282a2b",
+                        "on-background": "#e2e2e2",
+                        "surface-container-low": "#1a1c1c",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "secondary": "#c9c6c5",
+                        "primary": "#f2ca50",
+                        "primary-container": "#d4af37",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "on-primary": "#3c2f00",
+                        "background": "#121414",
+                        "on-tertiary-container": "#454545",
+                        "surface-container-lowest": "#0c0f0f",
+                        "outline-variant": "#4d4635",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline": "#99907c",
+                        "inverse-on-surface": "#2f3131",
+                        "on-primary-fixed-variant": "#574500",
+                        "inverse-primary": "#735c00",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-tint": "#e9c349",
+                        "on-primary-fixed": "#241a00",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed": "#ffe088"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "stack-xl": "80px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "24px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Anybody"],
+                        "label-caps": ["Space Grotesk"],
+                        "display-lg": ["Anybody"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0B0B0B;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        .gold-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            border-color: #ffffff;
+        }
+
+        .heritage-divider {
+            position: relative;
+            height: 1px;
+            background-color: rgba(212, 175, 55, 0.4);
+            width: 100%;
+        }
+
+        .heritage-divider::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3px;
+            width: 7px;
+            height: 7px;
+            background-color: #D4AF37;
+            transform: rotate(45deg);
+        }
+
+        .image-vignette {
+            box-shadow: inset 0 0 50px 20px #0B0B0B;
+        }
+
+        .gallery-overlay {
+            background: linear-gradient(to top, #0B0B0B 0%, transparent 100%);
+        }
+
+        /* Particles container for Hero */
+        #particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+            animation: float-up 10s infinite linear;
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-lg text-body-lg selection:bg-primary-container selection:text-black">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-primary/20 transition-all duration-300" id="navbar">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary hover:opacity-80 transition-opacity" href="#">
+                AFRIKAN WARRIORS
+            </a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="{{DATA:SCREEN:SCREEN_3}}">Performances</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="{{DATA:SCREEN:SCREEN_12}}">Workshops</a>
+<a class="text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="#">Packages</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="#">Inquiry</a>
+<a class="bg-primary-container text-black px-6 py-3 hover:opacity-80 transition-opacity border border-transparent hover:border-white gold-glow active:scale-95 duration-200" href="#">
+                    Book Now
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Toggle Menu" class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-32">
+<!-- Hero Section -->
+<section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop py-stack-xl overflow-hidden">
+<div id="particles-container"></div>
+<div class="relative z-10 max-w-4xl mx-auto space-y-6">
+<h1 class="font-display-lg text-display-lg text-on-surface uppercase drop-shadow-2xl md:text-[100px] leading-none">
+                    Cinematic Moments
+                </h1>
+<div class="heritage-divider max-w-md mx-auto my-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Three decades of raw energy, international prestige, and ancestral artistry captured under dramatic stage lighting. Witness the spectacle.
+                </p>
+</div>
+<!-- Filter Nav (Desktop) -->
+<div class="hidden md:flex flex-wrap justify-center gap-6 mt-16 z-10 relative">
+<button class="font-label-caps text-label-caps text-primary border-b border-primary pb-1">All</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Acrobatics</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Traditional Dance</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Fire Shows</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Stage Productions</button>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-stack-xl">
+<div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+<!-- Gallery Item 1 -->
+<div class="relative group overflow-hidden bg-surface cursor-pointer break-inside-avoid border-l border-t gold-border">
+<img alt="Acrobatics Performance" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 image-vignette" data-alt="A striking photograph of muscular African acrobats mid-air during a dynamic stage performance. The stage is filled with dramatic, low-key theatrical fog and illuminated by piercing golden spotlights cutting through the smoke. The performers are wearing traditional tribal skirts with intricate patterns, their bodies glistening with sweat under the high-contrast lighting, embodying raw physical power and cultural heritage in a premium cinematic composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcS2tKXeZAk7AwTWwsLLxlQEtgzUWQYIbtTct2fYY-IEnNMKzz3aX-vVNdsz5WpGO9bjtNw4imHH_Ms_rYCHN9g1sSlECuEQRIWpXrebmUg7ZFhpwN00V8oUvEUqaQy5ysUBnOfhhlysvFElTtjkbfkxy6N63AakzmwBNgL5SxeZQ4JSN5Rxi6qzBF7In_V8hu64qz425o7YnN8B4wwlHbtznpQAG_6hhfXlOA1DfSZmAGYFAisJBi3w"/>
+<div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-primary mb-2">Acrobatics</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Human Pyramid</h3>
+</div>
+</div>
+<!-- Gallery Item 2 -->
+<div class="relative group overflow-hidden bg-surface cursor-pointer break-inside-avoid border-r border-t gold-border">
+<img alt="Traditional Dance Close-up" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 image-vignette" data-alt="A close-up, highly detailed shot of a traditional African dancer on stage. Intense, warm cinematic lighting highlights the textured details of their elaborate feathered headdress and painted face. The background is completely black, isolating the subject in a dramatic void. A subtle mist hangs in the air, catching the light and creating a glowing halo effect around the performer, conveying deep ancestral prestige and modern theatrical intensity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARzJVPvI-fAQtSbQahMM_N7JPuVCbyYiLqCHHN2yxLFMicI3cuyU9fiiPf_3h2o53V_CP849z803ODQ9uqu8PhJMwAm8YRD5i-ld1RdIYTvZi1vhJbAVFzBSmPle8G_cPZSoJNytRexSvPUmImnEOBnyZCZbuq7kFxkYw-W9Cp6Zr2Ed4B-SS1i_opBx3c_9O1y9qXiaOiE34DA1H9CJL9jwUwBpo8EWJYWe0zJgd9OOxg5ubMHDVv5w"/>
+<div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-primary mb-2">Traditional Dance</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ancestral Echoes</h3>
+</div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="relative group overflow-hidden bg-surface cursor-pointer break-inside-avoid border-l border-b gold-border">
+<img alt="Large Stage Production" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 image-vignette" data-alt="A wide angle, panoramic view of a massive stage production featuring the Afrikan Warriors. A large troupe of performers moves synchronously across a sprawling, dark stage. Pyrotechnics burst in the background, casting brilliant golden and orange reflections off the performers' bodies. The scene is epic and grandiose, capturing the scale of an international arena show with high-contrast, moody lighting and heavy black space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy-CBpSUy0Y74CNFVBxD2mNyhNbBOvxfmFcFPbGzetdvYgSXlJ0FjNs6tTNMsByudLXJUnlbpYu31boUIqq1HtKQicQjtz-wuHNRHuHFAil4Rui7P9fjCs1Sf9MhGM90vT_7VkUUaKDCdTeoNO5syWZ6DoeBt7e63pVyc5w8KDVX97LJdPTI8FjlgXB7kvGm-1sf8hVKTg0fwN-mgOxf557RjWrUC-NXM1byVIPFWKNtoWSIrYkPQ1sw"/>
+<div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-primary mb-2">Stage Productions</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Global Arena Tour</h3>
+</div>
+</div>
+<!-- Gallery Item 4 -->
+<div class="relative group overflow-hidden bg-surface cursor-pointer break-inside-avoid border-t gold-border">
+<img alt="Fire Show" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 image-vignette" data-alt="An intense action shot of a fire breather during a live performance. A massive plume of bright, roaring orange fire erupts upwards, illuminating the dark stage and casting sharp, dynamic shadows on the performer's face and torso. The background is deeply shadowed, emphasizing the danger and visceral energy of the fire act. The image feels raw, hot, and distinctly premium with cinematic color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Ct7myah_pohz3AdOs-LQguddyU83KwswsIxnA-6kxNa5GN9aYpG7qkw9Zzlam_YO0tj8bx5ibLYuYOuDptCqFE3U7X9xxDJNEAEetcdaJcwSEdSsC0AkFqy3chpEnlzkEYLIqFKMLZAwj_vPA2ZsW0FO20JpUkdqwaHQ-LCMZGcxh6gCjLQIZkUs57JwEKt79__L0vLsHFoTJX1pgORoB99Fy8RSFtlNwok_o6-Bx78zKFteiOc6Mg"/>
+<div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-primary mb-2">Fire Shows</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Inferno Mastery</h3>
+</div>
+</div>
+<!-- Gallery Item 5 -->
+<div class="relative group overflow-hidden bg-surface cursor-pointer break-inside-avoid border-r border-b gold-border">
+<img alt="Solo Silhouette" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 image-vignette" data-alt="A dramatic black and white style photograph with only the golden stage lights retaining color. It captures a moment of stillness mid-performance where a solo warrior stands proudly in silhouette against a thick cloud of theatrical smoke. A single, powerful beam of golden light strikes from above, creating a stark, high-contrast, luxury brutalist aesthetic that emphasizes strength, discipline, and the gravity of the performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYExeuaOxZL0nXOgd1t5LGgi6DKQIZdYKFX6AKupVwUBrlWFgMh9bK2xuf3sgfV6rKg-5XmieFhs6TXd2kZad4JI79WugHvh_32IrQ6-XTHE9usI_aiiYAs5-HKb5WOrF3vle_xJKYjhyWqFq_EaqLK_43YiyKf56QMJVdajvB47iZ6XH11epXUZLhLJA9ibj4wJLCxgkGcon77xGegvSwIGBlA637NYgv2WAxYONt_c4fokl8lkjmdg"/>
+<div class="absolute inset-0 gallery-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+<span class="font-label-caps text-label-caps text-primary mb-2">Performances</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Sentinel</h3>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12">
+<button class="px-8 py-3 border border-primary text-primary font-label-caps text-label-caps hover:bg-primary/10 transition-colors flex items-center gap-2">
+                    Load More <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container py-stack-xl relative overflow-hidden border-t border-primary/20">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary via-surface to-background"></div>
+<div class="max-w-4xl mx-auto text-center px-margin-mobile md:px-margin-desktop relative z-10 space-y-8">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                    Bring the Spectacle to Your Event
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Secure a performance that blends explosive athleticism with rich cultural storytelling. Elevate your global stage.
+                </p>
+<div class="flex flex-col md:flex-row justify-center items-center gap-4 pt-4">
+<a class="w-full md:w-auto text-center bg-primary-container text-black font-label-caps text-label-caps px-8 py-4 hover:opacity-80 transition-opacity border border-transparent hover:border-white gold-glow" href="#">
+                        Book the Show
+                    </a>
+<a class="w-full md:w-auto text-center border border-primary text-primary font-label-caps text-label-caps px-8 py-4 hover:bg-primary/10 transition-colors" href="#">
+                        View Packages
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col space-y-4">
+<span class="font-display-lg text-headline-md text-primary">AFRIKAN WARRIORS</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Cinematic Heritage &amp; Ancestral Prestige. Delivering unparalleled stage performances for over 30 years globally.
+                </p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-8 justify-start md:justify-end items-start pt-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="col-span-1 md:col-span-4 pt-8 border-t border-primary/20">
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">
+                    © 2024 AFRIKAN WARRIORS. CINEMATIC HERITAGE &amp; ANCESTRAL PRESTIGE.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple particle generator for background effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('particles-container');
+            if (container) {
+                const particleCount = 20;
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    const size = Math.random() * 4 + 2; // 2px to 6px
+                    const left = Math.random() * 100;
+                    const delay = Math.random() * 10;
+                    const duration = Math.random() * 10 + 10; // 10s to 20s
+                    
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${left}%`;
+                    particle.style.animationDelay = `${delay}s`;
+                    particle.style.animationDuration = `${duration}s`;
+                    
+                    container.appendChild(particle);
+                }
+            }
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-[#0B0B0B]/90');
+                    navbar.classList.remove('bg-transparent');
+                } else {
+                    navbar.classList.add('bg-transparent');
+                    navbar.classList.remove('bg-[#0B0B0B]/90');
+                }
+            });
+        });
+    </script>
+</body></html>

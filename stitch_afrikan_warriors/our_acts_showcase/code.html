@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Acts - AFRIKAN WARRIORS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container": "#1e2020",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#3c2f00",
+                        "on-primary-fixed": "#241a00",
+                        "surface-bright": "#38393a",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-highest": "#333535",
+                        "on-surface-variant": "#d0c5af",
+                        "on-background": "#e2e2e2",
+                        "primary-container": "#d4af37",
+                        "secondary-container": "#4a4949",
+                        "on-secondary-container": "#bab8b7",
+                        "tertiary-container": "#b4b2b2",
+                        "secondary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary-container": "#554300",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4635",
+                        "surface-variant": "#333535",
+                        "primary": "#f2ca50",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-container-lowest": "#0c0f0f",
+                        "background": "#121414",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-tertiary": "#313030",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface": "#121414",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#121414",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline": "#99907c",
+                        "tertiary": "#d0cecd",
+                        "surface-container-high": "#282a2b",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-tint": "#e9c349",
+                        "secondary": "#c9c6c5",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#454545",
+                        "gold": "#D4AF37"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {
+                        "stack-xl": "80px",
+                        "container-max": "1440px",
+                        "stack-lg": "48px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anybody"],
+                        "display-lg": ["Anybody"],
+                        "headline-md": ["Anybody"],
+                        "headline-lg": ["Anybody"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        "glow": "0 0 40px -10px rgba(212, 175, 55, 0.4)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .group:hover .reveal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .reveal-content {
+            transform: translateY(100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .vignette-overlay {
+            background: radial-gradient(circle, transparent 40%, rgba(11, 11, 11, 0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-primary/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary hover:opacity-80 transition-opacity" href="#">AFRIKAN WARRIORS</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Performances</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Workshops</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Packages</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Inquiry</a>
+</div>
+<button class="font-label-caps text-label-caps bg-primary-container text-on-primary px-6 py-3 border border-transparent hover:border-on-surface hover:shadow-glow transition-all duration-300 transform active:scale-95">
+                Book Now
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-stack-xl max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<!-- Page Header -->
+<header class="mb-stack-lg text-center md:text-left">
+<h1 class="font-headline-lg-mobile md:font-display-lg text-on-background uppercase mb-unit">Our Acts</h1>
+<p class="font-body-lg text-primary tracking-widest uppercase text-label-caps">Individually Spectacular</p>
+<div class="h-px w-24 bg-primary mt-6 mb-8 md:mx-0 mx-auto"></div>
+</header>
+<!-- Bento Grid for Acts -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter auto-rows-[400px]">
+<!-- Card 1: Limbo Dance -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors col-span-1 md:col-span-2 lg:col-span-2 row-span-1">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A highly dramatic, cinematic photograph of an African acrobat performing an extreme limbo dance under a flaming bar. The stage is pitch black, illuminated only by the intense, fiery glow of the flames reflecting off the performer's sweat-glistening skin and the subtle gold architectural lines of the stage set. Shot with high contrast and stark shadows, emphasizing extreme athletic flexibility and primal energy in a luxury, brutalist environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAoogMy9vmx0H7jm80bB3KWE5JdReG3IOME0xEUOGpLwImgzBrHp5N-9eY7efw1MUFrOXCuw-rSX5Nl1s7jxMzJEfygSlc6NiSANOFzHful_6PtrYqFsVEk7n9HuY55cZrKnAHR9pL-lLQU3D85VSbZBF2Dt2CHE9HtBlwlypLnCpu2E4fNfC49kX9RPIDSk6k1WzhCn5REDt5K2bgkJrxGqqVcRUDYALeCclMliLYd5znofDTLybcIjg')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Limbo Dance</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">(With Limbo Fire Option)</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">Defying gravity and heat, our limbo performers bend to impossible angles, culminating in a breathtaking finale beneath a blazing bar of fire. A true test of flexibility and courage.</p>
+</div>
+</div>
+</article>
+<!-- Card 2: Human Pyramids -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A dramatic, high-contrast shot of a towering human pyramid formed by athletic performers. The background is a stark void-black stage, lit from above by sharp, structural beams of white and gold light. The composition highlights the geometric precision and raw strength of the performers, styled in minimalist tribal attire with subtle gold accents, conveying monumental scale and unity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsNzbVw4SE9u5OuYZfSIFA0e4oWQ0CAwLhfOw0LkQyxEu_ein9wFmvnqgfgmC_scMnLU_5OKBQ30J0odwD29xrv3T9px6NYjEXuR_ZL7k-n-f-RCHXAiAek7hLvojesxrXLG76ckJuaF5CM0WQvobj7gfJpXqcq-YzeeB0S2AfPmZA2ShIRSgwHzFIgWKt3p2MiDTYepjDKppDaiIpQxiA_xWgusVH9LD-y_NYjUQjW9zjVcnkgrHvqg')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Human Pyramids</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Strength &amp; Balance</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">Towering formations built on absolute trust and raw strength. A monumental display of human architecture and collective power.</p>
+</div>
+</div>
+</article>
+<!-- Card 3: Hat Juggling -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A fast-paced, motion-blurred photograph capturing the rapid manipulation of multiple woven hats by a skilled juggler. The scene is set against a deep black background with razor-sharp gold edge lighting framing the performer. The aesthetic is sleek, high-energy, and precision-focused, merging traditional elements with modern, cinematic starkness." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUfnZK4kIEwfd6igZJyjidZeOuiwJ6ehVxjDoulooJqwfrUGHzg-mgYcpM6Z7su2jUPs6gpPgxoXhmZiXt3EAnutksXzGgI1VqeeI81obJRXOQwjDBgtdVjhUK3hagamxWzZRTI-640JqOhc0vwtnTSxx9c_W5tNuruX8WZ3cadxlDjH7SuWhISkjx_9A1NF_stD4ssSVfvc9C-SfxLFEFFVK2XKKFICGbyzthz_4q8qTHohnIUF_5SQ')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Hat Juggling</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Rhythmic Precision</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">Lightning-fast coordination and rhythmic manipulation of traditional hats in a mesmerizing blur of motion and dexterity.</p>
+</div>
+</div>
+</article>
+<!-- Card 4: Hoops Diving -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A cinematic action shot of an acrobat suspended mid-air, diving precisely through stacked wooden hoops. The stage is entirely black, illuminated by a single, powerful spotlight that creates a halo effect around the golden hoops. The performer's muscular form is captured in sharp detail, emphasizing explosive kinetic energy and fearless agility in a luxurious, minimalist setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBtit3nSmQjnM_8ZGOp1mfD3UG2k00Ml6_YiAnekFKuBZPg5TXf-1okPh03W_29317cf2zYBbnwurRFcNMZWYLUTjsuJbwuA3P6Ye3t4HLvtJ1xmMOlPm_tHwunPjaUOQV2M3cW7eVG22Cz3BicUl_S83GmfBpMD1WCHNGPb45IZNsPbuFZBn1wwqw4pr1nMyCkt1IG2is58I7A9j3j-8VAkNvLZ1vJEmogOeGhLWyGfonwUu__MGDmg')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Hoops Diving</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Airborne Agility</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">Explosive leaps and pinpoint accuracy as performers thread the needle through stacked hoops in a display of fearless aerial acrobatics.</p>
+</div>
+</div>
+</article>
+<!-- Card 5: Chair Comedy -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A theatrical, high-contrast image of a performer executing a precarious, comedic balancing act with wooden chairs. The lighting is dramatic, casting deep shadows against a void-black background, highlighting the gold accents on the performer's costume. The mood balances tension and levity, captured with crisp, cinematic precision characteristic of high-end stage photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVzvXDRibn3bvVfV1ILxjtiZZkTwqUQULUox74DynJcydm8stv-PZ6UhxEX_5SKnxgDD0qIq84l1MJs7S9Tp3Ap9lq4n_xbJNMeBP36oyZ8QZxKJh7TfjaThHOj9N6YrLFHl3dLzVnzRBnK6iPAKjh-8OGemlc7pl15ml6FhqwJG2MKYo3zBTu7U-jFyPEkkKVkcg9ERY642BRQ5HW0JqV-G3Oar1mei4dxRFiw2dlS-qVU4SCIv2H2Q')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Chair Comedy</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Theatrical Levity</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">A masterclass in physical comedy, blending precarious balancing acts with theatrical humor to break the tension.</p>
+</div>
+</div>
+</article>
+<!-- Card 6: Skipping Rope -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors col-span-1 md:col-span-2 lg:col-span-2">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A dynamic, wide-angle shot of multiple performers engaging in a complex skipping rope routine. The thick ropes blur with speed against a deep black stage, catching sharp reflections from intense, low-angle gold lighting. The performers jump in perfect synchronization, their athleticism highlighted by stark shadows and the brutalist, minimalist aesthetic of the environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1ov657ETzxYy0QddTnSCcyzscumAmmi8uEvF2ZRDaAbcCAJfY2nJvfz6Okz-H8IjFNu4d6aoFEfXsS4_t13KXmH-iYmoKS3Gk2wnjP71h7vActZhQg7ieRKUdG5VjFqOmpOewXfy23j1OQ2OnPmQ2Jpxce7yeFrTuOVPTA2rFYGi0kgFNUXdwreCUKlEfk2zyg-6E540fi9AyRMiRxVbuMtNm6bEl1-5zOZ2xCU6FcOKT-dearBk0Aw')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Skipping Rope</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Kinetic Synchronization</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">A high-velocity, synchronized display of endurance and timing. Complex rope formations and acrobatic leaps converge in a relentless rhythm.</p>
+</div>
+</div>
+</article>
+<!-- Card 7: Chinese Pole -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A striking vertical composition showing an acrobat holding a gravity-defying horizontal flag pose on a stark, metallic pole. The background is pure black, punctuated by a thin, razor-sharp vertical gold beam of light illuminating the pole and the performer's tense muscles. The image conveys immense strength and rigid control within a premium, minimalist stage design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMcuOYiSs0js7EJYtncxMlLdWOv2FjszdCEWbwhYBhFSkLWvXBMPjuU7eT5rF23SQtyejaJExlc8zH-zsUsZt6iR5zw0F_Xk1CvEWMsvCeNL3bnNEuh8-25Wyxf-vzVIy04zsK1VXcp69luteX8KuTbxtU5wktsCwxVoTUk8WX2jZk8hJ7CRcDQzhNta3Ze2G3LEtDAdl4cBQhMJSYRPk09HMSv6_WcGXGyvdEmBptwOGR0AIH1OLXrg')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Chinese Pole</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Vertical Mastery</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">Gravity-defying drops and rigid holds executed on a vertical axis, demanding supreme core strength and flawless control.</p>
+</div>
+</div>
+</article>
+<!-- Card 8: Chair Balancing -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A tense, dramatic image of a performer balancing atop a towering, unstable stack of wooden chairs reaching into the darkness. The scene is set against a void-black background with a single, dramatic spotlight emphasizing the precarious height and the performer's absolute focus. The aesthetic is cinematic, high-stakes, and framed with sharp geometric precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEqHO4FFfWvJRPfjDFt-lGpJ0KxJe-2E2Ru_LWXm_NS3kmefONKqqshEB5gOrBiWWcszv0AFBrGbtN4CBxRwZVNGeT-1qrriW7htxIpTuvXz7B8aQ7Jj_HDBrix11Yw9NfXzsWQJwDC1nRo57ePYu1pe6HExq_CehEtzNyaEDD5B-NeYIqkemLxg1rq1yJc8ZxcS-40iGcpV7mGnVkbPjQs1U__Cd353y0Q_9zd152zgfol2qs68RIHQ')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Chair Balancing</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Ascending Tension</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">A breathtaking ascent on an ever-growing, unstable tower of chairs. A testament to unparalleled focus and equilibrium.</p>
+</div>
+</div>
+</article>
+<!-- Card 9: Tumbling -->
+<article class="group relative overflow-hidden bg-surface border border-primary/20 hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" data-alt="A fast-action, cinematic capture of a tumbler mid-flip, suspended above a stark black stage. A trail of motion blur conveys extreme speed, while strobe-like golden edge lighting freezes the performer's peak athletic extension. The mood is adrenaline-fueled and highly disciplined, fitting a premium sports-entertainment aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7VaVHq-DthpZlh6tnCpZ4iO8mlWssBgMe9899WBD3YXN6qGLdMaowrHPGJ04NQT_ZQ6sh1HVc_2iRlMmQgZ-EP_YdcivcolcaKYBAm53HOCnYNNsHUU1CNplh1pL0fsAVOvLyNiuGk-XLx0YBcnhDdfOX0zjal-xzTNrItcWeEbm_DFFulN3FIsv-bzj_LFp2VvVs8Zzs2U7TOXY0jo6amT1H9ePJKx-209C7mVkmnVlqLTD4p4MELg')"></div>
+<div class="absolute inset-0 vignette-overlay mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+<h2 class="font-headline-md text-primary uppercase tracking-tight mb-2">Tumbling</h2>
+<p class="font-body-md text-on-surface-variant uppercase text-sm tracking-wider">Raw Velocity</p>
+<div class="reveal-content mt-4 border-t border-primary/30 pt-4 bg-background/80 backdrop-blur-sm p-4">
+<p class="font-body-md text-on-surface">Continuous, high-impact acrobatic sequences traversing the stage with explosive power, speed, and spatial awareness.</p>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t-2 border-primary w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<a class="font-display-lg text-headline-md text-primary mb-4 block" href="#">AFRIKAN WARRIORS</a>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                    © 2024 AFRIKAN WARRIORS. CINEMATIC HERITAGE &amp; ANCESTRAL PRESTIGE.
+                </p>
+</div>
+<div class="col-span-1">
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Press Kit</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

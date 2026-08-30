@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meet the AW-Team - AFRIKAN WARRIORS</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS & Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#735c00",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container": "#1e2020",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#3c2f00",
+                        "on-primary-fixed": "#241a00",
+                        "surface-bright": "#38393a",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-highest": "#333535",
+                        "on-surface-variant": "#d0c5af",
+                        "on-background": "#e2e2e2",
+                        "primary-container": "#d4af37",
+                        "secondary-container": "#4a4949",
+                        "on-secondary-container": "#bab8b7",
+                        "tertiary-container": "#b4b2b2",
+                        "secondary-fixed": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary-container": "#554300",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4635",
+                        "surface-variant": "#333535",
+                        "primary": "#f2ca50",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-container-lowest": "#0c0f0f",
+                        "background": "#121414",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-tertiary": "#313030",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface": "#121414",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#121414",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline": "#99907c",
+                        "tertiary": "#d0cecd",
+                        "surface-container-high": "#282a2b",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-tint": "#e9c349",
+                        "secondary": "#c9c6c5",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#454545"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-xl": "80px",
+                        "container-max": "1440px",
+                        "stack-lg": "48px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anybody"],
+                        "display-lg": ["Anybody"],
+                        "headline-md": ["Anybody"],
+                        "headline-lg": ["Anybody"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom glow for buttons as per guidelines */
+        .btn-gold-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            border-color: white;
+        }
+        /* Vignette overlay for card images */
+        .image-vignette::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 40%, rgba(11, 11, 11, 0.8) 100%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Shared Component: TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-primary/20">
+<div class="flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary uppercase" href="/">
+                AFRIKAN WARRIORS
+            </a>
+<nav class="hidden md:flex gap-gutter items-center font-label-caps text-label-caps">
+<!-- No strict match for 'Team', applying inactive to all for neutrality -->
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">Performances</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">Workshops</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">Packages</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="#">Inquiry</a>
+</nav>
+<button class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-none uppercase tracking-widest hover:scale-95 duration-200 btn-gold-glow border border-transparent transition-all">
+                Book Now
+            </button>
+<!-- Mobile Menu Toggle (Visual only for scaffolding) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-stack-xl flex flex-col gap-stack-lg max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop">
+<!-- Hero Title -->
+<section class="flex flex-col items-center justify-center text-center py-stack-lg border-b border-primary/20 relative">
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rotate-45 translate-y-1/2"></div>
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-primary uppercase mb-unit">
+                Meet the AW-Team
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                The cinematic heritage and ancestral prestige brought to life by master athletes, acrobats, and performers.
+            </p>
+</section>
+<!-- Team Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter pt-stack-lg">
+<!-- Performer Cards generated dynamically via repeated block -->
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male acrobat, Rahim Saphy. Positioned against a stark, deep black background. Dramatic single spotlight lighting highlights his muscular physique and intense expression. He wears minimalist dark tribal-inspired performance gear with subtle gold accents. Luxury minimalist brutalism style, evoking power and ancestral prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFQIcptiqoQUwq3xvrIEJJ32tgAMolm8-jlsxBd3li_Fn5LwkGD77MXrccBBqe5tvGbSnmFBNUcN3dPO2hvK1EZD8lj5xjta131agKSdjQGDgUAXa72xzRJzL-8gaL4D0HCziSNWWYAiPHxQmzyG1ewJX0dcEZ6PlrvmBPIhbtUxEv7vsv3Hkkr7pxvWuB9td6V6bjp1sv-CeMDPnoTQ784wxgM6-bOfH7xxNOU6fS8lJ9JltvEr_6vA"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Rahim Saphy</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Master Acrobat &amp; Founder</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        A cornerstone of the AW-Team, bringing explosive energy and unparalleled precision to every stage performance. Deeply rooted in ancestral heritage.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male lead tumbler, Alex Cuna. Positioned against a stark, deep black background. Dramatic single spotlight lighting highlights his athletic physique and focused expression. Minimalist dark tribal-inspired performance gear with thin gold geometric patterns. Luxury minimalist brutalism style, high stakes atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDee6KxzBxwxuVN4wCa6zOoMtXhB7WrBSiH8drcb2PpUoQ-vp-VG7RD8dsE7tsWfkabvuxxQMg6rZdIhfcblSx4j64Cf14Q0QM-pcPX_Ni3La2CrJzf7jqCwYEPpZ7o5wb99BYJ-izjiwzUWvgyo0fJ-p3icsUAXUBqM-qD0nizkqrn-LGAByr6s0KELfjBw_qblV_TzLDmaC8w7gqBi4hQ2cjRJ4ujKeIAiTw8nlcxrbIcqNxr1xAD-A"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Alex Cuna</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Lead Tumbler</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        Defying gravity with striking momentum, his tumbling sequences are central to the group's dramatic kinetic energy.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male fire performer, Iddy Waziri. Positioned against a stark, deep black background. Dramatic warm rim lighting mimicking firelight highlights his muscular frame and fierce expression. Minimalist dark performance wear with gold armbands. Luxury minimalist brutalism style, evoking raw energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_2HlS15lWNjMvZbga4B6tYyLITrIIwtC4kUdePxghTW7poUIbCaGu2F121AkmmDMS8papaHebnounER4owG_1NJ_sHm_QIveROpduJ8w7CPRg3x-euVrRNxh6tiMhGniMjsk2E3hAOmrFUT_12JyQcMyJpevhCuOUHOtb7_Jtnf0CeA3uOfhsJUNrdQzG6Oa84DTCYAIRnGClactK3uFsWmGedhv3WH9NZIo_-mEgNzypiTnCoXo1g"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Iddy Waziri</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Fire Performer &amp; Acrobat</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        Mastering the elements, his fire acts bring a dangerous, thrilling luminescence to the dark stage.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male contortionist, David Kashindo. Positioned against a stark, deep black background. Dramatic cold spotlight lighting highlights his extraordinary flexibility and calm expression. Minimalist dark tribal-inspired gear with sharp gold lines. Luxury minimalist brutalism style, structural precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBirETa7n5RjMKe5U6YphX4hL1ccNMDasFaD1iKLK9nSE2vTVngJpsnsjVo662MkbmjxqIHemY18QwtH-85JyQeWvs6CgzBpUfnZdaWSezVU0CqXcHuc07zSA50gz_UbuzophHvV656MMRvbt-bO2ZwZYaod3SDEqhPUCXF6HH9o7CFSpt7qd2_E6LV22-N-gUZjm4QPm-DMSFtCK_BggDuuZhu8EdHYzjX4J1M0gUxM4OkfaswD8euLQ"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">David Kashindo</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Contortionist &amp; Aerialist</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        Bending the limits of human anatomy, his fluid, alien-like movements add a surreal visual texture to the ensemble.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male precision balancer, Lawrence Ntauka. Positioned against a stark, deep black background. Dramatic spotlighting creates stark shadows on his defined physique. He stands perfectly poised. Minimalist dark gear with subtle gold accents. Luxury minimalist brutalism style, evoking absolute control and strength." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrDuDuWplPms4I2NQdMQYeU4IxPhJrJaMACp_UFojmo8eVhGO3-sFzV6xReHVoPLNoCGIN56FvA8PRlYpA5j9GFOTYCR5E1uAncgJvGo0JieNlwKGAWRslkb8Vs1vhRVyDz2X774OEPS_RnAZIRUKMD5NOELqxXhiGQypF-Esw3xF5vRQQx_YbSjyi8F4h_gvzNExn4l0jNAHxrCIolwCVsl10W0FVm8EjEDeQ1acQzZgTtk46sqoyYg"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Lawrence Ntauka</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Precision Balancer</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        The physical anchor of the squad, executing impossible balances that demand absolute focus and core resilience.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male base acrobat, Jumanne Kibasila. Positioned against a stark, deep black background. Dramatic spotlight lighting highlights his massive muscular frame and stoic expression. Dark tribal-inspired performance gear with bold gold cuffs. Luxury minimalist brutalism style, evoking foundational power." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiROwD-CkVGUfb0IQYrHEoiwrHxpVSFf2I38p6kA6fbT6abnxOvFKCAeo_o800opdA8-TSOyKhMOha6Xf1KCV2lds9dknQssaqz_0wtBtKvoSh5Mnxe-LaHkLI3DJKDnvO6tQ5gG9ybg01kW03uzzUcPVmmti2SF3aLcAxEcDyZ2_M1ywSwQ-QQGLEdLnLX_NKuEa3kn6vU4Bzgwq5h7h9mm9ABHekLqGHGOG9Vz34FnJc1fT1wVsDnw"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Jumanne Kibasila</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Base Acrobat &amp; Rigger</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        The immovable foundation for towering human pyramids, his strength is the bedrock of the team's most ambitious structures.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male dynamic tumbler, Hilary Majariwa. Positioned against a stark, deep black background. Lighting catches him mid-motion, creating a sense of kinetic energy while keeping his face sharp. Dark performance gear with gold detailing. Luxury minimalist brutalism style, explosive agility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaVvM434EgJqb7PSIU9uS6M755S5ji8f2WF1Q-Amt4O-MAMfFBex9XEl1c3K7Q4oIGMt3nmBT5c3XTLyEoy0dzKT6UrPbGHodKPId8xV3IWwV24XewYrs4NXZIqKEhT1k55TuGs6XjvcFoUgswDs9e7J_qk9ORLkbt9UgLzfxUpyosE7CHHTm75PGxteqc5X-U4Xg7Nm52S-SPiOhnRi1Ph3zk7ybDsPaUenGXZstaQ3Db7NlIBQWg1w"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Hilary Majariwa</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Dynamic Tumbler</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        Injecting rapid-fire rhythm into routines, his agility across the stage creates an electric, breathless pace.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male aerialist, Ally Kimbunga. Positioned against a stark, deep black background. Downward dramatic spotlight lighting highlights his lean physique and intense upward gaze. Minimalist dark performance gear with striking gold elements. Luxury minimalist brutalism style, evoking flight and elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjkrC2k7YWLC1os3XJbr7HrlAI4yanWVeK3DdTxHDn_Ue9BrJmLN9HVrjAeA6I7HbYlD0RiUmXW1YQYs8I2dSWcQivs8B2DwQQj3KoxISYdg8OK3CsyzWKc2NUx8mOi5CHhBZBiDLMp854RqaEHyYwvYum-SO47MCZr9kVgepU4oxNO4sU3e6eHkrSVQbePh5JHSgL40PRvmuPyAPTcBlbgdykirUQY4wmjFj7-9gZMsYArHtlT3gqQQ"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate" title="Ally 'Chika' Kimbunga">Ally "Chika" Kimbunga</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">High-Flying Aerialist</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        Commanding the airspace above the stage, he translates ancient warrior narratives into breathtaking aerial ballet.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male choreographer, Mohammed Mwamule. Positioned against a stark, deep black background. Dramatic spotlight lighting highlights his strong features and authoritative expression. Dark tribal-inspired performance gear with refined gold patterns. Luxury minimalist brutalism style, evoking creative command." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSbwqprbfHc00-yGRTBe1XQUlINyLqPoD9EKmXRLofDZblfyGSvFwrlp4siJPmohNzddi_NzwPK_mslYnnvVN70l_gueSwDdj_ULUKiS6b7zTIIZBiqFhZPiC5wj4gqMTpBkKBQvSPQDj6hLspHEyVmKy8fzKIBPzs4lhpvdFMCFLeAJgE7myLDj5ROSf5H6REdC_bqA0DlGbj6r-vvSw-RWUrcR4IYDhLSumTmdDHKtSBgyk1uwT7vA"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Mohammed Mwamule</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Choreographer &amp; Acrobat</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        The visionary mind syncing raw athleticism with traditional rhythms, ensuring every movement hits with maximum impact.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male strength balancer, Hussein Chuse. Positioned against a stark, deep black background. Dramatic spotlighting creates stark shadows on his intensely defined musculature. Minimalist dark gear with heavy gold bands. Luxury minimalist brutalism style, evoking sheer, unyielding force." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGq0_IukuKwgN6AsCI7I4X8x9apB5CVSuPqYxtf6MNuAHjXq0T6eg23GdMtSxBFVe3vldBB2_4Byo6Mb-1VVxSFH58-yllfDqOs5VP5qNgDlaLgxwQPsTkpjDuU9EL05ygK86UCAl4MVzca0S8LvE_WKAl0WuQ6_Psrp2LHB0TxGhCRnQAKOZISAiSTX03EerdqypA0rpXZ-b4NJ3CdGO931E9icXIcD6RHPwaOwDx6m81hJQ05LDKig"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Hussein Chuse</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Strength Balancer</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        A display of pure, unyielding power, executing slow, gravity-defying holds that leave audiences in stunned silence.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male fire spinner, Juma Chaussa. Positioned against a stark, deep black background. Complex ambient lighting implies spinning flames nearby, catching highlights on his face and chest. Dark performance gear with subtle gold accents. Luxury minimalist brutalism style, dynamic and dangerous." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ6U3YHm7mqRJzjKFI23HyAFh5aPNVhe-RZfgeSrsKYObsbHvhEQwMqI0YnRPFQD2ZKoz3fq5wyQ8P5PJmHjHmHYv9bzoo1kLsrA6G8yaQ9ZFeROPZ4enQu-8a5O5fv7SRNws2urRm3ET0Axeybx43lNsMAUtYYP6mqRdRKMrJo3Eh9uKmpsz6k4pslG7kllOg9mKLdNdySlwf0T2vd85RveR4bXmBllIZQ8HBimZkrciz02bNpzEq2g"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Juma Chaussa</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Fire Spinner</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        Weaving intricate webs of flame, his performances are a mesmerizing blend of martial arts precision and elemental danger.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of an African male drummer and acrobat, Hassan Kissi. Positioned against a stark, deep black background. Dramatic spotlighting catches him holding a traditional drum. His expression is intense and rhythmic. Dark tribal-inspired performance gear with gold detailing. Luxury minimalist brutalism style, the heartbeat of the team." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9qBpr-xg_2wtJno4Hjexn_NZAKb2hQfvR9_cRVpCh27RJlcsRrhQDPYJnVtoCiUy9rifPJL0XVr7y3xzGHvqMOQDuZ1tFpLWNFfGYWkhiX5Ue5WK4Tp75pEJA7kBQbgiFTgBJasQjOpuXFRlbN7JHMYFwiKOZ_Z_be_ssMdZxXMmONb6CcAYG8JHFgX3OVSytPkTU5QgOc-KZ2L4GGrulBENE9gELzCXUJwCSXMFbbWSzL3p_pUivwQ"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Hassan Kissi</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Acrobat &amp; Drummer</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        The rhythmic pulse of the warriors, driving the momentum of the acrobatic feats with thunderous, ancestral percussion.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of a young African male acrobat, Shaaban Saphy. Positioned against a stark, deep black background. Dramatic spotlight lighting highlights his agile frame and determined expression. Minimalist dark tribal-inspired performance gear with thin gold lines. Luxury minimalist brutalism style, the next generation of prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwgJvGnr4aDe_gNw4I-siC9iobZW5oUQ36p4AMlOAPuSluUx2C0Wh0YyiXYtKaliOwF3X8URSV207H-Xky6wJZ1bj__5d9SiNpXXW3uPvWORSzVeKdxqoTBEpYTZ1dEC2J5Tcb8oT-rVPAcMeif4ygnDHR4nJzeXt2E7doibUFtYNH6AZ7gBK7khIMLrFq09Eid8EbsvrdQ_cTBaPce1zqH34rD5_QZcFj_IB3NMrQrBlLvq3Py3LsTA"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Shaaban Saphy</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Junior Acrobat</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        Representing the future of the lineage, executing highly technical maneuvers with the fearlessness of youth.
+                    </p>
+</div>
+</div>
+<div class="bg-surface-container rounded-none border-t border-primary overflow-hidden flex flex-col group">
+<div class="relative w-full aspect-[3/4] image-vignette overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" data-alt="A cinematic, high-contrast portrait of a young African male acrobat, Amour Saphy. Positioned against a stark, deep black background. Dramatic spotlight lighting highlights his sharp features and intense focus. Minimalist dark tribal-inspired performance gear with subtle gold elements. Luxury minimalist brutalism style, youthful explosive energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDBR-DsnZM_OJv3KyWPfrVhdQMHIv4SRyfQpa07g154B61O_gKyks54Fxsg59mJwmXt6mbpiyFqcmeFWR9QeuxAMm1iaM63XhAShWdaMzVGfP6xNM3kAxqk_ckZRBePmztCjTyFiqg6ptyg9Go3Qy0zvxOxrvv_2Ug40T_EANTxn_g5AtKc6XvtdmJXHkLtuw6ggszc_kHRyFvtJ8CoD-oUVfknzhIlKnjuk0ZggMGBgzNMC4XRyWytA"/>
+</div>
+<div class="p-6 flex flex-col gap-2 relative">
+<div class="w-full h-px bg-primary/20 absolute top-0 left-0"></div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase truncate">Amour Saphy</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Junior Acrobat</span>
+<p class="font-body-md text-body-md text-on-surface mt-2 line-clamp-3 opacity-80">
+                        A rising talent whose speed and fearlessness add a vital, unpredictable edge to the team's dynamic routines.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="w-full bg-surface-container-lowest border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop py-stack-xl max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+<span class="font-display-lg text-headline-md text-primary uppercase">AFRIKAN WARRIORS</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    © 2024 AFRIKAN WARRIORS. CINEMATIC HERITAGE &amp; ANCESTRAL PRESTIGE.
+                </p>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Legal</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Terms of Service</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-primary uppercase">Connect</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Press Kit</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-70" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Performance Packages | AFRIKAN WARRIORS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#735c00",
+                      "on-primary-fixed-variant": "#574500",
+                      "surface-container": "#1e2020",
+                      "on-surface": "#e2e2e2",
+                      "on-secondary": "#313030",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#3c2f00",
+                      "on-primary-fixed": "#241a00",
+                      "surface-bright": "#38393a",
+                      "primary-fixed": "#ffe088",
+                      "surface-container-highest": "#333535",
+                      "on-surface-variant": "#d0c5af",
+                      "on-background": "#e2e2e2",
+                      "primary-container": "#d4af37",
+                      "secondary-container": "#4a4949",
+                      "on-secondary-container": "#bab8b7",
+                      "tertiary-container": "#b4b2b2",
+                      "secondary-fixed": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#474646",
+                      "on-primary-container": "#554300",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#4d4635",
+                      "surface-variant": "#333535",
+                      "primary": "#f2ca50",
+                      "secondary-fixed-dim": "#c9c6c5",
+                      "primary-fixed-dim": "#e9c349",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "surface-container-low": "#1a1c1c",
+                      "surface-container-lowest": "#0c0f0f",
+                      "background": "#121414",
+                      "tertiary-fixed": "#e5e2e1",
+                      "on-tertiary": "#313030",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "surface": "#121414",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "surface-dim": "#121414",
+                      "inverse-surface": "#e2e2e2",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "outline": "#99907c",
+                      "tertiary": "#d0cecd",
+                      "surface-container-high": "#282a2b",
+                      "inverse-on-surface": "#2f3131",
+                      "surface-tint": "#e9c349",
+                      "secondary": "#c9c6c5",
+                      "on-error": "#690005",
+                      "on-tertiary-container": "#454545"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-xl": "80px",
+                      "container-max": "1440px",
+                      "stack-lg": "48px",
+                      "unit": "8px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "margin-mobile": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Anybody"
+                      ],
+                      "display-lg": [
+                              "Anybody"
+                      ],
+                      "headline-md": [
+                              "Anybody"
+                      ],
+                      "headline-lg": [
+                              "Anybody"
+                      ],
+                      "label-caps": [
+                              "Space Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "80px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0B0B0B;
+            color: #e2e2e2;
+        }
+        
+        .stage-bg {
+            background-color: #0B0B0B;
+        }
+
+        .platform-bg {
+            background-color: #171717;
+        }
+
+        .gold-accent {
+            color: #D4AF37;
+        }
+
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .gold-border-solid {
+            border-color: #D4AF37;
+        }
+
+        .accent-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary {
+            background-color: #D4AF37;
+            color: #050505;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), inset 0 0 0 1px white;
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .card {
+            border-radius: 0;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-top-color: #D4AF37;
+        }
+
+        .heritage-divider {
+            height: 1px;
+            background: linear-gradient(90deg, #D4AF37 0%, transparent 100%);
+            position: relative;
+        }
+
+        .heritage-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -3px;
+            width: 7px;
+            height: 7px;
+            background-color: #D4AF37;
+            transform: rotate(45deg);
+        }
+        
+        .vignette-img {
+            mask-image: radial-gradient(circle, black 60%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+        }
+        
+        .clip-sharp {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md relative overflow-x-hidden">
+<!-- Top Navigation (Generated from JSON) -->
+<header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-primary/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary hover:opacity-80 transition-opacity" href="#">
+                AFRIKAN WARRIORS
+            </a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Performances</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Workshops</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200" href="#">Packages</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">Inquiry</a>
+</nav>
+<button class="hidden md:block btn-primary px-6 py-3 font-label-caps text-label-caps active:scale-95 duration-200">
+                Book Now
+            </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-stack-xl relative z-10">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-xl text-center md:text-left">
+<div class="flex flex-col md:flex-row gap-gutter items-end">
+<div class="flex-1">
+<div class="heritage-divider w-24 mb-6 mx-auto md:mx-0"></div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 uppercase">
+                        Cinematic <br/><span class="gold-accent">Performance</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto md:mx-0">
+                        Elevate your event with our ancestral prestige and high-octane athleticism. Choose a package designed to command the stage and leave audiences in awe.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Packages Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Cool Silver -->
+<article class="card platform-bg border-t border-l border-gold-border p-8 flex flex-col relative group">
+<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-4xl">swords</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 uppercase">COOL SILVER</h2>
+<p class="font-label-caps text-label-caps text-primary mb-8 tracking-widest">FROM £499</p>
+<ul class="flex-grow space-y-4 mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">2 Master Performers</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">Up to 2x 30-minute sets</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">Standard Acrobatic Repertoire</span>
+</li>
+</ul>
+<button class="btn-ghost w-full py-4 font-label-caps text-label-caps uppercase mt-auto">
+                        Inquire Silver
+                    </button>
+</article>
+<!-- Warm Bronze -->
+<article class="card platform-bg border-t-2 border-primary border-l border-gold-border p-8 flex flex-col relative group transform md:-translate-y-4 shadow-2xl">
+<div class="absolute -top-4 right-8 bg-primary text-on-primary font-label-caps text-xs px-3 py-1 tracking-widest">
+                        MOST POPULAR
+                    </div>
+<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-4xl">local_fire_department</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 uppercase">WARM BRONZE</h2>
+<p class="font-label-caps text-label-caps text-primary mb-8 tracking-widest">FROM £895</p>
+<ul class="flex-grow space-y-4 mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant text-on-surface">3 Master Performers</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">Up to 2x 30-minute sets</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">3-set option available</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">Enhanced Choreography</span>
+</li>
+</ul>
+<button class="btn-primary w-full py-4 font-label-caps text-label-caps uppercase mt-auto">
+                        Inquire Bronze
+                    </button>
+</article>
+<!-- Hot Gold -->
+<article class="card platform-bg border-t border-l border-gold-border p-8 flex flex-col relative group">
+<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-4xl">workspace_premium</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 uppercase">HOT GOLD</h2>
+<p class="font-label-caps text-label-caps text-primary mb-8 tracking-widest">PRICE ON REQUEST</p>
+<ul class="flex-grow space-y-4 mb-8">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">4-5 Master Performers</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">Premium High-Energy Package</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span>
+<span class="text-on-surface-variant">Ideal for Opening Ceremonies &amp; Major Festivals</span>
+</li>
+</ul>
+<button class="btn-ghost w-full py-4 font-label-caps text-label-caps uppercase mt-auto">
+                        Inquire Gold
+                    </button>
+</article>
+</div>
+</section>
+<!-- Specialist Acts Strip -->
+<section class="border-y border-gold-border bg-surface-container-low py-12">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="md:w-1/3">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-2">Specialist Add-Ons</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm border-l-2 border-primary pl-4">
+                            Enhance your package. Additional charges apply. Minimum 5m x 5m performance space required for large acts.
+                        </p>
+</div>
+<div class="md:w-2/3 flex flex-wrap gap-4 justify-start md:justify-end">
+<span class="px-4 py-2 border border-gold-border text-on-surface font-label-caps text-xs uppercase tracking-wider">Chair Balance</span>
+<span class="px-4 py-2 border border-gold-border text-on-surface font-label-caps text-xs uppercase tracking-wider">Chinese Pole</span>
+<span class="px-4 py-2 border border-gold-border text-on-surface font-label-caps text-xs uppercase tracking-wider">Live Percussion</span>
+<span class="px-4 py-2 border border-gold-border text-on-surface font-label-caps text-xs uppercase tracking-wider">Stilt Walking</span>
+<span class="px-4 py-2 border border-gold-border text-on-surface font-label-caps text-xs uppercase tracking-wider">Roller Balance</span>
+<span class="px-4 py-2 border border-gold-border text-on-surface font-label-caps text-xs uppercase tracking-wider">Additional Musicians</span>
+<span class="px-4 py-2 border border-gold-border text-primary font-label-caps text-xs uppercase tracking-wider">Larger Cast Pyramids</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Generated from JSON) -->
+<footer class="bg-surface-container-lowest border-t-2 border-primary w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto">
+<div class="md:col-span-2">
+<div class="font-display-lg text-headline-md text-primary mb-4 tracking-tighter">
+                    AFRIKAN WARRIORS
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                    © 2024 AFRIKAN WARRIORS. CINEMATIC HERITAGE &amp; ANCESTRAL PRESTIGE.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-2">Legal</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-2">Connect</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

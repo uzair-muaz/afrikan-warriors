@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AFRICAN PIRATE - AFRIKAN WARRIORS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&amp;family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#f2ca50",
+                        "background": "#121414",
+                        "surface-tint": "#e9c349",
+                        "on-tertiary-container": "#454545",
+                        "on-secondary": "#313030",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#d0cecd",
+                        "tertiary-container": "#b4b2b2",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-container": "#1e2020",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-container": "#4a4949",
+                        "surface": "#121414",
+                        "on-secondary-container": "#bab8b7",
+                        "on-background": "#e2e2e2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "inverse-primary": "#735c00",
+                        "primary-fixed": "#ffe088",
+                        "surface-container-lowest": "#0c0f0f",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#313030",
+                        "surface-bright": "#38393a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-variant": "#333535",
+                        "primary-container": "#d4af37",
+                        "outline": "#99907c",
+                        "on-surface": "#e2e2e2",
+                        "surface-dim": "#121414",
+                        "on-surface-variant": "#d0c5af",
+                        "secondary": "#c9c6c5",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-highest": "#333535",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary-container": "#554300",
+                        "primary-fixed-dim": "#e9c349",
+                        "outline-variant": "#4d4635",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#574500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "24px",
+                        "stack-lg": "48px",
+                        "stack-xl": "80px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Space Grotesk"],
+                        "headline-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "display-lg": ["Anybody"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .accent-glow {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+        .vignette {
+            background: radial-gradient(circle, transparent 50%, #0B0B0B 100%);
+        }
+        .stage-bg {
+            background-color: #0B0B0B;
+        }
+        .platform-bg {
+            background-color: #171717;
+        }
+        .gold-border-highlight {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .heritage-divider {
+            height: 1px;
+            background-color: rgba(212, 175, 55, 0.5);
+            position: relative;
+        }
+        .heritage-divider::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3px;
+            width: 7px;
+            height: 7px;
+            background-color: #D4AF37;
+            transform: rotate(45deg);
+        }
+        .gold-text {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="stage-bg text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-primary/20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md tracking-tighter text-primary" href="index.html">AFRIKAN WARRIORS</a>
+<nav class="hidden md:flex items-center gap-gutter font-label-caps text-label-caps">
+<a class="text-primary border-b-2 border-primary pb-1 hover:opacity-80 transition-opacity" href="index.html">Performances</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="workshops.html">Workshops</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="gallery.html">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="packages.html">Packages</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80" href="inquiry.html">Inquiry</a>
+</nav>
+<button class="hidden md:block bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-none hover:opacity-80 transition-opacity hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:border hover:border-white">
+                Book Now
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-[104px]">
+<!-- Hero Section with Trailer Embed -->
+<section class="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-40" data-alt="A dramatic cinematic wide shot of African acrobats dressed as pirates performing a high-energy leap on a dark, theatrical stage. The lighting is moody with intense golden spotlights cutting through atmospheric haze, capturing the dynamic physical comedy and spectacular skills. The scene uses a deep black backdrop (#0B0B0B) with bright gold (#D4AF37) accents highlighting their costumes and movements, evoking a premium, action-packed family adventure aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgz8UV5-XtEfKVex6qWpRaVJ2vCnc8GugFntvCtL0C_gmdWxnJtyBghr9HTAFHlkd6hptI1CCWnEAIelKU3IeprriDya34rqRmmhlauHSnoQBrCwfkSNHKd2gKd3niQXrp5CU8YgudIlv7J52i7W0yxxGs6ZEQTyNHwJ9POrTLTTx84R_HI2h1zbYXyBZcqihKwg6NSBYwbmDWXRpBFVY-esoSruR6rbZi-GyEpkLisPGU3bTeVWTPag')"></div>
+<div class="absolute inset-0 vignette"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile max-w-4xl mx-auto flex flex-col items-center gap-stack-lg">
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em]">FAMILY ENTERTAINMENT PRODUCTION</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-white uppercase tracking-tighter">AFRICAN PIRATE</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">An African Twist on a Classic Adventure. Filled with colourful characters, physical comedy, spectacular skills and a unique personality.</p>
+</div>
+<!-- YouTube Embed Placeholder -->
+<div class="w-full max-w-3xl aspect-video platform-bg border border-primary/30 p-2 relative group cursor-pointer">
+<div class="absolute inset-0 bg-black/60 flex items-center justify-center group-hover:bg-black/40 transition-colors z-20">
+<span class="material-symbols-outlined text-primary text-6xl drop-shadow-lg" data-icon="play_circle">play_circle</span>
+</div>
+<div class="w-full h-full bg-cover bg-center z-10" data-alt="A still frame from a theatrical trailer showing a colorful African pirate character captured mid-laugh during a comedic physical stunt. High-contrast lighting with a dark background and sharp gold highlights emphasizes the premium live-action quality of the show." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIj2_FugdNud26NHSKWDJ9Ag15TMN7CUBCd9uB5dDSFhJj-AEIJt8onzMx09iay2cGtioPTCvPAn5fTCCJKcYROReO15vevfxzXLP6QvhnRZog6DiiCnTJ_E0oO2_siygLuzQjMgZXG5UdZ4LumJHLGj-TUCNcAWqn6mezxPbtZR9Jdw9tMPBvxGVpG_5_CfoM4zP4IelX0wgLxkEeAdsfAvaszaTaIboQ1Co8pH_ZmJCtnrVGe4Zb-w')"></div>
+</div>
+</div>
+</section>
+<!-- The Adventure & Elements -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white uppercase">The Experience</h2>
+<div class="heritage-divider w-24 mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1: Comedy -->
+<div class="platform-bg p-8 border-l border-primary/20 hover:border-primary/50 transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="theater_comedy">theater_comedy</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4 group-hover:text-primary transition-colors">Physical Comedy</h3>
+<p class="font-body-md text-on-surface-variant">Uproarious antics and slapstick humor tailored for all ages, delivering laughs through masterful timing and expressive physical acting.</p>
+</div>
+<!-- Card 2: Skills -->
+<div class="platform-bg p-8 border-l border-primary/20 hover:border-primary/50 transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="sports_martial_arts">sports_martial_arts</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4 group-hover:text-primary transition-colors">Spectacular Skills</h3>
+<p class="font-body-md text-on-surface-variant">Breathtaking acrobatics, precision tumbling, and high-energy stunts that showcase elite athletic prowess on a cinematic stage.</p>
+</div>
+<!-- Card 3: Characters -->
+<div class="platform-bg p-8 border-l border-primary/20 hover:border-primary/50 transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="groups">groups</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4 group-hover:text-primary transition-colors">Colourful Characters</h3>
+<p class="font-body-md text-on-surface-variant">A vibrant cast of unique personalities bringing the African Pirate lore to life, perfect for captivating audiences in theatres and festivals.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="max-w-3xl mx-auto text-center relative z-10 platform-bg p-12 gold-border-highlight">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-6 uppercase">Bring the Adventure to Your Stage</h2>
+<p class="font-body-lg text-on-surface-variant mb-8">Ideal for theatres, festivals, and premium family attractions seeking high-impact, culturally rich entertainment.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-none hover:opacity-80 transition-all hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:border hover:border-white">
+                        Book The Show
+                    </button>
+<button class="border border-primary text-primary font-label-caps text-label-caps px-8 py-4 rounded-none hover:bg-primary/10 transition-colors">
+                        Download Press Kit
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t-2 border-primary mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<span class="font-display-lg text-headline-md text-primary block mb-4">AFRIKAN WARRIORS</span>
+<p class="font-body-md text-on-surface-variant text-sm">© 2024 AFRIKAN WARRIORS. CINEMATIC HERITAGE &amp; ANCESTRAL PRESTIGE.</p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end items-start font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Press Kit</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
