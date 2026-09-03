@@ -14,7 +14,6 @@ export const skillTags = [
   "Traditional Dance",
   "Physical Comedy",
   "Live Percussion",
-  "Fire Performance",
   "Theatrical Storytelling",
   "Contortion",
   "Human Pyramids",
@@ -42,13 +41,85 @@ export const eventTypes: { icon: IconName; label: string }[] = [
   { icon: "diversity_3", label: "Cultural Events" },
 ];
 
-export const tvAppearances = [
-  "Britain's Got Talent (2009)",
-  "Australia's Got Talent (2011)",
-  "Le Cirque Roger Lanzac (World Tour)",
-  "North West Talent Show (Finalists 2015)",
-  "Durham Street Theatre Festival (Champions / Award Winners 2016)",
+export const majorCredits = [
+  { title: "Britain's Got Talent", detail: "Semi-Finalists" },
+  { title: "Australia's Got Talent", detail: "Semi-Finalists" },
+  { title: "North West Talent Show", detail: "Finalists" },
+  { title: "Durham Festival", detail: "Street Theatre Champions" },
+  { title: "Le Cirque Roger Lanzac", detail: "World Tour" },
+] as const;
+
+export const storyTimeline: {
+  year: string;
+  mark: string;
+  icon: IconName;
+  body: string;
+}[] = [
+  {
+    year: "Tanzania",
+    mark: "Origins",
+    icon: "location_on",
+    body: "Street theatre and cultural performance in Dar es Salaam, where founder Rahim Saphy began as a young acrobat.",
+  },
+  {
+    year: "Dar-Boys International",
+    mark: "1996",
+    icon: "groups",
+    body: "The company takes shape as an international African performing-arts ensemble.",
+  },
+  {
+    year: "United Kingdom",
+    mark: "UK Base",
+    icon: "business",
+    body: "A UK home, circus residencies, and a growing reputation on British stages.",
+  },
+  {
+    year: "International Circus",
+    mark: "Tours",
+    icon: "attractions",
+    body: "Zippos, Circus Vegas, Planet Circus and more — nights under the big top across Britain and Ireland.",
+  },
+  {
+    year: "Television",
+    mark: "2009",
+    icon: "tv",
+    body: "Britain's Got Talent and Australia's Got Talent introduce Afrikan Warriors to millions.",
+  },
+  {
+    year: "Australia",
+    mark: "2011",
+    icon: "campaign",
+    body: "A presence established down under, widening the company's international reach.",
+  },
+  {
+    year: "World Tour",
+    mark: "Global",
+    icon: "directions_run",
+    body: "Le Cirque Roger Lanzac and further touring across Europe, Africa and beyond.",
+  },
+  {
+    year: "Street Theatre Champions",
+    mark: "2016",
+    icon: "workspace_premium",
+    body: "Durham Street Theatre Festival — champions and award winners.",
+  },
+  {
+    year: "Afrikan Warriors Today",
+    mark: "Now",
+    icon: "theater_comedy",
+    body: "A touring production company with a catalogue of bookable shows. 30+ years on.",
+  },
 ];
+
+export const promoterAssets = [
+  "Technical Rider",
+  "Company Biography",
+  "Press Photos",
+  "Logos",
+  "Risk Assessments",
+  "Insurance Information",
+  "Promotional Material",
+] as const;
 
 export const venues = [
   "Zippos Circus – England",

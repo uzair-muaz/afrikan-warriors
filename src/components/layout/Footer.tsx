@@ -2,77 +2,54 @@ import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import { footerExplore, footerLegal, footerSocial, site } from "@/constants/nav";
 
+const footerLinks = [...footerExplore, ...footerLegal];
+
 export function Footer() {
   return (
-    <footer className="w-full bg-surface-container-lowest text-primary font-body-md text-body-md border-t-2 border-primary">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto">
-        <div>
+    <footer className="w-full bg-surface-container-lowest border-t border-primary">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 md:py-8">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center">
           <Link
             href="/"
-            className="font-display-lg text-headline-md text-primary block mb-6"
+            className="font-display-lg text-lg tracking-tight text-primary shrink-0 hover:opacity-80 transition-opacity"
           >
             {site.name}
           </Link>
-          <p className="text-on-surface-variant text-sm pr-4">{site.tagline}</p>
-        </div>
-        <div>
-          <h4 className="font-label-caps text-label-caps uppercase mb-6 text-on-surface">
-            Explore
-          </h4>
-          <ul className="flex flex-col gap-4">
-            {footerExplore.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="text-on-surface-variant hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </Link>
-              </li>
+
+          <nav
+            aria-label="Footer"
+            className="flex flex-wrap gap-x-5 gap-y-2 font-label-caps text-xs uppercase tracking-widest"
+          >
+            {footerLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-on-surface-variant hover:text-primary transition-colors"
+              >
+                {item.label}
+              </Link>
             ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-label-caps text-label-caps uppercase mb-6 text-on-surface">
-            Legal & Contact
-          </h4>
-          <ul className="flex flex-col gap-4">
-            {footerLegal.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="text-on-surface-variant hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-label-caps text-label-caps uppercase mb-6 text-on-surface">
-            Social
-          </h4>
-          <ul className="flex flex-col gap-4">
+          </nav>
+
+          <ul className="flex items-center gap-3 lg:ml-auto">
             {footerSocial.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors"
+                  aria-label={item.label}
+                  className="flex size-9 items-center justify-center text-on-surface-variant hover:text-primary transition-colors"
                 >
                   <Icon name={item.icon} className="text-xl" />
-                  {item.label}
                 </a>
               </li>
             ))}
           </ul>
         </div>
-      </div>
-      <div className="text-center pb-8">
-        <p className="text-sm text-on-surface-variant border-t border-primary/20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-8">
-          © 2024 {site.name}. {site.tagline}
+
+        <p className="mt-5 pt-4 border-t border-primary/20 text-xs text-on-surface-variant">
+          © {new Date().getFullYear()} {site.name}
         </p>
       </div>
     </footer>

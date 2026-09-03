@@ -31,8 +31,8 @@ export default function WorkshopsPage() {
             <Button href="#workshops" size="lg">
               Explore Workshops
             </Button>
-            <Button href="#packages" variant="ghost" size="lg">
-              View Packages
+            <Button href={site.inquiryHref} variant="ghost" size="lg">
+              Request a Quote
             </Button>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function WorkshopsPage() {
           </article>
           <article className="md:col-span-4 bg-platform border-t border-primary-container/30 p-8 relative flex flex-col min-h-[300px] hover:border-primary-container transition-colors">
             <div className="inline-flex items-center gap-2 text-primary-container mb-4">
-              <Icon name="local_fire_department" filled />
+              <Icon name="attractions" />
               <span className="font-label-caps text-label-caps">All Levels</span>
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface uppercase mb-2 text-xl">

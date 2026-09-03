@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/Button";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { HeritageDivider } from "@/components/ui/HeritageDivider";
 import { Icon } from "@/components/ui/Icon";
@@ -12,7 +13,10 @@ const facts = [
 
 export function AboutSection() {
   return (
-    <section className="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+    <section
+      id="about"
+      className="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative scroll-mt-32"
+    >
       <HeritageDivider className="mb-16" />
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
         <div className="col-span-1 md:col-span-6 order-2 md:order-1">
@@ -39,6 +43,9 @@ export function AboutSection() {
               </li>
             ))}
           </ul>
+          <Button href="/about" variant="ghost">
+            Our Story
+          </Button>
         </div>
         <div className="col-span-1 md:col-span-6 order-1 md:order-2">
           <div className="relative w-full h-[500px] border-l border-primary/20 pl-8">

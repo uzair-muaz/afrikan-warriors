@@ -164,7 +164,7 @@ export default function FreedomPage() {
               and premium private showcases.
             </p>
           </div>
-          <Button href="/packages#inquiry-form" size="lg" className="gap-4 px-12 py-6">
+          <Button href="/#inquiry" size="lg" className="gap-4 px-12 py-6">
             Inquire Now
             <Icon name="arrow_forward" className="text-[20px]" />
           </Button>

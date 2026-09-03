@@ -1,7 +1,7 @@
 export const faqItems = [
   {
     q: "Do you offer discounts for multi-day bookings?",
-    a: "Yes, we offer tailored packages for residencies, festivals, and multi-day events. The discount structure depends on the duration of the engagement and the scale of the required performances. Please contact us with your event details for a custom quote.",
+    a: "Yes, we offer tailored programmes for residencies, festivals, and multi-day events. Share the duration and scale of the engagement and we will prepare a custom quote.",
   },
   {
     q: "Are travel and accommodation costs included?",
@@ -17,7 +17,7 @@ export const faqItems = [
   },
   {
     q: "How much is a short performance?",
-    a: "Short, high-intensity showcase performances (typically 10-15 minutes) start at a premium base rate. Pricing scales based on the number of performers requested, specific act inclusions (like fire), and the prestige of the event.",
+    a: "Every event is different. Share your venue, audience and running time and we will create the right performance for your budget. There are no published rates — we quote each booking individually.",
   },
   {
     q: "What is your cancellation policy?",
@@ -41,7 +41,7 @@ export const faqItems = [
   },
   {
     q: "What is required for the Limbo Fire option?",
-    a: "The Limbo Fire act requires prior written safety approval from the venue, appropriate fire suppression equipment on standby, a minimum 4-meter clearance from all flammable materials/audience, and adequate ventilation if performed indoors.",
+    a: "Limbo Fire option available subject to venue approval, risk assessment and appropriate safety conditions. The client must provide a suitable contingency if conditions are unsafe.",
   },
   {
     q: "What is the required performance space?",

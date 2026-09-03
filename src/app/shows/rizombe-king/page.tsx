@@ -58,7 +58,7 @@ export default function RizombeKingPage() {
         subtitle="Power. Culture. Rhythm. An original Afrikan Warriors theatrical production merging ancestral storytelling with breathtaking physical performance."
       >
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button href="/packages#inquiry-form" size="lg">
+          <Button href="/#inquiry" size="lg">
             Secure Tickets
           </Button>
           <Button variant="ghost" size="lg" className="gap-2">
@@ -142,7 +142,7 @@ export default function RizombeKingPage() {
       <CtaBanner
         title="Witness The Legacy"
         body="Secure your place for an unforgettable evening of power and prestige. Limited engagements available."
-        primaryHref="/packages#inquiry-form"
+        primaryHref="/#inquiry"
         primaryLabel="Reserve Seats"
       />
     </>

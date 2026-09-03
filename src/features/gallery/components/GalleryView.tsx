@@ -148,7 +148,7 @@ export function GalleryView() {
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">
             Bring This Energy To Your Stage
           </h2>
-          <Button href="/packages#inquiry-form" size="lg">
+          <Button href="/#inquiry" size="lg">
             Book the Show
           </Button>
         </div>

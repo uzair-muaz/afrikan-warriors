@@ -19,13 +19,11 @@ export function HomeInquirySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase mb-6">
-              Make Your Event Unforgettable
+              Request a Quote
             </h2>
             <p className="font-body-lg text-on-surface-variant mb-8">
-              Whether you need a spectacular 10-minute opening performance,
-              multiple festival shows, a complete theatrical production or a
-              seasonal entertainment programme, Afrikan Warriors can create a
-              solution for you.
+              Every event is different. Tell us about yours and we&apos;ll create
+              the right performance for your audience, venue and budget.
             </p>
             <ul className="space-y-4 font-label-caps text-on-surface tracking-widest uppercase mb-10">
               {prompts.map((item) => (

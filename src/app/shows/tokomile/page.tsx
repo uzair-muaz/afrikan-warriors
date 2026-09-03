@@ -3,10 +3,17 @@ import { Button } from "@/components/ui/Button";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { HeritageDivider } from "@/components/ui/HeritageDivider";
 import { Icon } from "@/components/ui/Icon";
-import { Input } from "@/components/ui/Input";
 import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
 import { youtubeVideos } from "@/constants/media";
-import { showImages, tokomileExpect } from "@/constants/shows";
+import { site } from "@/constants/nav";
+import {
+  showImages,
+  tokomileCharacters,
+  tokomileExpect,
+  tokomileGallery,
+  tokomileSections,
+  tokomileTechnical,
+} from "@/constants/shows";
 import { CtaBanner } from "@/features/shows/components/CtaBanner";
 
 export const metadata: Metadata = {
@@ -28,29 +35,42 @@ export default function TokomilePage() {
           <div className="absolute inset-0 bg-linear-to-t from-stage to-transparent" />
         </div>
         <div className="z-10 w-full md:w-2/3">
+          <p className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4">
+            Afrikan Warriors Presents
+          </p>
           <h1 className="font-display-lg text-display-lg text-primary uppercase leading-none mb-6">
-            TOKOMILE SHOW
+            TOKOMILE
           </h1>
           <p className="font-headline-lg text-headline-md text-on-surface-variant mb-4 uppercase tracking-widest">
-            Zaramu Kingdom
+            An African Adventure Like No Other
           </p>
           <HeritageDivider className="mb-8" />
-          <p className="font-body-lg text-body-lg text-on-surface mb-8 max-w-2xl">
-            A cinematic fusion of high-performance athleticism and ancestral
-            prestige. Experience the fierce rivalry of the Zaramu Kingdom brought
-            to life through breathtaking acrobatics and traditional rhythm.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button href="#trailer" size="lg" className="gap-2">
               <Icon name="play_arrow" filled />
-              Watch the Full Show
+              Watch Trailer
             </Button>
-            <Button href="/packages#inquiry-form" variant="ghost" size="lg">
-              Book the Show
+            <Button href={site.inquiryHref} variant="ghost" size="lg">
+              Book TOKOMILE
             </Button>
           </div>
         </div>
       </header>
+
+      <nav
+        aria-label="Tokomile sections"
+        className="border-y border-primary/20 bg-surface-container-lowest px-margin-mobile md:px-margin-desktop"
+      >
+        <ul className="max-w-container-max mx-auto flex gap-6 overflow-x-auto py-4 font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">
+          {tokomileSections.map((item) => (
+            <li key={item.label} className="shrink-0">
+              <a href={item.href} className="hover:text-primary transition-colors">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-xl space-y-stack-xl">
         <section id="trailer" className="w-full relative scroll-mt-32">
@@ -60,7 +80,7 @@ export default function TokomilePage() {
           />
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <section id="story" className="grid grid-cols-1 md:grid-cols-12 gap-gutter scroll-mt-32">
           <div className="md:col-span-5 relative">
             <h2 className="font-headline-lg text-headline-lg text-primary mb-6 uppercase">
               The Story
@@ -84,48 +104,14 @@ export default function TokomilePage() {
                 their father, Chief Zuwadiswa, prepares for succession, the
                 brothers clash in a test of strength, wit, and ancestral right.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                <div>
-                  <p className="font-label-caps text-label-caps text-on-surface-variant mb-2">
-                    Written & Directed By
-                  </p>
-                  <p className="font-headline-md text-headline-md text-primary text-xl">
-                    Rahim Saphy
-                  </p>
-                </div>
-                <div>
-                  <p className="font-label-caps text-label-caps text-on-surface-variant mb-2">
-                    Choreography
-                  </p>
-                  <p className="font-headline-md text-headline-md text-primary text-xl">
-                    AW-Team
-                  </p>
-                </div>
-                <div>
-                  <p className="font-label-caps text-label-caps text-on-surface-variant mb-2">
-                    Cast Size
-                  </p>
-                  <p className="font-headline-md text-headline-md text-primary text-xl">
-                    30 Warriors
-                  </p>
-                </div>
-                <div>
-                  <p className="font-label-caps text-label-caps text-on-surface-variant mb-2">
-                    Running Time
-                  </p>
-                  <p className="font-headline-md text-headline-md text-primary text-xl">
-                    85 Minutes
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-stack-lg">
+        <section id="experience" className="py-stack-lg scroll-mt-32">
           <div className="text-center md:text-left mb-12">
             <h2 className="font-headline-lg text-headline-lg text-primary uppercase">
-              What to Expect
+              The Experience
             </h2>
             <HeritageDivider className="mx-auto md:mx-0 w-32" />
           </div>
@@ -146,24 +132,70 @@ export default function TokomilePage() {
             ))}
           </div>
         </section>
+
+        <section id="characters" className="scroll-mt-32">
+          <h2 className="font-headline-lg text-headline-lg text-primary uppercase mb-12">
+            Characters
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {tokomileCharacters.map((character) => (
+              <article
+                key={character.name}
+                className="bg-surface-container border-t border-primary/30 p-8"
+              >
+                <h3 className="font-headline-md text-headline-md text-primary uppercase mb-2">
+                  {character.name}
+                </h3>
+                <p className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-4">
+                  {character.role}
+                </p>
+                <p className="font-body-md text-on-surface-variant">
+                  {character.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="gallery" className="scroll-mt-32">
+          <h2 className="font-headline-lg text-headline-lg text-primary uppercase mb-12">
+            Gallery
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {tokomileGallery.map((item) => (
+              <div key={item.src} className="relative aspect-4/5 border border-primary/20">
+                <CoverImage src={item.src} alt={item.alt} className="vignette" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="technical" className="scroll-mt-32 bg-platform p-8 md:p-12 border-l border-primary">
+          <h2 className="font-headline-lg text-headline-lg text-primary uppercase mb-8">
+            Technical Information
+          </h2>
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {tokomileTechnical.map((item) => (
+              <div key={item.label}>
+                <dt className="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">
+                  {item.label}
+                </dt>
+                <dd className="font-headline-md text-headline-md text-on-surface text-xl">
+                  {item.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
 
       <CtaBanner
-        title="Adaptable Prestige"
-        body="While the full Tokomile Show runs for a spectacular 85 minutes with our complete 30-warrior cast, we understand that exceptional venues require exceptional flexibility. The performance can be tailored in running time, cast size, and budget to perfectly suit your specific event requirements without compromising the cinematic impact."
-        primaryHref="/packages#inquiry-form"
-        primaryLabel="Inquire Now"
+        title="Book TOKOMILE"
+        body="The full production runs 85 minutes with a 30-warrior cast, and can be tailored in running time, cast size and scale to the venue — without losing cinematic impact."
+        primaryHref={site.inquiryHref}
+        primaryLabel="Book TOKOMILE"
         className="bg-platform border-l-2 border-primary mx-margin-mobile md:mx-margin-desktop mb-stack-xl"
-      >
-        <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto mb-8" action="/packages#inquiry-form">
-          <Input
-            name="email"
-            type="email"
-            placeholder="Enter your email for a custom quote"
-            className="bg-void border-0 border-b-2 border-primary/50"
-          />
-        </form>
-      </CtaBanner>
+      />
     </>
   );
 }

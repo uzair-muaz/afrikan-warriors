@@ -68,10 +68,10 @@ export default function AfricanPiratePage() {
       <CtaBanner
         title="Bring the Adventure to Your Stage"
         body="Ideal for theatres, festivals, and premium family attractions seeking high-impact, culturally rich entertainment."
-        primaryHref="/packages#inquiry-form"
+        primaryHref="/#inquiry"
         primaryLabel="Book The Show"
-        secondaryHref="#"
-        secondaryLabel="Download Press Kit"
+        secondaryHref="/about#promoters"
+        secondaryLabel="Request Press Kit"
       />
     </>
   );

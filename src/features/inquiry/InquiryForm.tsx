@@ -33,7 +33,7 @@ export function InquiryForm({ variant }: { variant: Variant }) {
         <Textarea
           name="message"
           rows={4}
-          placeholder="Tell us about your event (Location, Date, Package)..."
+          placeholder="Tell us about your event — audience, venue and budget."
         />
         <Button type="submit" fullWidth size="lg" disabled={pending}>
           {pending ? "Submitting…" : "Submit Enquiry"}

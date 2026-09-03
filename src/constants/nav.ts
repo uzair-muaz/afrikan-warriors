@@ -1,40 +1,53 @@
 import type { IconName } from "@/components/ui/Icon";
+import { featuredShows } from "@/constants/shows";
 
 export const site = {
   name: "AFRIKAN WARRIORS",
-  tagline: "CINEMATIC HERITAGE & ANCESTRAL PRESTIGE.",
+  tagline: "The Spirit of Africa. The Energy of Live Performance.",
   email: "booking@afrikanwarriors.com",
-  inquiryHref: "/packages#inquiry-form",
+  inquiryHref: "/#inquiry",
 } as const;
 
 export type NavItem = {
   href: string;
   label: string;
   match?: "exact" | "prefix" | "shows";
+  children?: { href: string; label: string }[];
 };
 
 export const navItems: NavItem[] = [
-  { href: "/acts", label: "Our Acts", match: "prefix" },
-  { href: "/workshops", label: "Workshops", match: "prefix" },
-  { href: "/gallery", label: "Gallery", match: "prefix" },
-  { href: "/packages", label: "Packages", match: "prefix" },
-  { href: "/team", label: "Team", match: "prefix" },
+  {
+    href: "/#shows",
+    label: "Shows",
+    match: "shows",
+    children: featuredShows.map((show) => ({
+      href: show.href,
+      label: show.title,
+    })),
+  },
+  { href: "/about", label: "About", match: "prefix" },
+  { href: "/acts", label: "Acts", match: "prefix" },
+  { href: "/gallery", label: "Media", match: "prefix" },
+  { href: "/#packages", label: "Packages" },
+  { href: "/team", label: "AW-Team", match: "prefix" },
   { href: "/faq", label: "FAQ", match: "prefix" },
-  { href: "/packages#inquiry-form", label: "Inquiry" },
 ];
 
 export const footerExplore = [
-  { href: "/#shows", label: "Performances" },
-  { href: "/acts", label: "Our Acts" },
-  { href: "/team", label: "Team" },
+  { href: "/", label: "Home" },
+  { href: "/#shows", label: "Shows" },
+  { href: "/acts", label: "Acts" },
+  { href: "/about", label: "About" },
+  { href: "/gallery", label: "Media" },
+  { href: "/#packages", label: "Packages" },
+  { href: "/workshops", label: "Workshops" },
+  { href: "/team", label: "AW-Team" },
   { href: "/faq", label: "FAQ" },
 ] as const;
 
 export const footerLegal = [
-  { href: "#", label: "Privacy Policy" },
-  { href: "#", label: "Terms of Service" },
-  { href: "#", label: "Press Kit" },
-  { href: "/packages#inquiry-form", label: "Contact" },
+  { href: "/about#promoters", label: "Press Kit" },
+  { href: "/#inquiry", label: "Contact" },
 ] as const;
 
 export const footerSocial: {

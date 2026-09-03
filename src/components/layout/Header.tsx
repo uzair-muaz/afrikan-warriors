@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
-import { navItems, site } from "@/constants/nav";
+import { navItems, site, type NavItem } from "@/constants/nav";
 import { cn } from "@/lib/cn";
 
 function isActive(pathname: string, href: string, match?: string) {
@@ -70,23 +70,9 @@ function HeaderBar({
           className="hidden lg:flex items-center gap-5 xl:gap-8 font-label-caps text-label-caps"
           aria-label="Primary"
         >
-          {navItems.map((item) => {
-            const active = isActive(pathname, item.href, item.match);
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "transition-colors duration-500 ease-in-out hover:text-primary hover:opacity-80",
-                  active
-                    ? "text-primary border-b-2 border-primary pb-1"
-                    : "text-on-surface-variant",
-                )}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+          {navItems.map((item) => (
+            <DesktopNavItem key={item.label} item={item} pathname={pathname} />
+          ))}
         </nav>
 
         <Button
@@ -94,7 +80,7 @@ function HeaderBar({
           className="hidden xl:inline-flex"
           size="md"
         >
-          Book Now
+          Book Us
         </Button>
 
         <button
@@ -114,25 +100,90 @@ function HeaderBar({
             {navItems.map((item) => {
               const active = isActive(pathname, item.href, item.match);
               return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={cn(
-                    "py-2 border-b border-primary/10",
-                    active ? "text-primary" : "text-on-surface-variant",
-                  )}
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "py-2 border-b border-primary/10 block",
+                      active ? "text-primary" : "text-on-surface-variant",
+                    )}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children ? (
+                    <ul className="mt-2 mb-2 flex flex-col gap-2 pl-4">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className="py-1 text-on-surface-variant hover:text-primary block"
+                            onClick={() => setOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
               );
             })}
           </nav>
           <Button href={site.inquiryHref} size="lg" fullWidth>
-            Book Now
+            Book Us
           </Button>
         </div>
       ) : null}
     </header>
+  );
+}
+
+function DesktopNavItem({
+  item,
+  pathname,
+}: {
+  item: NavItem;
+  pathname: string;
+}) {
+  const active = isActive(pathname, item.href, item.match);
+  const linkClass = cn(
+    "transition-colors duration-500 ease-in-out hover:text-primary hover:opacity-80 inline-flex items-center gap-1",
+    active
+      ? "text-primary border-b-2 border-primary pb-1"
+      : "text-on-surface-variant",
+  );
+
+  if (!item.children) {
+    return (
+      <Link href={item.href} className={linkClass}>
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="relative group">
+      <Link href={item.href} className={linkClass}>
+        {item.label}
+        <Icon name="expand_more" className="text-sm" />
+      </Link>
+      <ul className="absolute left-0 top-full pt-3 hidden group-hover:block group-focus-within:block min-w-56">
+        <li>
+          <ul className="bg-stage border border-gold-border py-3 px-4 flex flex-col gap-3 shadow-lg">
+            {item.children.map((child) => (
+              <li key={child.href}>
+                <Link
+                  href={child.href}
+                  className="text-on-surface-variant hover:text-primary block whitespace-nowrap"
+                >
+                  {child.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </div>
   );
 }

@@ -57,7 +57,7 @@ export default function FaqPage() {
             Our management team is ready to discuss the specific requirements for
             your next premium event.
           </p>
-          <Button href="/packages#inquiry-form" variant="ghost" size="lg">
+          <Button href="/#inquiry" variant="ghost" size="lg">
             Get in Touch
           </Button>
         </div>

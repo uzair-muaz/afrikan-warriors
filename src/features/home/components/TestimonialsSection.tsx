@@ -3,7 +3,7 @@ import { testimonials } from "@/constants/home";
 
 export function TestimonialsSection() {
   return (
-    <section className="py-stack-lg bg-surface-container-lowest px-margin-mobile md:px-margin-desktop">
+    <section className="py-stack-lg bg-surface-container-lowest px-margin-mobile md:px-margin-desktop scroll-mt-32" id="reviews">
       <div className="max-w-container-max mx-auto">
         <h2 className="text-center font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase mb-16">
           What They <span className="text-primary">Say</span>

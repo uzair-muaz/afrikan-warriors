@@ -6,7 +6,6 @@ export const galleryFilters = [
   "All",
   "Acrobatics",
   "Traditional Dance",
-  "Fire Shows",
   "Stage Productions",
 ] as const;
 
@@ -33,9 +32,9 @@ export const galleryItems = [
   },
   {
     src: urls[3],
-    alt: "Fire Show",
-    category: "Fire Shows" as const,
-    title: "Inferno Mastery",
+    alt: "Night-time stage performance",
+    category: "Stage Productions" as const,
+    title: "Stage Spectacle",
   },
   {
     src: urls[4],

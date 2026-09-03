@@ -14,10 +14,10 @@ export type ActItem = {
 export const acts: ActItem[] = [
   {
     title: "Limbo Dance",
-    subtitle: "(With Limbo Fire Option)",
-    body: "Defying gravity and heat, our limbo performers bend to impossible angles, culminating in a breathtaking finale beneath a blazing bar of fire. A true test of flexibility and courage.",
+    subtitle: "Limbo Fire option",
+    body: "A display of extreme flexibility under the bar. Limbo Fire option available subject to venue approval, risk assessment and appropriate safety conditions.",
     image: urls[0],
-    alt: "African acrobat performing extreme limbo under a flaming bar",
+    alt: "African acrobat performing extreme limbo",
     featured: true,
   },
   {

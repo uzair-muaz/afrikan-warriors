@@ -76,7 +76,7 @@ export default function RegularShowPage() {
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 italic">
             Performances can be adapted to your venue, audience and running time.
           </p>
-          <Button href="/packages#inquiry-form" size="lg">
+          <Button href="/#inquiry" size="lg">
             Book The Regular Show
           </Button>
         </div>

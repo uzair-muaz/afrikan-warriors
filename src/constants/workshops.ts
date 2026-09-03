@@ -26,7 +26,7 @@ export const workshopTiers = [
   {
     name: "The Spectacle",
     size: "5-Man Team",
-    body: "Our most popular package. A full-scale kinetic assault featuring human pyramids, tumbling, and dramatic choreography.",
+    body: "Our most requested scale. A full kinetic ensemble featuring human pyramids, tumbling, and dramatic choreography.",
     ideal: ["Award Ceremonies", "Theatre Stages", "Mid-Size Festivals"],
     featured: true,
   },

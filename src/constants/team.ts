@@ -17,8 +17,8 @@ export const teamMembers = [
   },
   {
     name: "Iddy Waziri",
-    role: "Fire Performer & Acrobat",
-    bio: "Mastering the elements, his fire acts bring a dangerous, thrilling luminescence to the dark stage.",
+    role: "Acrobat",
+    bio: "A versatile performer whose tumbling and balance work bring height and precision to ensemble routines.",
     image: portraits[2],
   },
   {
@@ -65,8 +65,8 @@ export const teamMembers = [
   },
   {
     name: "Juma Chaussa",
-    role: "Fire Spinner",
-    bio: "Weaving intricate webs of flame, his performances are a mesmerizing blend of martial arts precision and elemental danger.",
+    role: "Acrobat",
+    bio: "A versatile ensemble artist whose precision and stamina support the company's most demanding stage sequences.",
     image: portraits[10],
   },
   {
