@@ -40,7 +40,7 @@ export default function WorkshopsPage() {
           <CoverImage
             src={workshopImages.hero}
             alt="Afrikan Warriors performer mid-leap during a high-energy acrobatic routine"
-            className="grayscale opacity-80 mix-blend-screen"
+            className="vignette"
           />
           <div className="absolute inset-0 border border-primary-container/20 m-4 pointer-events-none" />
         </div>
@@ -67,7 +67,7 @@ export default function WorkshopsPage() {
             <CoverImage
               src={workshopImages.acro}
               alt="Two performers demonstrating a gravity-defying acro-balance pose"
-              className="grayscale opacity-40 group-hover:opacity-60"
+              className="opacity-50 group-hover:opacity-70"
             />
             <div className="relative z-10 p-8 h-full flex flex-col justify-end">
               <div className="inline-flex items-center gap-2 text-primary-container mb-2">

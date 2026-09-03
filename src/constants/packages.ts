@@ -21,7 +21,7 @@ export const performancePackages: PerformancePackage[] = [
       "Standard Acrobatic Repertoire",
     ],
     cta: "Enquire About Silver",
-    icon: "swords",
+    icon: "shield",
   },
   {
     id: "bronze",
@@ -47,7 +47,7 @@ export const performancePackages: PerformancePackage[] = [
       "Ideal for Opening Ceremonies & Major Festivals",
     ],
     cta: "Enquire About Gold",
-    icon: "workspace_premium",
+    icon: "crown",
   },
 ];
 

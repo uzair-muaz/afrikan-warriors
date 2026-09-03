@@ -28,7 +28,7 @@ export function HomeInquirySection() {
             <ul className="space-y-4 font-label-caps text-on-surface tracking-widest uppercase mb-10">
               {prompts.map((item) => (
                 <li key={item.label} className="flex items-center gap-4">
-                  <Icon name={item.icon} className="text-primary" />
+                  <Icon name={item.icon} className="text-primary text-3xl" />
                   {item.label}
                 </li>
               ))}

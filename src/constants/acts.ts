@@ -1,6 +1,6 @@
 import images from "@/constants/images.json";
 
-const urls = images.our_acts_showcase;
+const urls = images.acts;
 
 export type ActItem = {
   title: string;

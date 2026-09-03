@@ -1,6 +1,6 @@
 import images from "@/constants/images.json";
 
-const urls = images.gallery_final;
+const urls = images.gallery;
 
 export const galleryFilters = [
   "All",

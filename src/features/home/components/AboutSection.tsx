@@ -53,7 +53,7 @@ export function AboutSection() {
               <CoverImage
                 src={homeImages.about}
                 alt="Silhouette of an African acrobat mid-leap against a dark background"
-                className="grayscale hover:grayscale-0 vignette"
+                className="vignette"
               />
             </div>
           </div>

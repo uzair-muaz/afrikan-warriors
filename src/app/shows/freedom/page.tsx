@@ -98,7 +98,7 @@ export default function FreedomPage() {
                 <CoverImage
                   src={showImages.freedom.drum}
                   alt="Tribal drum being played by muscular hands in mid-strike"
-                  className="grayscale hover:grayscale-0 opacity-80"
+                  className="opacity-90"
                 />
               </div>
             </div>

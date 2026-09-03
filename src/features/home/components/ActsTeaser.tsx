@@ -22,7 +22,7 @@ export function ActsTeaser() {
             key={act.title}
             className="relative aspect-3/4 overflow-hidden border border-primary/20"
           >
-            <CoverImage src={act.image} alt={act.alt} className="grayscale" />
+            <CoverImage src={act.image} alt={act.alt} />
             <div className="absolute inset-0 bg-linear-to-t from-stage to-transparent" />
             <h3 className="absolute bottom-4 left-4 right-4 font-label-caps text-label-caps text-on-surface uppercase">
               {act.title}

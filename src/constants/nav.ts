@@ -29,6 +29,7 @@ export const navItems: NavItem[] = [
   { href: "/acts", label: "Acts", match: "prefix" },
   { href: "/gallery", label: "Media", match: "prefix" },
   { href: "/#packages", label: "Packages" },
+  { href: "/workshops", label: "Workshops", match: "prefix" },
   { href: "/team", label: "AW-Team", match: "prefix" },
   { href: "/faq", label: "FAQ", match: "prefix" },
 ];

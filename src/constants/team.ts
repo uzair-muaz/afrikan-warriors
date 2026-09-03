@@ -1,6 +1,6 @@
 import images from "@/constants/images.json";
 
-const portraits = images.meet_the_team;
+const portraits = images.team;
 
 export const teamMembers = [
   {

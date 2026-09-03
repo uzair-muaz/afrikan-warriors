@@ -2,11 +2,11 @@ import type { IconName } from "@/components/ui/Icon";
 import { limboFireNote } from "@/constants/copy";
 import images from "@/constants/images.json";
 
-const tokomile = images.tokomile_show_zaramu_kingdom_final;
-const rizombe = images.rizombe_king_power_rhythm_final;
-const pirate = images.african_pirate_an_african_adventure_final;
-const freedom = images.freedom_movement_culture_final;
-const regular = images.performance_regular_show;
+const tokomile = images.tokomile;
+const rizombe = images.rizombeKing;
+const pirate = images.africanPirate;
+const freedom = images.freedom;
+const regular = images.regularShow;
 
 export type ShowCard = {
   slug: string;

@@ -1,80 +1,70 @@
 {
-  "african_pirate_an_african_adventure_final": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCgz8UV5-XtEfKVex6qWpRaVJ2vCnc8GugFntvCtL0C_gmdWxnJtyBghr9HTAFHlkd6hptI1CCWnEAIelKU3IeprriDya34rqRmmhlauHSnoQBrCwfkSNHKd2gKd3niQXrp5CU8YgudIlv7J52i7W0yxxGs6ZEQTyNHwJ9POrTLTTx84R_HI2h1zbYXyBZcqihKwg6NSBYwbmDWXRpBFVY-esoSruR6rbZi-GyEpkLisPGU3bTeVWTPag",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCIj2_FugdNud26NHSKWDJ9Ag15TMN7CUBCd9uB5dDSFhJj-AEIJt8onzMx09iay2cGtioPTCvPAn5fTCCJKcYROReO15vevfxzXLP6QvhnRZog6DiiCnTJ_E0oO2_siygLuzQjMgZXG5UdZ4LumJHLGj-TUCNcAWqn6mezxPbtZR9Jdw9tMPBvxGVpG_5_CfoM4zP4IelX0wgLxkEeAdsfAvaszaTaIboQ1Co8pH_ZmJCtnrVGe4Zb-w"
+  "home": [
+    "/stitch/home/01.jpg",
+    "/stitch/home/02.jpg"
   ],
-  "afrikan_warriors_home_final": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuA4AUScECeJHKS070qdNSMMWMK-l4xDeJqm-sjpYWIAWmoE_sjrr1GXdkGGvIEFGife-dNNUP2QhWeLYpjDH8wCQiK__6162hDXLY0Ixa-_1ZdQidu6OV-lPnINILwe0iGbfWy8W0S8OcZp-je8f3UtClqXkWLSmOs1LQHuYyhCwjfWjqb_eRxB4Vkve3EzimovE1kczPnYdtkHFM4D603MW3MTzRE_itYsV5A9k5-ZPfh2-JWi6PWaig",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuC1WIPoLkDv9EoJPKHG5h2a-YI84HLvf0yzo4Urn754-_8bi0Tg8gnQx4fs6hG6zWHBv94ITewqPLfBNqCvDa7N2d1GTuRulWwNhB9XpjsrY2gq9GZvqaGEloRMBnTJdLoYLI4CvZ8wzbLWQ31ItMYBqPK6VQV79t7N5ynoCvr0XEPBJR1pqszsN3-lzeplIVskPqgZfNxL4ou31d-B8F1g6dLWVTCa7-JRYCLlC_LTc9dUtl9cqj3Y0g",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDGwj9xiVTGzK3SowSJat7716bS3x7RwfmoHgwfFK5yVVWrcLayVn7zMo6q1U_7kn_NWoJa0kZJqnUMCUDvChjJ2diwekTXqZRk7932FvkxrhooyiosJQVvLGIDcdP2IpISgzWn97A99shbrNT-ZT_tF8rJfdv9ZnL3JhwW0WUERP4cw_ZVrxmqpdq9VZU0LryQqzcUTB1_F0eSnoKAoKp_TxfvSuLhVO_s_QTLv-p3eR5Ua6EEw8_trg"
+  "acts": [
+    "/stitch/acts/01.jpg",
+    "/stitch/acts/02.jpg",
+    "/stitch/acts/03.jpg",
+    "/stitch/acts/04.jpg",
+    "/stitch/acts/05.jpg",
+    "/stitch/acts/06.jpg",
+    "/stitch/acts/07.jpg",
+    "/stitch/acts/08.jpg",
+    "/stitch/acts/09.jpg"
   ],
-  "afrikan_warriors_home_final_integrated": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuA4AUScECeJHKS070qdNSMMWMK-l4xDeJqm-sjpYWIAWmoE_sjrr1GXdkGGvIEFGife-dNNUP2QhWeLYpjDH8wCQiK__6162hDXLY0Ixa-_1ZdQidu6OV-lPnINILwe0iGbfWy8W0S8OcZp-je8f3UtClqXkWLSmOs1LQHuYyhCwjfWjqb_eRxB4Vkve3EzimovE1kczPnYdtkHFM4D603MW3MTzRE_itYsV5A9k5-ZPfh2-JWi6PWaig",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuC1WIPoLkDv9EoJPKHG5h2a-YI84HLvf0yzo4Urn754-_8bi0Tg8gnQx4fs6hG6zWHBv94ITewqPLfBNqCvDa7N2d1GTuRulWwNhB9XpjsrY2gq9GZvqaGEloRMBnTJdLoYLI4CvZ8wzbLWQ31ItMYBqPK6VQV79t7N5ynoCvr0XEPBJR1pqszsN3-lzeplIVskPqgZfNxL4ou31d-B8F1g6dLWVTCa7-JRYCLlC_LTc9dUtl9cqj3Y0g",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDGwj9xiVTGzK3SowSJat7716bS3x7RwfmoHgwfFK5yVVWrcLayVn7zMo6q1U_7kn_NWoJa0kZJqnUMCUDvChjJ2diwekTXqZRk7932FvkxrhooyiosJQVvLGIDcdP2IpISgzWn97A99shbrNT-ZT_tF8rJfdv9ZnL3JhwW0WUERP4cw_ZVrxmqpdq9VZU0LryQqzcUTB1_F0eSnoKAoKp_TxfvSuLhVO_s_QTLv-p3eR5Ua6EEw8_trg"
+  "gallery": [
+    "/stitch/gallery/01.jpg",
+    "/stitch/gallery/02.jpg",
+    "/stitch/gallery/03.jpg",
+    "/stitch/gallery/04.jpg",
+    "/stitch/gallery/05.jpg"
   ],
-  "freedom_movement_culture_final": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuD3hDTbhbYNUwSetVIiRe5Jj0eCN6z4f60YKeZpKMt_Ql19DpRSN1qpA6s8V-2l_dMIRPF_8VduHEUQ95SVN9P4ndzm_kmHjey1r-Dz17RVQnYxHSF3fzjkYplvBaXaNiKfv3mLtzNLpXDvj-rbyL1qzoM03Ig_kX13-OcIBJUQxTd4GsusNqbKU6DSHEwL6iwI2yAMPZM35Xj9COHWvsayLf0-f5fbuoYjnm-jDxLhHE8L9neVXug6ng",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCYl7ogBsguBMgrpjxVvgTzcdk3MRvZqpLRl5lYhsb4hZQFbvFf_gpimpuNu3c63gRXKfqn4TDYijhsAk130IqU8O5YbubY-Xx-PXsHnypt00kAqs3pEJ20YZW91eqgpRZEaoeXyRpCV-2H0SFUcijZhnBBjYFd8YYGG6L_gIU_NrKJxUHwY4LS9f2AsrsZWWb0T-j9I8MaZOMV9O8qWQHedqNH89WTITCwqu0AMFOR3YNEN4yzFCdMIA",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDnvd53t7d4feLiv6pNQNRlhha4ef4UvddX6SQQXnLIWskjAH15LJ96Fxd3IOKAvj1bmAIvfekBDyBGoXKCpKwRUGva6vYoE1v7C7-FcQwjZYu-hSz01hc5Kq3PeNHUh-qC-Us2AtnvF4cHG5K1mtpiOG30iDGV-D2op8ljm6LLZwVMMCMVYpKMSe1HnaD4jRzWlfTg-s9z1P0m29eq7vBN__gA-I4k6gByd44naz8S4t5S7TWxwRRdzQ"
+  "workshops": [
+    "/stitch/workshops/01.jpg",
+    "/stitch/workshops/02.jpg"
   ],
-  "frequently_asked_questions": [],
-  "gallery_final": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCcS2tKXeZAk7AwTWwsLLxlQEtgzUWQYIbtTct2fYY-IEnNMKzz3aX-vVNdsz5WpGO9bjtNw4imHH_Ms_rYCHN9g1sSlECuEQRIWpXrebmUg7ZFhpwN00V8oUvEUqaQy5ysUBnOfhhlysvFElTtjkbfkxy6N63AakzmwBNgL5SxeZQ4JSN5Rxi6qzBF7In_V8hu64qz425o7YnN8B4wwlHbtznpQAG_6hhfXlOA1DfSZmAGYFAisJBi3w",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuARzJVPvI-fAQtSbQahMM_N7JPuVCbyYiLqCHHN2yxLFMicI3cuyU9fiiPf_3h2o53V_CP849z803ODQ9uqu8PhJMwAm8YRD5i-ld1RdIYTvZi1vhJbAVFzBSmPle8G_cPZSoJNytRexSvPUmImnEOBnyZCZbuq7kFxkYw-W9Cp6Zr2Ed4B-SS1i_opBx3c_9O1y9qXiaOiE34DA1H9CJL9jwUwBpo8EWJYWe0zJgd9OOxg5ubMHDVv5w",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAy-CBpSUy0Y74CNFVBxD2mNyhNbBOvxfmFcFPbGzetdvYgSXlJ0FjNs6tTNMsByudLXJUnlbpYu31boUIqq1HtKQicQjtz-wuHNRHuHFAil4Rui7P9fjCs1Sf9MhGM90vT_7VkUUaKDCdTeoNO5syWZ6DoeBt7e63pVyc5w8KDVX97LJdPTI8FjlgXB7kvGm-1sf8hVKTg0fwN-mgOxf557RjWrUC-NXM1byVIPFWKNtoWSIrYkPQ1sw",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuA3Ct7myah_pohz3AdOs-LQguddyU83KwswsIxnA-6kxNa5GN9aYpG7qkw9Zzlam_YO0tj8bx5ibLYuYOuDptCqFE3U7X9xxDJNEAEetcdaJcwSEdSsC0AkFqy3chpEnlzkEYLIqFKMLZAwj_vPA2ZsW0FO20JpUkdqwaHQ-LCMZGcxh6gCjLQIZkUs57JwEKt79__L0vLsHFoTJX1pgORoB99Fy8RSFtlNwok_o6-Bx78zKFteiOc6Mg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBYExeuaOxZL0nXOgd1t5LGgi6DKQIZdYKFX6AKupVwUBrlWFgMh9bK2xuf3sgfV6rKg-5XmieFhs6TXd2kZad4JI79WugHvh_32IrQ6-XTHE9usI_aiiYAs5-HKb5WOrF3vle_xJKYjhyWqFq_EaqLK_43YiyKf56QMJVdajvB47iZ6XH11epXUZLhLJA9ibj4wJLCxgkGcon77xGegvSwIGBlA637NYgv2WAxYONt_c4fokl8lkjmdg"
+  "team": [
+    "/stitch/team/01.jpg",
+    "/stitch/team/02.jpg",
+    "/stitch/team/03.jpg",
+    "/stitch/team/04.jpg",
+    "/stitch/team/05.jpg",
+    "/stitch/team/06.jpg",
+    "/stitch/team/07.jpg",
+    "/stitch/team/08.jpg",
+    "/stitch/team/09.jpg",
+    "/stitch/team/10.jpg",
+    "/stitch/team/11.jpg",
+    "/stitch/team/12.jpg",
+    "/stitch/team/13.jpg",
+    "/stitch/team/14.jpg"
   ],
-  "meet_the_team": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCFQIcptiqoQUwq3xvrIEJJ32tgAMolm8-jlsxBd3li_Fn5LwkGD77MXrccBBqe5tvGbSnmFBNUcN3dPO2hvK1EZD8lj5xjta131agKSdjQGDgUAXa72xzRJzL-8gaL4D0HCziSNWWYAiPHxQmzyG1ewJX0dcEZ6PlrvmBPIhbtUxEv7vsv3Hkkr7pxvWuB9td6V6bjp1sv-CeMDPnoTQ784wxgM6-bOfH7xxNOU6fS8lJ9JltvEr_6vA",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDee6KxzBxwxuVN4wCa6zOoMtXhB7WrBSiH8drcb2PpUoQ-vp-VG7RD8dsE7tsWfkabvuxxQMg6rZdIhfcblSx4j64Cf14Q0QM-pcPX_Ni3La2CrJzf7jqCwYEPpZ7o5wb99BYJ-izjiwzUWvgyo0fJ-p3icsUAXUBqM-qD0nizkqrn-LGAByr6s0KELfjBw_qblV_TzLDmaC8w7gqBi4hQ2cjRJ4ujKeIAiTw8nlcxrbIcqNxr1xAD-A",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBy_2HlS15lWNjMvZbga4B6tYyLITrIIwtC4kUdePxghTW7poUIbCaGu2F121AkmmDMS8papaHebnounER4owG_1NJ_sHm_QIveROpduJ8w7CPRg3x-euVrRNxh6tiMhGniMjsk2E3hAOmrFUT_12JyQcMyJpevhCuOUHOtb7_Jtnf0CeA3uOfhsJUNrdQzG6Oa84DTCYAIRnGClactK3uFsWmGedhv3WH9NZIo_-mEgNzypiTnCoXo1g",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBirETa7n5RjMKe5U6YphX4hL1ccNMDasFaD1iKLK9nSE2vTVngJpsnsjVo662MkbmjxqIHemY18QwtH-85JyQeWvs6CgzBpUfnZdaWSezVU0CqXcHuc07zSA50gz_UbuzophHvV656MMRvbt-bO2ZwZYaod3SDEqhPUCXF6HH9o7CFSpt7qd2_E6LV22-N-gUZjm4QPm-DMSFtCK_BggDuuZhu8EdHYzjX4J1M0gUxM4OkfaswD8euLQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDrDuDuWplPms4I2NQdMQYeU4IxPhJrJaMACp_UFojmo8eVhGO3-sFzV6xReHVoPLNoCGIN56FvA8PRlYpA5j9GFOTYCR5E1uAncgJvGo0JieNlwKGAWRslkb8Vs1vhRVyDz2X774OEPS_RnAZIRUKMD5NOELqxXhiGQypF-Esw3xF5vRQQx_YbSjyi8F4h_gvzNExn4l0jNAHxrCIolwCVsl10W0FVm8EjEDeQ1acQzZgTtk46sqoyYg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBiROwD-CkVGUfb0IQYrHEoiwrHxpVSFf2I38p6kA6fbT6abnxOvFKCAeo_o800opdA8-TSOyKhMOha6Xf1KCV2lds9dknQssaqz_0wtBtKvoSh5Mnxe-LaHkLI3DJKDnvO6tQ5gG9ybg01kW03uzzUcPVmmti2SF3aLcAxEcDyZ2_M1ywSwQ-QQGLEdLnLX_NKuEa3kn6vU4Bzgwq5h7h9mm9ABHekLqGHGOG9Vz34FnJc1fT1wVsDnw",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCaVvM434EgJqb7PSIU9uS6M755S5ji8f2WF1Q-Amt4O-MAMfFBex9XEl1c3K7Q4oIGMt3nmBT5c3XTLyEoy0dzKT6UrPbGHodKPId8xV3IWwV24XewYrs4NXZIqKEhT1k55TuGs6XjvcFoUgswDs9e7J_qk9ORLkbt9UgLzfxUpyosE7CHHTm75PGxteqc5X-U4Xg7Nm52S-SPiOhnRi1Ph3zk7ybDsPaUenGXZstaQ3Db7NlIBQWg1w",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAjkrC2k7YWLC1os3XJbr7HrlAI4yanWVeK3DdTxHDn_Ue9BrJmLN9HVrjAeA6I7HbYlD0RiUmXW1YQYs8I2dSWcQivs8B2DwQQj3KoxISYdg8OK3CsyzWKc2NUx8mOi5CHhBZBiDLMp854RqaEHyYwvYum-SO47MCZr9kVgepU4oxNO4sU3e6eHkrSVQbePh5JHSgL40PRvmuPyAPTcBlbgdykirUQY4wmjFj7-9gZMsYArHtlT3gqQQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBSbwqprbfHc00-yGRTBe1XQUlINyLqPoD9EKmXRLofDZblfyGSvFwrlp4siJPmohNzddi_NzwPK_mslYnnvVN70l_gueSwDdj_ULUKiS6b7zTIIZBiqFhZPiC5wj4gqMTpBkKBQvSPQDj6hLspHEyVmKy8fzKIBPzs4lhpvdFMCFLeAJgE7myLDj5ROSf5H6REdC_bqA0DlGbj6r-vvSw-RWUrcR4IYDhLSumTmdDHKtSBgyk1uwT7vA",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDGq0_IukuKwgN6AsCI7I4X8x9apB5CVSuPqYxtf6MNuAHjXq0T6eg23GdMtSxBFVe3vldBB2_4Byo6Mb-1VVxSFH58-yllfDqOs5VP5qNgDlaLgxwQPsTkpjDuU9EL05ygK86UCAl4MVzca0S8LvE_WKAl0WuQ6_Psrp2LHB0TxGhCRnQAKOZISAiSTX03EerdqypA0rpXZ-b4NJ3CdGO931E9icXIcD6RHPwaOwDx6m81hJQ05LDKig",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAQ6U3YHm7mqRJzjKFI23HyAFh5aPNVhe-RZfgeSrsKYObsbHvhEQwMqI0YnRPFQD2ZKoz3fq5wyQ8P5PJmHjHmHYv9bzoo1kLsrA6G8yaQ9ZFeROPZ4enQu-8a5O5fv7SRNws2urRm3ET0Axeybx43lNsMAUtYYP6mqRdRKMrJo3Eh9uKmpsz6k4pslG7kllOg9mKLdNdySlwf0T2vd85RveR4bXmBllIZQ8HBimZkrciz02bNpzEq2g",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuA9qBpr-xg_2wtJno4Hjexn_NZAKb2hQfvR9_cRVpCh27RJlcsRrhQDPYJnVtoCiUy9rifPJL0XVr7y3xzGHvqMOQDuZ1tFpLWNFfGYWkhiX5Ue5WK4Tp75pEJA7kBQbgiFTgBJasQjOpuXFRlbN7JHMYFwiKOZ_Z_be_ssMdZxXMmONb6CcAYG8JHFgX3OVSytPkTU5QgOc-KZ2L4GGrulBENE9gELzCXUJwCSXMFbbWSzL3p_pUivwQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDwgJvGnr4aDe_gNw4I-siC9iobZW5oUQ36p4AMlOAPuSluUx2C0Wh0YyiXYtKaliOwF3X8URSV207H-Xky6wJZ1bj__5d9SiNpXXW3uPvWORSzVeKdxqoTBEpYTZ1dEC2J5Tcb8oT-rVPAcMeif4ygnDHR4nJzeXt2E7doibUFtYNH6AZ7gBK7khIMLrFq09Eid8EbsvrdQ_cTBaPce1zqH34rD5_QZcFj_IB3NMrQrBlLvq3Py3LsTA",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCDBR-DsnZM_OJv3KyWPfrVhdQMHIv4SRyfQpa07g154B61O_gKyks54Fxsg59mJwmXt6mbpiyFqcmeFWR9QeuxAMm1iaM63XhAShWdaMzVGfP6xNM3kAxqk_ckZRBePmztCjTyFiqg6ptyg9Go3Qy0zvxOxrvv_2Ug40T_EANTxn_g5AtKc6XvtdmJXHkLtuw6ggszc_kHRyFvtJ8CoD-oUVfknzhIlKnjuk0ZggMGBgzNMC4XRyWytA"
+  "tokomile": [
+    "/stitch/shows/tokomile/01.jpg",
+    "/stitch/shows/tokomile/02.jpg",
+    "/stitch/shows/tokomile/03.jpg"
   ],
-  "our_acts_showcase": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAoogMy9vmx0H7jm80bB3KWE5JdReG3IOME0xEUOGpLwImgzBrHp5N-9eY7efw1MUFrOXCuw-rSX5Nl1s7jxMzJEfygSlc6NiSANOFzHful_6PtrYqFsVEk7n9HuY55cZrKnAHR9pL-lLQU3D85VSbZBF2Dt2CHE9HtBlwlypLnCpu2E4fNfC49kX9RPIDSk6k1WzhCn5REDt5K2bgkJrxGqqVcRUDYALeCclMliLYd5znofDTLybcIjg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBsNzbVw4SE9u5OuYZfSIFA0e4oWQ0CAwLhfOw0LkQyxEu_ein9wFmvnqgfgmC_scMnLU_5OKBQ30J0odwD29xrv3T9px6NYjEXuR_ZL7k-n-f-RCHXAiAek7hLvojesxrXLG76ckJuaF5CM0WQvobj7gfJpXqcq-YzeeB0S2AfPmZA2ShIRSgwHzFIgWKt3p2MiDTYepjDKppDaiIpQxiA_xWgusVH9LD-y_NYjUQjW9zjVcnkgrHvqg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCUfnZK4kIEwfd6igZJyjidZeOuiwJ6ehVxjDoulooJqwfrUGHzg-mgYcpM6Z7su2jUPs6gpPgxoXhmZiXt3EAnutksXzGgI1VqeeI81obJRXOQwjDBgtdVjhUK3hagamxWzZRTI-640JqOhc0vwtnTSxx9c_W5tNuruX8WZ3cadxlDjH7SuWhISkjx_9A1NF_stD4ssSVfvc9C-SfxLFEFFVK2XKKFICGbyzthz_4q8qTHohnIUF_5SQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDBtit3nSmQjnM_8ZGOp1mfD3UG2k00Ml6_YiAnekFKuBZPg5TXf-1okPh03W_29317cf2zYBbnwurRFcNMZWYLUTjsuJbwuA3P6Ye3t4HLvtJ1xmMOlPm_tHwunPjaUOQV2M3cW7eVG22Cz3BicUl_S83GmfBpMD1WCHNGPb45IZNsPbuFZBn1wwqw4pr1nMyCkt1IG2is58I7A9j3j-8VAkNvLZ1vJEmogOeGhLWyGfonwUu__MGDmg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDVzvXDRibn3bvVfV1ILxjtiZZkTwqUQULUox74DynJcydm8stv-PZ6UhxEX_5SKnxgDD0qIq84l1MJs7S9Tp3Ap9lq4n_xbJNMeBP36oyZ8QZxKJh7TfjaThHOj9N6YrLFHl3dLzVnzRBnK6iPAKjh-8OGemlc7pl15ml6FhqwJG2MKYo3zBTu7U-jFyPEkkKVkcg9ERY642BRQ5HW0JqV-G3Oar1mei4dxRFiw2dlS-qVU4SCIv2H2Q",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuD1ov657ETzxYy0QddTnSCcyzscumAmmi8uEvF2ZRDaAbcCAJfY2nJvfz6Okz-H8IjFNu4d6aoFEfXsS4_t13KXmH-iYmoKS3Gk2wnjP71h7vActZhQg7ieRKUdG5VjFqOmpOewXfy23j1OQ2OnPmQ2Jpxce7yeFrTuOVPTA2rFYGi0kgFNUXdwreCUKlEfk2zyg-6E540fi9AyRMiRxVbuMtNm6bEl1-5zOZ2xCU6FcOKT-dearBk0Aw",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCMcuOYiSs0js7EJYtncxMlLdWOv2FjszdCEWbwhYBhFSkLWvXBMPjuU7eT5rF23SQtyejaJExlc8zH-zsUsZt6iR5zw0F_Xk1CvEWMsvCeNL3bnNEuh8-25Wyxf-vzVIy04zsK1VXcp69luteX8KuTbxtU5wktsCwxVoTUk8WX2jZk8hJ7CRcDQzhNta3Ze2G3LEtDAdl4cBQhMJSYRPk09HMSv6_WcGXGyvdEmBptwOGR0AIH1OLXrg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCEqHO4FFfWvJRPfjDFt-lGpJ0KxJe-2E2Ru_LWXm_NS3kmefONKqqshEB5gOrBiWWcszv0AFBrGbtN4CBxRwZVNGeT-1qrriW7htxIpTuvXz7B8aQ7Jj_HDBrix11Yw9NfXzsWQJwDC1nRo57ePYu1pe6HExq_CehEtzNyaEDD5B-NeYIqkemLxg1rq1yJc8ZxcS-40iGcpV7mGnVkbPjQs1U__Cd353y0Q_9zd152zgfol2qs68RIHQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuB7VaVHq-DthpZlh6tnCpZ4iO8mlWssBgMe9899WBD3YXN6qGLdMaowrHPGJ04NQT_ZQ6sh1HVc_2iRlMmQgZ-EP_YdcivcolcaKYBAm53HOCnYNNsHUU1CNplh1pL0fsAVOvLyNiuGk-XLx0YBcnhDdfOX0zjal-xzTNrItcWeEbm_DFFulN3FIsv-bzj_LFp2VvVs8Zzs2U7TOXY0jo6amT1H9ePJKx-209C7mVkmnVlqLTD4p4MELg"
+  "rizombeKing": [
+    "/stitch/shows/rizombe-king/01.jpg",
+    "/stitch/shows/rizombe-king/02.jpg",
+    "/stitch/shows/rizombe-king/03.jpg",
+    "/stitch/shows/rizombe-king/04.jpg",
+    "/stitch/shows/rizombe-king/05.jpg",
+    "/stitch/shows/rizombe-king/06.jpg",
+    "/stitch/shows/rizombe-king/07.jpg"
   ],
-  "performance_packages_official": [],
-  "performance_packages_with_inquiry_form": [],
-  "performance_regular_show": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuByQ2gCQqf1HtGeAVjZL-0GX57oxAXIuT86jFSoBigyJRxUfxGIXzZgYmlvuc9h6McxPClo1oyHL_MKMSVx1z2orofWNB54Q0QOwNeGf6KCUzUrwx85U_T11RsW_m-xYf_6TXlZ6AqbR_6ti20tg_v6r7NgMNLvDE3DUB3vILx0kPMepfKHCSzzeKwI9WzEFV3Uh_bgSga6Nqe3GujM40Px2M8huelUOJzJSlbiexlH14iUok_lgIBsxw"
+  "africanPirate": [
+    "/stitch/shows/african-pirate/01.jpg",
+    "/stitch/shows/african-pirate/02.jpg"
   ],
-  "rizombe_king_power_rhythm_final": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDZot6nIIVT5i6FRRrBlY9FwahdoWRxWD3qL6D2dcl44_Rn1hq1X0ubogQBnyrSmJ0d_--2drvYa2-_A2Xg505LCT7F4zkK_D_sIaksleM7dzUd2_QPtfNFbYUrnb23FE0gqUnHz24N-Irl4JyF3MjkvvfHl287cYgGDSNBhJRiKzYJ96giAfZz25y5hRFjtSyLj_pIGKES3kzEAQq0AhsamJ6DIrQ60oJ0gTD1q_S2D_N58d5KnrbyPQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDBB8i_jaca0kuEL5Vwwnl06kE26kFfKX8oOdVBdXZCzpi37oUgGxnpLCOvDbXl4vSBr1V_KbxT6GBKzxDvGbYoewxvq1IbC_OPbGxD27OhpL97xTP6ZgB5oCZiWHT2BrcK4qtAbLdFmpZmLGCVk0pQvxU5xofT6v1Cm11-1p8bEFBNSAVhtZfZkV6ACoulxq6wBHO6CiNHWQAiR6wVj8Y9EZ0n79p5rRgFBHkeUXGvSevV8T68jBb4HA",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDQiZ9zkMSxqrHO8sLRyLIzKubOLFMbN5P9wCG-t_acyg8I1aydIHdekz-RlMFreNKRVlFVO5mefQOZh0ZGqwo9NiGZwOovDPvzrIgCBAOa7yF30q4FrOhgXDrAMGvmfdFaFnVLlhlB2Lnyk-KLDLnn6ry-hHmrEep1ZlRpnnDW79scbT0mLgqTYBPSjT0fwR7Vxh-QhFVTM16bDCOpZ1_I3nSdFTfbP5J4jJsxOILGfiqCfpnzY7qagg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBzOlcawLwjYDABXTTPCmhGj5Dq3CGYadBjHpvoq_JI9IttxIX1gGbZZrF1hfYHMlrOeY5PrdGW1AYYtXVo9NoFCBbBMItJ7tT-yL_WvzQm-pIp_eOnWL374l2O0Qr_H4HdAf-eX6UQGIEidIwu9GD1_u33nlaONFlEBHDBL8-kt2vaIP50ElQ0gwtp98xW2P4UmbUkXYPZVfqi4rK1tgKgMFG_LDOLzknKiA3XyZ7tCHXAv-IKWHn9cg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBbsZPsFJPHUMUlwDfXBfY2BjMqVuz-Pgz0Q5bfj6j9h96zhgqrCKBYHQHUPJ0jDXxGceKKK6uXSp5j1FGb0qDnmJ9IyIWm-ILjIZZkRX_UDC6qTgEk9SN3UzCe9NFbROo-euN8WRXVAgzqbMbsnBhE_XACQGChmonHBdulfs-qp4PsQgSSM3NRc_irrS4Cet89g8rzPQhD3JfHvclM8aPI45dqaH4OZGx04jMstzFWNwvE7C2C7JkbEg",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAh0Qno5kFowjbxtgCfzJcrvaIASj9u6vi_EXNxiGHxI_K0dkkXmO0xyihpqbfouGZO9uQTWFbcgTNljHBjWIeF8DuOvhlPgeWHUL83OG3Eb7aT9qT4yAk5tXgFIuVKNKLRH277KhSNTs5647J2sdWwZ07MM89LNVnsS7vvh5Lp1sUueDTks2aGZzIT3SJio0eFYN2t08YB2HmAA1cRymREF1n-PqP5T4012W8hRDseALb5y-42PPMuQw",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBKD4OHf1JtHaXMNVtogKsxk4XzHSjvlO7B72Sj6ogvVUjrxg6k5WlXbz9ycrE5dbJJi9qUuRteK1T8y9urOnRtr6kmpahoK2KX8ZANr199cjmcd30j-GqhmQlbkxEQpN5AZ5qqHWkHjL8wD1RQr09DvQmZsDgCvFAPNiohlZf5PnK7-Z96095FKXMfXcVd8bN6a1FhtQFuVXNjUifNbrkx0ZwnMZjynwN9YeWNu_ZAHlRIDd8rsZoh4A"
+  "freedom": [
+    "/stitch/shows/freedom/01.jpg",
+    "/stitch/shows/freedom/02.jpg",
+    "/stitch/shows/freedom/03.jpg"
   ],
-  "tokomile_show_zaramu_kingdom_final": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCJuAvaCBOcU7PdeQuFMh80AoMNaeQghkcZ8z67A2sGxxtuDFWDzKVIGQiYltynq8BcebMimExXmYyxEQZx5-mOrcDx85ugoMIWWDXweT_AUrIsI9Uz3uR1vdse-vqNjU5PVGN5LUtbGO7o25CEI0og-ksnLT57TIyjB-6GKJVUZB8HvcyjD9Kt4x1YOfPf_2bww3wxWTh-YpGXp34JFlOKIDP4hXHw9Hk5D0NCzXD7uyQk0HkFYK33TQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCKI4aHh5vd658m6wmz9Fk0wYJXeiU9SUQNwdAkT89QjOrCQqQcIPIqmYGa1cAGfK5HZD7lUSjpcPuohjpYSa7bSel0z4TxzkKdW5OCmRhYKOqcii4JvHibcV8Ba8eYtAr1emOHzPu2UmUd3lirJx1c-VzaWyJreqn3QSx_gznOiadRqkIsONXpFGrIR39QMM_mBYVADmtVt_B2yzBb2LYww2rqz98LFaw2NKrffW_v4Ea1ojZoLeYeIQ",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDIzEsiSpQKhvkmR8kXWL3a5s73F4JTu4Jyxt6tBljrtwOr-_iF-lGctxVC0ysLLljkzpUZJ8Fkb2YL7IkGnXJzzCOf-03830__Pj4Mgp6Gk3q7lAldI32A7nNvXTSr9Sis0qPOEIZ2bdcEKYd9LBU3jcRp-QRRcwzcwyXBe4ComK0CzM-Ujq_Zj2uhJUxdVIDZ34Cd_8NhsSTUViVvJaL3AuEJUgKNanB5dq9VlTQTDLiPc3WzhA7I8Q"
-  ],
-  "workshops_packages_final": [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBSzNRC-CHBaPnXd7LqZLOQAQPUzFrCfLiXJhvr4BRsqLbQB7FnviK17cQCEhZfpnzhqGX_TuP2ii7XzRj9tvutyFNbMKu3i-BKJSUXQyRtIzVfjktyqVNe0iElxFIGdaf46bA2dgP7bHaN_DWrdoyrJXuBVKHy_UrqmRok9zlqT-fBR4mgY37NPKtgXyc_0KIE-RTt3PUhO3qvketuq11VCBVQRsKJIUTdMWK4yuNS9U_Fp3uzGGe84Q",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDEoW1y0JbWCecOQnD8siYOS0BqTY4x6xEL8aCpzWS7MVn20c0UIM_gUxGnsyq3NwRhcAkr-wphEN0j7GQGmuZz9JyCX5TBETSovD6S1RqUQdsRdFq7zzVVIImEs5BoSOA-MFvLqNEviOmDpfYKuxFd-8yrMZP8ivDkH0J9YsYFAJiPtg_fk8BCVOpiBzCF29rd4vQfIoHVJ_qabWgJ2aFKpCUaqWYRhFFv2MpVBCq_P6TWIEW-UUFH4A",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuB5KANT1Z1t8JYRvVEVn7OGIrha-mOQf8g3RZaZBMfcxTYJOBtZig6Swg5g_BTZR7TqN97JDKzQ3YKrNXHGC3FKm8oEIM0hUBwnEzPIZ5mvVQUwq1K39YYUDzTU9tLXl_bcR--O_ORFAHzNz3VtzjxAE_4a93mdnKXf1FR1cJTLiFAzAjh4ODhhh875Y4ofX6FWNHo9uOmUFLGB5unIDuQYk2T3jw_P9PGnKS1kjIgIp0oY-NmXSxh-MA"
+  "regularShow": [
+    "/stitch/shows/regular-show/01.jpg"
   ]
 }

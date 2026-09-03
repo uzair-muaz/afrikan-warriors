@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
 import { quoteBlurb } from "@/constants/copy";
 import { performancePackages, specialistAddOns } from "@/constants/packages";
 import { cn } from "@/lib/cn";
@@ -33,6 +34,7 @@ export function PackagesTeaser() {
                   Most Popular
                 </Badge>
               ) : null}
+              <Icon name={pkg.icon} className="text-primary text-4xl mb-5" />
               <h3 className="font-headline-md text-headline-md text-primary uppercase mb-2">
                 {pkg.name}
               </h3>

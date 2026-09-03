@@ -16,7 +16,7 @@ export function ActGrid() {
           <CoverImage
             src={act.image}
             alt={act.alt}
-            className="grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105"
+            className="contrast-125 group-hover:scale-105"
           />
           <div className="absolute inset-0 vignette-overlay mix-blend-multiply" />
           <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-transparent" />

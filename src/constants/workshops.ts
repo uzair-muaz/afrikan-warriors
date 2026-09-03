@@ -1,11 +1,10 @@
 import images from "@/constants/images.json";
 
-const workshopUrls = images.workshops_packages_final;
+const workshopUrls = images.workshops;
 
 export const workshopImages = {
   hero: workshopUrls[0],
   acro: workshopUrls[1],
-  circus: workshopUrls[2],
 };
 
 export const workshopTiers = [

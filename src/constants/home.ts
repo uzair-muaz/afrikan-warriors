@@ -1,12 +1,9 @@
 import type { IconName } from "@/components/ui/Icon";
 import images from "@/constants/images.json";
 
-const homeUrls = images.afrikan_warriors_home_final_integrated;
-
 export const homeImages = {
-  hero: homeUrls[0],
-  about: homeUrls[1],
-  video: homeUrls[2],
+  hero: images.home[0],
+  about: images.home[1],
 };
 
 export const skillTags = [
@@ -70,7 +67,7 @@ export const storyTimeline: {
   {
     year: "United Kingdom",
     mark: "UK Base",
-    icon: "business",
+    icon: "flag",
     body: "A UK home, circus residencies, and a growing reputation on British stages.",
   },
   {

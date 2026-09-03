@@ -29,7 +29,7 @@ export default function TeamPage() {
               <CoverImage
                 src={member.image}
                 alt={`Portrait of ${member.name}`}
-                className="grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 vignette"
+                className="opacity-90 group-hover:scale-105 vignette"
               />
             </div>
             <div className="p-6 flex flex-col gap-2 relative">

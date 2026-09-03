@@ -90,7 +90,7 @@ export default function TokomilePage() {
               <CoverImage
                 src={showImages.tokomile.story}
                 alt="Two African warriors in a dramatic stare-down under golden stage lighting"
-                className="grayscale contrast-125"
+                className="contrast-125"
               />
               <div className="absolute inset-0 bg-linear-to-t from-stage to-transparent" />
             </div>
