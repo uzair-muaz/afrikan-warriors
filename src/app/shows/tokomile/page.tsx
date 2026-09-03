@@ -4,6 +4,8 @@ import { CoverImage } from "@/components/ui/CoverImage";
 import { HeritageDivider } from "@/components/ui/HeritageDivider";
 import { Icon } from "@/components/ui/Icon";
 import { Input } from "@/components/ui/Input";
+import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
+import { youtubeVideos } from "@/constants/media";
 import { showImages, tokomileExpect } from "@/constants/shows";
 import { CtaBanner } from "@/features/shows/components/CtaBanner";
 
@@ -39,7 +41,7 @@ export default function TokomilePage() {
             to life through breathtaking acrobatics and traditional rhythm.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button size="lg" className="gap-2">
+            <Button href="#trailer" size="lg" className="gap-2">
               <Icon name="play_arrow" filled />
               Watch the Full Show
             </Button>
@@ -51,18 +53,11 @@ export default function TokomilePage() {
       </header>
 
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-xl space-y-stack-xl">
-        <section className="w-full relative">
-          <div className="aspect-video w-full bg-platform relative border-l border-primary/20 overflow-hidden">
-            <iframe
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute top-0 left-0 w-full h-full z-10"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&rel=0&modestbranding=1"
-              title="Tokomile Show Trailer"
-            />
-          </div>
-          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary z-20 pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary z-20 pointer-events-none" />
+        <section id="trailer" className="w-full relative scroll-mt-32">
+          <YouTubeEmbed
+            videoId={youtubeVideos.tokomile}
+            title="Tokomile Show Trailer"
+          />
         </section>
 
         <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter">

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { CoverImage } from "@/components/ui/CoverImage";
+import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
+import { youtubeVideos } from "@/constants/media";
 import { teamMembers } from "@/constants/team";
 
 export const metadata: Metadata = { title: "Meet the AW-Team" };
@@ -43,6 +45,20 @@ export default function TeamPage() {
             </div>
           </article>
         ))}
+      </section>
+      <section id="interview" className="scroll-mt-32 flex flex-col gap-8 pt-stack-lg">
+        <div className="text-center">
+          <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase mb-unit">
+            Watch the team
+          </h2>
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Afrikan Warriors on Britain&apos;s Got Talent, 2009.
+          </p>
+        </div>
+        <YouTubeEmbed
+          videoId={youtubeVideos.interview}
+          title="Afrikan Warriors Interview — Britain's Got Talent 2009"
+        />
       </section>
     </div>
   );

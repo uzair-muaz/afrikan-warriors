@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from "@/components/ui/Icon";
 import { footerExplore, footerLegal, footerSocial, site } from "@/constants/nav";
 
 export function Footer() {
@@ -55,12 +56,15 @@ export function Footer() {
           <ul className="flex flex-col gap-4">
             {footerSocial.map((item) => (
               <li key={item.label}>
-                <Link
+                <a
                   href={item.href}
-                  className="text-on-surface-variant hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors"
                 >
+                  <Icon name={item.icon} className="text-xl" />
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

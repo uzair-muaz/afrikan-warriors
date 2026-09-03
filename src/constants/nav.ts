@@ -1,3 +1,5 @@
+import type { IconName } from "@/components/ui/Icon";
+
 export const site = {
   name: "AFRIKAN WARRIORS",
   tagline: "CINEMATIC HERITAGE & ANCESTRAL PRESTIGE.",
@@ -35,8 +37,29 @@ export const footerLegal = [
   { href: "/packages#inquiry-form", label: "Contact" },
 ] as const;
 
-export const footerSocial = [
-  { href: "#", label: "Instagram" },
-  { href: "#", label: "YouTube" },
-  { href: "#", label: "Facebook" },
-] as const;
+export const footerSocial: {
+  href: string;
+  label: string;
+  icon: IconName;
+}[] = [
+  {
+    href: "https://www.instagram.com/afrikanwarriorz",
+    label: "Instagram",
+    icon: "instagram",
+  },
+  {
+    href: "https://www.youtube.com/@aw-team",
+    label: "YouTube",
+    icon: "youtube",
+  },
+  {
+    href: "https://www.facebook.com/share/1GQJX4EzjG/",
+    label: "Facebook",
+    icon: "facebook",
+  },
+  {
+    href: "https://www.tiktok.com/@afrikanwarriors",
+    label: "TikTok",
+    icon: "tiktok",
+  },
+];
