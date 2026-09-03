@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+/* --------------------------------------------------------------------------
+   Aureum Kinetic design tokens
+   Mapped into Tailwind v4 @theme so they work as utilities:
+   bg-primary, text-on-surface, border-gold-border, p-gutter, font-label-caps, etc.
+   Do not use one-off hex in components — use these tokens.
+   -------------------------------------------------------------------------- */
+
+:root {
+  --stage: #0b0b0b;
+  --platform: #171717;
+  --void: #050505;
+  --gold-aura: rgb(212 175 55 / 0.4);
+}
+
+@theme inline {
+  /* Colors — semantic palette from DESIGN.md / Stitch Tailwind config */
+  --color-stage: var(--stage);
+  --color-platform: var(--platform);
+  --color-void: var(--void);
+
+  --color-primary: #f2ca50;
+  --color-on-primary: #3c2f00;
+  --color-primary-container: #d4af37;
+  --color-on-primary-container: #554300;
+  --color-primary-fixed: #ffe088;
+  --color-primary-fixed-dim: #e9c349;
+  --color-on-primary-fixed: #241a00;
+  --color-on-primary-fixed-variant: #574500;
+  --color-inverse-primary: #735c00;
+  --color-surface-tint: #e9c349;
+
+  --color-secondary: #c9c6c5;
+  --color-on-secondary: #313030;
+  --color-secondary-container: #4a4949;
+  --color-on-secondary-container: #bab8b7;
+  --color-secondary-fixed: #e5e2e1;
+  --color-secondary-fixed-dim: #c9c6c5;
+  --color-on-secondary-fixed: #1c1b1b;
+  --color-on-secondary-fixed-variant: #474646;
+
+  --color-tertiary: #d0cecd;
+  --color-on-tertiary: #313030;
+  --color-tertiary-container: #b4b2b2;
+  --color-on-tertiary-container: #454545;
+  --color-tertiary-fixed: #e5e2e1;
+  --color-tertiary-fixed-dim: #c8c6c5;
+  --color-on-tertiary-fixed: #1c1b1b;
+  --color-on-tertiary-fixed-variant: #474746;
+
+  --color-background: #121414;
+  --color-on-background: #e2e2e2;
+  --color-surface: #121414;
+  --color-surface-dim: #121414;
+  --color-surface-bright: #38393a;
+  --color-surface-variant: #333535;
+  --color-surface-container-lowest: #0c0f0f;
+  --color-surface-container-low: #1a1c1c;
+  --color-surface-container: #1e2020;
+  --color-surface-container-high: #282a2b;
+  --color-surface-container-highest: #333535;
+  --color-on-surface: #e2e2e2;
+  --color-on-surface-variant: #d0c5af;
+  --color-inverse-surface: #e2e2e2;
+  --color-inverse-on-surface: #2f3131;
+
+  --color-outline: #99907c;
+  --color-outline-variant: #4d4635;
+  --color-gold-border: rgb(212 175 55 / 0.2);
+  --color-gold: #d4af37;
+  --color-gold-veil: rgb(212 175 55 / 0.05);
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --color-success: #a8d5a2;
+  --color-warning: #e9c349;
+
+  /* Typography families (wired from next/font CSS variables on <html>) */
+  --font-display-lg: var(--font-anybody);
+  --font-headline-lg: var(--font-anybody);
+  --font-headline-lg-mobile: var(--font-anybody);
+  --font-headline-md: var(--font-anybody);
+  --font-body-lg: var(--font-hanken);
+  --font-body-md: var(--font-hanken);
+  --font-label-caps: var(--font-space);
+  --font-sans: var(--font-hanken);
+
+  /* Type scale */
+  --text-display-lg: 5rem;
+  --text-display-lg--line-height: 1;
+  --text-display-lg--letter-spacing: -0.04em;
+  --text-display-lg--font-weight: 800;
+
+  --text-display-hero: 6.25rem;
+  --text-display-hero--line-height: 1;
+  --text-display-hero--letter-spacing: -0.04em;
+  --text-display-hero--font-weight: 800;
+
+  --text-headline-lg: 3rem;
+  --text-headline-lg--line-height: 1.1;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+
+  --text-headline-lg-mobile: 2rem;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-headline-md: 2rem;
+  --text-headline-md--line-height: 1.2;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-label-caps: 0.875rem;
+  --text-label-caps--line-height: 1;
+  --text-label-caps--letter-spacing: 0.1em;
+  --text-label-caps--font-weight: 600;
+
+  /* Spacing scale from Stitch */
+  --spacing-unit: 0.5rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-stack-lg: 3rem;
+  --spacing-stack-xl: 5rem;
+  --spacing-margin-mobile: 1.5rem;
+  --spacing-margin-desktop: 4rem;
+
+  --max-width-container-max: 90rem;
+
+  /* Sharp / brutalist radii */
+  --radius: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 9999px;
+
+  --shadow-gold-glow: 0 0 30px var(--gold-aura);
+
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  background-color: var(--color-stage);
+  color: var(--color-on-surface);
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  background-color: var(--color-stage);
+  color: var(--color-on-surface);
+  font-family: var(--font-hanken), sans-serif;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* Shared effects from the Stitch screens — used as classes, not inline styles */
+.accent-glow,
+.gold-glow,
+.gold-aura {
+  transition:
+    box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accent-glow:hover,
+.gold-glow:hover,
+.gold-aura:hover {
+  box-shadow: var(--shadow-gold-glow);
+  border-color: white;
+}
+
+.vignette {
+  box-shadow: inset 0 0 100px 50px var(--color-stage);
+}
+
+.vignette-overlay {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    var(--color-stage) 100%
+  );
+}
+
+.gold-radial-veil {
+  background-image: radial-gradient(
+    circle at center,
+    var(--color-gold-veil) 0%,
+    transparent 70%
+  );
+}
+
+.hover-media {
+  transition-property: scale, transform, filter, opacity;
+  transition-duration: 1.6s, 1.6s, 1.5s, 1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-media-slow {
+  transition-property: scale, transform, filter, opacity;
+  transition-duration: 2.2s, 2.2s, 1.5s, 1.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heritage-divider {
+  position: relative;
+  height: 1px;
+  background-color: var(--color-primary-container);
+  width: 100%;
+  opacity: 0.5;
+}
+
+.heritage-divider::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--color-stage);
+  border: 1px solid var(--color-primary-container);
+  transform: rotate(45deg);
+}
+
+.heritage-divider-left::after {
+  right: auto;
+  left: 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+body:has(.shutter-intro) {
+  overflow: hidden;
+}
+
+.shutter-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.curtain-panel {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: var(--color-stage);
+  will-change: transform;
+}
+
+.curtain-panel-top {
+  top: 0;
+  animation: curtain-split-top 1.15s cubic-bezier(0.65, 0, 0.35, 1) 0.35s both;
+}
+
+.curtain-panel-bottom {
+  bottom: 0;
+  animation: curtain-split-bottom 1.15s cubic-bezier(0.65, 0, 0.35, 1) 0.35s both;
+}
+
+.curtain-seam {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary);
+  transform: translateY(-50%);
+  animation: curtain-fade 0.22s ease 0.28s both;
+}
+
+.shutter-brand {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 var(--spacing-margin-mobile);
+  animation: curtain-fade 0.22s ease 0.28s both;
+}
+
+@keyframes curtain-split-top {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes curtain-split-bottom {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes curtain-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .shutter-intro {
+    display: none;
+  }
+
+  body:has(.shutter-intro) {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .curtain-panel,
+  .curtain-seam,
+  .shutter-brand,
+  .page-enter {
+    animation: none;
+  }
+
+  .hover-media,
+  .hover-media-slow,
+  .accent-glow,
+  .gold-glow,
+  .gold-aura {
+    transition: none;
+  }
+}
