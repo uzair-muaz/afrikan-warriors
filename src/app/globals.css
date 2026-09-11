@@ -389,13 +389,9 @@ body:has(.shutter-intro) {
 @keyframes page-enter {
   from {
     opacity: 0;
-    transform: translate3d(0, 40px, 0);
   }
   to {
     opacity: 1;
-    /* none — translate3d(0,0,0) creates a containing block and breaks
-       position:fixed / GSAP ScrollTrigger pin (black pin-spacer). */
-    transform: none;
   }
 }
 

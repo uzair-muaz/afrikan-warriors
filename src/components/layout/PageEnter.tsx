@@ -3,8 +3,8 @@
 import { useRef, type ReactNode } from "react";
 
 /**
- * Route enter fade. Clears the animation class when finished so a lingering
- * `transform` cannot break `position: fixed` / GSAP ScrollTrigger pinning.
+ * Route enter fade. The class is removed when the animation ends so it
+ * cannot linger on the page wrapper.
  */
 export function PageEnter({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);

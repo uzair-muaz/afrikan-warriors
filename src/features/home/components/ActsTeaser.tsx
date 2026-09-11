@@ -15,44 +15,49 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const SCROLL_SLOWDOWN = 2.25;
 
 /**
- * Fake horizontal scroll (GSAP ScrollTrigger).
- * pinReparent avoids broken fixed positioning when an ancestor had a transform
- * (e.g. page-enter animation).
+ * Horizontal gallery driven by vertical scroll.
+ * The viewport is CSS-sticky (not a GSAP pin) so the cards stay on screen
+ * while you scroll; the extra height is only the scrub track.
  */
 export function ActsTeaser() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const container = containerRef.current;
+      const sticky = stickyRef.current;
       const track = trackRef.current;
-      if (!container || !track) return;
+      if (!container || !sticky || !track) return;
 
       const mm = gsap.matchMedia();
 
       mm.add(
         "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
         () => {
-          /**
-           * Stop when the track’s right edge meets the viewport —
-           * last cards fill the frame (no empty black on the right).
-           */
           const getDistance = () =>
             Math.max(1, track.scrollWidth - window.innerWidth);
+
+          const applyHeight = () => {
+            const next = `${sticky.offsetHeight + getDistance() * SCROLL_SLOWDOWN}px`;
+            if (container.style.height !== next) {
+              container.style.height = next;
+            }
+          };
+
+          ScrollTrigger.addEventListener("refreshInit", applyHeight);
+          applyHeight();
 
           const tween = gsap.to(track, {
             x: () => -getDistance(),
             ease: "none",
             scrollTrigger: {
               trigger: container,
-              pin: true,
-              pinReparent: true,
-              scrub: 1,
               start: "top top",
-              end: () => `+=${getDistance() * SCROLL_SLOWDOWN}`,
+              end: "bottom bottom",
+              scrub: 1,
               invalidateOnRefresh: true,
-              anticipatePin: 0,
             },
           });
 
@@ -66,16 +71,13 @@ export function ActsTeaser() {
             }
           });
 
-          // Defer setup until after page-enter transform is cleared
-          requestAnimationFrame(refresh);
-          const later = window.setTimeout(refresh, 800);
-
           return () => {
-            window.clearTimeout(later);
+            ScrollTrigger.removeEventListener("refreshInit", applyHeight);
             window.removeEventListener("aw:curtain-done", refresh);
             tween.scrollTrigger?.kill();
             tween.kill();
             gsap.set(track, { clearProps: "transform" });
+            container.style.removeProperty("height");
           };
         },
       );
@@ -91,11 +93,11 @@ export function ActsTeaser() {
       className="border-t border-primary/10 scroll-mt-32"
       aria-label="Our Acts"
     >
-      <div
-        ref={containerRef}
-        className="relative h-auto w-full overflow-hidden bg-stage md:h-svh"
-      >
-        <div className="flex h-full flex-col">
+      <div ref={containerRef} className="relative w-full">
+        <div
+          ref={stickyRef}
+          className="relative z-10 flex h-auto w-full flex-col overflow-hidden bg-stage md:sticky md:top-0 md:h-svh"
+        >
           <header className="shrink-0 px-margin-mobile pt-20 pb-4 text-center md:px-margin-desktop md:pt-28 md:pb-3">
             <p className="mb-3 font-label-caps text-label-caps uppercase tracking-widest text-primary">
               Gallery
