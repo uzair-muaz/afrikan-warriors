@@ -1,6 +1,6 @@
 {
   "home": [
-    "/media/v1/source/01-pyramid.jpg",
+    "/media/v1/home/hero-2.png",
     "/media/v1/home/about.png",
     "/media/v1/source/02-storytelling.jpg",
     "/media/v1/home/ensemble.png"
@@ -27,9 +27,7 @@
     "/media/v1/workshops/01-hero.png",
     "/media/v1/workshops/02-acro.png"
   ],
-  "team": [
-    "/media/v1/team/placeholder.svg"
-  ],
+  "team": ["/media/v1/team/placeholder.png"],
   "tokomile": [
     "/media/v1/source/04-tokomile-kingdom.jpg",
     "/media/v1/shows/tokomile/02-ensemble.png",
@@ -53,9 +51,7 @@
     "/media/v1/shows/freedom/02-drum.png",
     "/media/v1/shows/freedom/03-trailer.png"
   ],
-  "regularShow": [
-    "/media/v1/source/05-tumbling-live.jpg"
-  ],
+  "regularShow": ["/media/v1/source/05-tumbling-live.jpg"],
   "pages": {
     "mediaHero": "/media/v1/pages/media-hero.png",
     "faqHero": "/media/v1/pages/faq-hero.png"

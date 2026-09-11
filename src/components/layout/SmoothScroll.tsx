@@ -2,6 +2,17 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
+import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/** Tune site scroll feel here (hard-refresh after changes). */
+const SCROLL_LERP = 0.14; // 0.08 = silkier/slower catch-up · 0.2 = snappier
+const SCROLL_WHEEL = 1; // 1 = normal distance · <1 = slower travel
+
+let lenisInstance: Lenis | null = null;
 
 function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -10,6 +21,12 @@ function prefersReducedMotion() {
 function scrollToId(id: string) {
   const element = document.getElementById(id);
   if (!element) return false;
+
+  if (lenisInstance && !prefersReducedMotion()) {
+    lenisInstance.scrollTo(element, { offset: -112 });
+    return true;
+  }
+
   element.scrollIntoView({
     behavior: prefersReducedMotion() ? "auto" : "smooth",
     block: "start",
@@ -18,6 +35,9 @@ function scrollToId(id: string) {
 }
 
 function scrollToTop() {
+  if (lenisInstance) {
+    lenisInstance.scrollTo(0, { immediate: true });
+  }
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
@@ -55,7 +75,8 @@ function whenCurtainDone(callback: () => void) {
 
     const onDone = () => finish();
     window.addEventListener("aw:curtain-done", onDone);
-    removeListener = () => window.removeEventListener("aw:curtain-done", onDone);
+    removeListener = () =>
+      window.removeEventListener("aw:curtain-done", onDone);
     fallbackId = window.setTimeout(finish, 2000);
   });
 
@@ -75,6 +96,36 @@ export function SmoothScroll() {
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
+  }, []);
+
+  // Site-wide smooth scroll — snappy lerp, full wheel speed
+  useEffect(() => {
+    if (prefersReducedMotion()) return;
+
+    const lenis = new Lenis({
+      lerp: SCROLL_LERP,
+      wheelMultiplier: SCROLL_WHEEL,
+      touchMultiplier: 1,
+      smoothWheel: true,
+      autoRaf: true,
+    });
+
+    lenisInstance = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const onCurtain = () => {
+      lenis.start();
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener("aw:curtain-done", onCurtain);
+    ScrollTrigger.refresh();
+
+    return () => {
+      window.removeEventListener("aw:curtain-done", onCurtain);
+      lenis.destroy();
+      if (lenisInstance === lenis) lenisInstance = null;
+      ScrollTrigger.refresh();
+    };
   }, []);
 
   useEffect(() => {
@@ -125,7 +176,6 @@ export function SmoothScroll() {
 
     return whenCurtainDone(() => {
       scrollToTop();
-      // Next paint — catch any late scroll restoration from the router
       window.requestAnimationFrame(() => scrollToTop());
     });
   }, [pathname]);

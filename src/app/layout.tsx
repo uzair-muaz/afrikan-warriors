@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { ShutterIntro } from "@/components/layout/ShutterIntro";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 
 const anybody = Anybody({
   subsets: ["latin"],
@@ -45,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`${anybody.variable} ${hanken.variable} ${spaceGrotesk.variable} h-full dark antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-stage font-body-md text-body-md text-on-surface overflow-x-hidden">
+      <body className="min-h-full flex flex-col bg-stage font-body-md text-body-md text-on-surface">
         <SmoothScroll />
         <ShutterIntro />
         <Header />

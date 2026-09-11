@@ -151,7 +151,8 @@
 html {
   background-color: var(--color-stage);
   color: var(--color-on-surface);
-  scroll-behavior: smooth;
+  /* auto — smooth fights ScrollTrigger pin / scrub (GSAP) */
+  scroll-behavior: auto;
   scroll-padding-top: 7rem;
 }
 
@@ -392,7 +393,9 @@ body:has(.shutter-intro) {
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    /* none — translate3d(0,0,0) creates a containing block and breaks
+       position:fixed / GSAP ScrollTrigger pin (black pin-spacer). */
+    transform: none;
   }
 }
 
@@ -403,7 +406,7 @@ body:has(.shutter-intro) {
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: none;
   }
 }
 
