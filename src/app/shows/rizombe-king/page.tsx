@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/Button";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { HeritageDivider } from "@/components/ui/HeritageDivider";
 import { Icon, type IconName } from "@/components/ui/Icon";
+import { VideoLightbox } from "@/components/ui/VideoLightbox";
+import { youtubeVideos } from "@/constants/media";
 import { showImages } from "@/constants/shows";
 import { CtaBanner } from "@/features/shows/components/CtaBanner";
 import { ShowHero } from "@/features/shows/components/ShowHero";
@@ -61,10 +63,11 @@ export default function RizombeKingPage() {
           <Button href="/#inquiry" size="lg">
             Secure Tickets
           </Button>
-          <Button variant="ghost" size="lg" className="gap-2">
-            <Icon name="play_circle" />
-            Watch Trailer
-          </Button>
+          <VideoLightbox
+            videoId={youtubeVideos.showreel}
+            title="Rizombe King Trailer"
+            label="Watch Trailer"
+          />
         </div>
       </ShowHero>
 
@@ -104,6 +107,9 @@ export default function RizombeKingPage() {
         <TrailerPlaceholder
           image={showImages.rizombe.trailer}
           alt="Dynamic group dance sequence from the Rizombe King trailer"
+          label="Watch Trailer"
+          videoId={youtubeVideos.showreel}
+          videoTitle="Rizombe King Trailer"
         />
       </section>
 

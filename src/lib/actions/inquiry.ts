@@ -12,6 +12,12 @@ export async function submitInquiry(
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
+  const showInterest = String(formData.get("showInterest") ?? "").trim();
+  const eventType = String(formData.get("eventType") ?? "").trim();
+  const date = String(formData.get("date") ?? "").trim();
+  const location = String(formData.get("location") ?? "").trim();
+  const audience = String(formData.get("audience") ?? "").trim();
+  const venueSetting = String(formData.get("venueSetting") ?? "").trim();
 
   if (!name || !email) {
     return { ok: false, error: "Please provide your name and email." };
@@ -22,5 +28,12 @@ export async function submitInquiry(
   }
 
   void message;
+  void showInterest;
+  void eventType;
+  void date;
+  void location;
+  void audience;
+  void venueSetting;
+
   return { ok: true };
 }

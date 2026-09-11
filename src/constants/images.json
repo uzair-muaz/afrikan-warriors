@@ -1,70 +1,71 @@
 {
   "home": [
-    "/stitch/home/01.jpg",
-    "/stitch/home/02.jpg"
+    "/media/v1/source/01-pyramid.jpg",
+    "/media/v1/home/about.png",
+    "/media/v1/source/02-storytelling.jpg",
+    "/media/v1/home/ensemble.png"
   ],
   "acts": [
-    "/stitch/acts/01.jpg",
-    "/stitch/acts/02.jpg",
-    "/stitch/acts/03.jpg",
-    "/stitch/acts/04.jpg",
-    "/stitch/acts/05.jpg",
-    "/stitch/acts/06.jpg",
-    "/stitch/acts/07.jpg",
-    "/stitch/acts/08.jpg",
-    "/stitch/acts/09.jpg"
+    "/media/v1/acts/01-pyramids.png",
+    "/media/v1/acts/02-fire-limbo.png",
+    "/media/v1/acts/03-hoops.png",
+    "/media/v1/acts/04-hat-juggling.png",
+    "/media/v1/acts/05-tumbling.png",
+    "/media/v1/acts/06-chinese-pole.png",
+    "/media/v1/acts/07-chair-balance.png",
+    "/media/v1/acts/08-percussion.png",
+    "/media/v1/acts/09-traditional-dance.png"
   ],
   "gallery": [
-    "/stitch/gallery/01.jpg",
-    "/stitch/gallery/02.jpg",
-    "/stitch/gallery/03.jpg",
-    "/stitch/gallery/04.jpg",
-    "/stitch/gallery/05.jpg"
+    "/media/v1/gallery/01-pyramid.png",
+    "/media/v1/gallery/02-ancestral.png",
+    "/media/v1/gallery/03-arena.png",
+    "/media/v1/gallery/04-spectacle.png",
+    "/media/v1/gallery/05-sentinel.png"
   ],
   "workshops": [
-    "/stitch/workshops/01.jpg",
-    "/stitch/workshops/02.jpg"
+    "/media/v1/workshops/01-hero.png",
+    "/media/v1/workshops/02-acro.png"
   ],
   "team": [
-    "/stitch/team/01.jpg",
-    "/stitch/team/02.jpg",
-    "/stitch/team/03.jpg",
-    "/stitch/team/04.jpg",
-    "/stitch/team/05.jpg",
-    "/stitch/team/06.jpg",
-    "/stitch/team/07.jpg",
-    "/stitch/team/08.jpg",
-    "/stitch/team/09.jpg",
-    "/stitch/team/10.jpg",
-    "/stitch/team/11.jpg",
-    "/stitch/team/12.jpg",
-    "/stitch/team/13.jpg",
-    "/stitch/team/14.jpg"
+    "/media/v1/team/placeholder.svg"
   ],
   "tokomile": [
-    "/stitch/shows/tokomile/01.jpg",
-    "/stitch/shows/tokomile/02.jpg",
-    "/stitch/shows/tokomile/03.jpg"
+    "/media/v1/source/04-tokomile-kingdom.jpg",
+    "/media/v1/shows/tokomile/02-ensemble.png",
+    "/media/v1/shows/tokomile/03-story.png"
   ],
   "rizombeKing": [
-    "/stitch/shows/rizombe-king/01.jpg",
-    "/stitch/shows/rizombe-king/02.jpg",
-    "/stitch/shows/rizombe-king/03.jpg",
-    "/stitch/shows/rizombe-king/04.jpg",
-    "/stitch/shows/rizombe-king/05.jpg",
-    "/stitch/shows/rizombe-king/06.jpg",
-    "/stitch/shows/rizombe-king/07.jpg"
+    "/media/v1/source/02-storytelling.jpg",
+    "/media/v1/shows/rizombe-king/02-portrait.png",
+    "/media/v1/shows/rizombe-king/03-trailer.png",
+    "/media/v1/shows/rizombe-king/04-acro.png",
+    "/media/v1/shows/rizombe-king/05-dance.png",
+    "/media/v1/shows/rizombe-king/06-music.png",
+    "/media/v1/shows/rizombe-king/07-drama.png"
   ],
   "africanPirate": [
-    "/stitch/shows/african-pirate/01.jpg",
-    "/stitch/shows/african-pirate/02.jpg"
+    "/media/v1/source/05-tumbling-live.jpg",
+    "/media/v1/source/01-pyramid.jpg"
   ],
   "freedom": [
-    "/stitch/shows/freedom/01.jpg",
-    "/stitch/shows/freedom/02.jpg",
-    "/stitch/shows/freedom/03.jpg"
+    "/media/v1/shows/freedom/01-leap.png",
+    "/media/v1/shows/freedom/02-drum.png",
+    "/media/v1/shows/freedom/03-trailer.png"
   ],
   "regularShow": [
-    "/stitch/shows/regular-show/01.jpg"
+    "/media/v1/source/05-tumbling-live.jpg"
+  ],
+  "pages": {
+    "mediaHero": "/media/v1/pages/media-hero.png",
+    "faqHero": "/media/v1/pages/faq-hero.png"
+  },
+  "source": [
+    "/media/v1/source/01-pyramid.jpg",
+    "/media/v1/source/02-storytelling.jpg",
+    "/media/v1/source/03-fire-limbo.jpg",
+    "/media/v1/source/04-tokomile-kingdom.jpg",
+    "/media/v1/source/05-tumbling-live.jpg",
+    "/media/v1/source/06-freedom-vocal.jpg"
   ]
 }

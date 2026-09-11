@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { CoverImage } from "@/components/ui/CoverImage";
-import { HeritageDivider } from "@/components/ui/HeritageDivider";
 import { Icon } from "@/components/ui/Icon";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { homeImages } from "@/constants/home";
 
 const facts = [
@@ -17,12 +17,18 @@ export function AboutSection() {
       id="about"
       className="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative scroll-mt-32"
     >
-      <HeritageDivider className="mb-16" />
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
         <div className="col-span-1 md:col-span-6 order-2 md:order-1">
-          <h2 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase mb-8">
-            Three Decades of African Entertainment
-          </h2>
+          <SectionHeading
+            align="left"
+            title={
+              <>
+                Three Decades of{" "}
+                <span className="text-primary">African Entertainment</span>
+              </>
+            }
+            className="mb-8"
+          />
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-6">
             Afrikan Warriors is a Tanzanian-born international performing arts
             company specialising in African acrobatics, dance, comedy, music and
@@ -49,11 +55,10 @@ export function AboutSection() {
         </div>
         <div className="col-span-1 md:col-span-6 order-1 md:order-2">
           <div className="relative w-full h-[500px] border-l border-primary/20 pl-8">
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-full overflow-hidden">
               <CoverImage
                 src={homeImages.about}
-                alt="Silhouette of an African acrobat mid-leap against a dark background"
-                className="vignette"
+                alt="Afrikan Warriors acrobat in mid-air with live musicians on stage"
               />
             </div>
           </div>

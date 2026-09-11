@@ -1,10 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useLayoutEffect, useState } from "react";
 import { site } from "@/constants/nav";
 
+function scrollToTop() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
+/**
+ * Remounts on every pathname change so the curtain always starts fresh
+ * (same as first load) and scroll is reset under the cover.
+ */
 export function ShutterIntro() {
+  const pathname = usePathname();
+  return <CurtainOverlay key={pathname} />;
+}
+
+function CurtainOverlay() {
   const [done, setDone] = useState(false);
+
+  useLayoutEffect(() => {
+    scrollToTop();
+  }, []);
 
   if (done) return null;
 
@@ -13,9 +33,10 @@ export function ShutterIntro() {
       className="shutter-intro"
       aria-hidden
       onAnimationEnd={(event) => {
-        if (event.animationName === "curtain-split-top") {
-          setDone(true);
-        }
+        if (event.animationName !== "curtain-split-top") return;
+        scrollToTop();
+        setDone(true);
+        window.dispatchEvent(new CustomEvent("aw:curtain-done"));
       }}
     >
       <div className="curtain-panel curtain-panel-top" />

@@ -3,7 +3,7 @@ import { majorCredits } from "@/constants/home";
 export function CreditsBar() {
   return (
     <section
-      className="border-y border-primary/20 bg-surface-container-lowest py-8 overflow-hidden"
+      className="border-y border-primary/30 bg-void py-10 overflow-hidden"
       aria-label="Major credits"
     >
       <div className="hidden motion-reduce:flex flex-wrap justify-center gap-x-10 gap-y-6 px-margin-mobile md:px-margin-desktop">

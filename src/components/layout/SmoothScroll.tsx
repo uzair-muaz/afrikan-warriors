@@ -17,9 +17,65 @@ function scrollToId(id: string) {
   return true;
 }
 
+function scrollToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
+/**
+ * Wait until the route curtain finishes (or skip if none / reduced motion).
+ * Defers one frame so a remounted ShutterIntro can appear before we check.
+ */
+function whenCurtainDone(callback: () => void) {
+  if (prefersReducedMotion()) {
+    callback();
+    return () => {};
+  }
+
+  let cancelled = false;
+  let removeListener = () => {};
+  let fallbackId = 0;
+
+  const finish = () => {
+    if (cancelled) return;
+    cancelled = true;
+    removeListener();
+    window.clearTimeout(fallbackId);
+    callback();
+  };
+
+  const frame = window.requestAnimationFrame(() => {
+    if (cancelled) return;
+
+    if (!document.querySelector(".shutter-intro")) {
+      finish();
+      return;
+    }
+
+    const onDone = () => finish();
+    window.addEventListener("aw:curtain-done", onDone);
+    removeListener = () => window.removeEventListener("aw:curtain-done", onDone);
+    fallbackId = window.setTimeout(finish, 2000);
+  });
+
+  return () => {
+    cancelled = true;
+    window.cancelAnimationFrame(frame);
+    removeListener();
+    window.clearTimeout(fallbackId);
+  };
+}
+
 export function SmoothScroll() {
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+  }, []);
 
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
@@ -58,13 +114,20 @@ export function SmoothScroll() {
 
   useEffect(() => {
     const id = window.location.hash.slice(1);
-    if (!id) return;
 
-    const timeout = window.setTimeout(() => {
-      scrollToId(id);
-    }, 120);
+    scrollToTop();
 
-    return () => window.clearTimeout(timeout);
+    if (id) {
+      return whenCurtainDone(() => {
+        scrollToId(id);
+      });
+    }
+
+    return whenCurtainDone(() => {
+      scrollToTop();
+      // Next paint — catch any late scroll restoration from the router
+      window.requestAnimationFrame(() => scrollToTop());
+    });
   }, [pathname]);
 
   return null;

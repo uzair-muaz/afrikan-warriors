@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
-import { HeritageDivider } from "@/components/ui/HeritageDivider";
 import { Icon } from "@/components/ui/Icon";
+import { VideoLightbox } from "@/components/ui/VideoLightbox";
+import { youtubeVideos } from "@/constants/media";
 import { regularChecklist, regularElements, showImages } from "@/constants/shows";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 
-export const metadata: Metadata = { title: "The Regular Show" };
+export const metadata: Metadata = { title: "Afrikan Warriors Live" };
 
 export default function RegularShowPage() {
   return (
@@ -13,23 +15,25 @@ export default function RegularShowPage() {
       <ShowHero
         image={showImages.regular.hero}
         alt="African acrobats performing a mid-air somersault on a dark stage"
-        eyebrow="Pure African Acrobatics"
-        title="The Regular Show"
-        subtitle="Our most adaptable live show for festivals, corporate events, theatres, circuses, theme parks, weddings, gala dinners and private celebrations."
+        eyebrow="The Original Core Act"
+        title="Afrikan Warriors Live"
+        subtitle="Our original high-energy African acrobatics experience — adaptable for festivals, corporate events, theatres, circuses, theme parks, weddings, gala dinners and private celebrations."
       >
-        <HeritageDivider className="w-32 mx-auto" />
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <VideoLightbox
+            videoId={youtubeVideos.showreel}
+            title="Afrikan Warriors Live Showreel"
+            label="Watch Trailer"
+          />
+        </div>
       </ShowHero>
 
       <section className="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-headline-lg text-headline-md md:text-headline-lg text-on-background uppercase">
-            Show Elements
-          </h2>
-          <p className="font-body-md text-body-md text-on-surface-variant mt-4">
-            A dynamic fusion of traditional artistry and high-performance
-            athleticism.
-          </p>
-          <HeritageDivider className="w-24 mx-auto mt-8" />
+          <SectionHeading
+            title="Show Elements"
+            description="A dynamic fusion of traditional artistry and high-performance athleticism."
+          />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {regularElements.map((item) => (
@@ -77,7 +81,7 @@ export default function RegularShowPage() {
             Performances can be adapted to your venue, audience and running time.
           </p>
           <Button href="/#inquiry" size="lg">
-            Book The Regular Show
+            Book Afrikan Warriors Live
           </Button>
         </div>
       </section>

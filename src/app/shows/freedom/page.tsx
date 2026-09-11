@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { Icon, type IconName } from "@/components/ui/Icon";
+import { VideoLightbox } from "@/components/ui/VideoLightbox";
+import { youtubeVideos } from "@/constants/media";
 import { showImages } from "@/constants/shows";
+import { ShowHero } from "@/features/shows/components/ShowHero";
 import { TrailerPlaceholder } from "@/features/shows/components/TrailerPlaceholder";
 
 export const metadata: Metadata = { title: "FREEDOM" };
@@ -40,34 +43,20 @@ const pillars: {
 export default function FreedomPage() {
   return (
     <>
-      <header className="relative w-full h-screen min-h-[700px] flex items-center justify-center pt-24">
-        <div className="absolute inset-0">
-          <CoverImage
-            src={showImages.freedom.hero}
-            alt="Powerful African dancer in mid-leap on a dark stage"
-            priority
-          />
-          <div className="absolute inset-0 vignette-overlay mix-blend-multiply opacity-90" />
-          <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
-        </div>
-        <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center flex flex-col items-center">
-          <span className="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-6">
-            The Premier Experience
-          </span>
-          <h1 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary uppercase mb-6 tracking-tighter leading-none">
-            FREEDOM
-          </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
-            A visceral celebration of movement, rhythm, and ancestral prestige.
-            Experience the pinnacle of physical storytelling, forged through
-            decades of global performance.
-          </p>
-          <Button variant="ghost" size="lg" className="gap-3">
-            <Icon name="play_arrow" filled />
-            Watch Trailer
-          </Button>
-        </div>
-      </header>
+      <ShowHero
+        image={showImages.freedom.hero}
+        alt="Powerful African dancer in mid-leap on a dark stage"
+        eyebrow="The Premier Experience"
+        title="FREEDOM"
+        titlePrimary
+        subtitle="A visceral celebration of movement, rhythm, and ancestral prestige. Experience the pinnacle of physical storytelling, forged through decades of global performance."
+      >
+        <VideoLightbox
+          videoId={youtubeVideos.showreel}
+          title="Freedom Trailer"
+          label="Watch Trailer"
+        />
+      </ShowHero>
 
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg md:py-stack-xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
@@ -118,7 +107,9 @@ export default function FreedomPage() {
         <TrailerPlaceholder
           image={showImages.freedom.trailer}
           alt="Epic stage shot from the FREEDOM performance"
-          label="Live Recording • London 2023"
+          label="Watch Trailer"
+          videoId={youtubeVideos.showreel}
+          videoTitle="Freedom Trailer"
         />
       </section>
 

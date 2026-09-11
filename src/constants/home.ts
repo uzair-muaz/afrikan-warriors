@@ -4,6 +4,8 @@ import images from "@/constants/images.json";
 export const homeImages = {
   hero: images.home[0],
   about: images.home[1],
+  bring: images.home[2],
+  ensemble: images.home[3],
 };
 
 export const skillTags = [
@@ -41,9 +43,12 @@ export const eventTypes: { icon: IconName; label: string }[] = [
 export const majorCredits = [
   { title: "Britain's Got Talent", detail: "Semi-Finalists" },
   { title: "Australia's Got Talent", detail: "Semi-Finalists" },
-  { title: "North West Talent Show", detail: "Finalists" },
+  { title: "Circus Vegas", detail: "UK & Ireland Tour" },
+  { title: "American Circus", detail: "UK & Ireland Tour" },
+  { title: "Planet Circus", detail: "Irish Tour" },
   { title: "Durham Festival", detail: "Street Theatre Champions" },
   { title: "Le Cirque Roger Lanzac", detail: "World Tour" },
+  { title: "30+ Years", detail: "International Entertainment" },
 ] as const;
 
 export const storyTimeline: {
@@ -51,62 +56,68 @@ export const storyTimeline: {
   mark: string;
   icon: IconName;
   body: string;
+  image?: string;
 }[] = [
   {
-    year: "Tanzania",
+    year: "Dar es Salaam",
     mark: "Origins",
     icon: "location_on",
-    body: "Street theatre and cultural performance in Dar es Salaam, where founder Rahim Saphy began as a young acrobat.",
-  },
-  {
-    year: "Dar-Boys International",
-    mark: "1996",
-    icon: "groups",
-    body: "The company takes shape as an international African performing-arts ensemble.",
+    body: "Street theatre and cultural performance in Tanzania, where founder Rahim Saphy began as a young acrobat.",
+    image: images.source[0],
   },
   {
     year: "United Kingdom",
     mark: "UK Base",
     icon: "flag",
     body: "A UK home, circus residencies, and a growing reputation on British stages.",
+    image: images.source[4],
   },
   {
-    year: "International Circus",
-    mark: "Tours",
-    icon: "attractions",
-    body: "Zippos, Circus Vegas, Planet Circus and more — nights under the big top across Britain and Ireland.",
-  },
-  {
-    year: "Television",
+    year: "Britain's Got Talent",
     mark: "2009",
     icon: "tv",
-    body: "Britain's Got Talent and Australia's Got Talent introduce Afrikan Warriors to millions.",
+    body: "National television introduces Afrikan Warriors to millions — followed by Australia's Got Talent.",
+    image: images.source[1],
   },
   {
     year: "Australia",
     mark: "2011",
     icon: "campaign",
     body: "A presence established down under, widening the company's international reach.",
+    image: images.source[5],
   },
   {
-    year: "World Tour",
+    year: "European Touring",
     mark: "Global",
     icon: "directions_run",
-    body: "Le Cirque Roger Lanzac and further touring across Europe, Africa and beyond.",
-  },
-  {
-    year: "Street Theatre Champions",
-    mark: "2016",
-    icon: "workspace_premium",
-    body: "Durham Street Theatre Festival — champions and award winners.",
+    body: "Circuses and festivals across Europe, plus performances in the UAE, Kuwait, Qatar and Bahrain.",
+    image: images.source[3],
   },
   {
     year: "Afrikan Warriors Today",
     mark: "Now",
     icon: "theater_comedy",
-    body: "A touring production company with a catalogue of bookable shows. 30+ years on.",
+    body: "A touring production company with a catalogue of bookable shows. 30+ years on — Durham Street Theatre Champions (2016).",
+    image: images.source[2],
   },
 ];
+
+export const promoterBookingTypes: { icon: IconName; label: string }[] = [
+  { icon: "festival", label: "Festivals" },
+  { icon: "theater_comedy", label: "Theatres" },
+  { icon: "attractions", label: "Circuses" },
+  { icon: "park", label: "Theme Parks" },
+  { icon: "business", label: "Corporate Events" },
+  { icon: "tv", label: "Television" },
+  { icon: "cake", label: "Private Events" },
+];
+
+export const promoterLinks = [
+  { label: "Download Press Kit", href: "/about#promoters" },
+  { label: "Technical Requirements", href: "/about#promoters" },
+  { label: "Risk & Safety Information", href: "/about#promoters" },
+  { label: "Request Availability", href: "/#inquiry" },
+] as const;
 
 export const promoterAssets = [
   "Technical Rider",

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { CoverImage } from "@/components/ui/CoverImage";
-import { HeritageDivider } from "@/components/ui/HeritageDivider";
 import { Icon } from "@/components/ui/Icon";
 import { site } from "@/constants/nav";
 import {
@@ -10,44 +9,32 @@ import {
   workshopTiers,
 } from "@/constants/workshops";
 import { InquiryForm } from "@/features/inquiry/InquiryForm";
+import { ShowHero } from "@/features/shows/components/ShowHero";
 
 export const metadata: Metadata = { title: "Workshops & Events" };
 
 export default function WorkshopsPage() {
   return (
-    <div className="pt-[120px] pb-stack-xl">
-      <header className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-xl text-center md:text-left flex flex-col md:flex-row gap-gutter items-center">
-        <div className="flex-1 space-y-6">
-          <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-tight">
-            Ignite Your <br />
-            <span className="text-primary-container">Potential</span>
-          </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-            Experience the adrenaline and discipline of ancestral athleticism.
-            Our workshops and performances are designed to elevate events,
-            inspire teams, and leave a lasting impression of power and precision.
-          </p>
-          <div className="pt-4 flex gap-4 justify-center md:justify-start">
-            <Button href="#workshops" size="lg">
-              Explore Workshops
-            </Button>
-            <Button href={site.inquiryHref} variant="ghost" size="lg">
-              Request a Quote
-            </Button>
-          </div>
+    <>
+      <ShowHero
+        image={workshopImages.hero}
+        alt="Afrikan Warriors performer mid-leap during a high-energy acrobatic routine"
+        eyebrow="Workshops & Events"
+        title="Ignite Your Potential"
+        titlePrimary
+        subtitle="Experience the adrenaline and discipline of ancestral athleticism. Workshops and performances designed to elevate events and inspire teams."
+      >
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+          <Button href="#workshops" size="lg">
+            Explore Workshops
+          </Button>
+          <Button href={site.inquiryHref} variant="ghost" size="lg">
+            Request a Quote
+          </Button>
         </div>
-        <div className="flex-1 w-full relative min-h-[400px] md:min-h-[600px]">
-          <CoverImage
-            src={workshopImages.hero}
-            alt="Afrikan Warriors performer mid-leap during a high-energy acrobatic routine"
-            className="vignette"
-          />
-          <div className="absolute inset-0 border border-primary-container/20 m-4 pointer-events-none" />
-        </div>
-      </header>
+      </ShowHero>
 
-      <HeritageDivider className="max-w-container-max mx-auto px-margin-desktop" />
-
+      <div className="pb-stack-xl">
       <section
         className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-stack-lg scroll-mt-32"
         id="workshops"
@@ -248,6 +235,7 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

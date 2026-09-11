@@ -26,24 +26,23 @@ export const navItems: NavItem[] = [
     })),
   },
   { href: "/about", label: "About", match: "prefix" },
-  { href: "/acts", label: "Acts", match: "prefix" },
   { href: "/gallery", label: "Media", match: "prefix" },
-  { href: "/#packages", label: "Packages" },
   { href: "/workshops", label: "Workshops", match: "prefix" },
-  { href: "/team", label: "AW-Team", match: "prefix" },
+  { href: "/#promoters", label: "For Promoters" },
   { href: "/faq", label: "FAQ", match: "prefix" },
+  { href: "/#inquiry", label: "Contact" },
 ];
 
 export const footerExplore = [
   { href: "/", label: "Home" },
   { href: "/#shows", label: "Shows" },
-  { href: "/acts", label: "Acts" },
   { href: "/about", label: "About" },
   { href: "/gallery", label: "Media" },
-  { href: "/#packages", label: "Packages" },
+  { href: "/acts", label: "Acts" },
   { href: "/workshops", label: "Workshops" },
   { href: "/team", label: "AW-Team" },
   { href: "/faq", label: "FAQ" },
+  { href: "/#promoters", label: "For Promoters" },
 ] as const;
 
 export const footerLegal = [

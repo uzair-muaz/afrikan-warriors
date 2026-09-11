@@ -1,54 +1,84 @@
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 import { CoverImage } from "@/components/ui/CoverImage";
-import { featuredShows } from "@/constants/shows";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { featuredShows, tokomileFlagship } from "@/constants/shows";
 import { cn } from "@/lib/cn";
 
 export function FeaturedShows() {
+  const galleryShows = featuredShows.filter((s) => !s.featured);
+
   return (
     <section
       className="py-stack-lg bg-surface-container-lowest px-margin-mobile md:px-margin-desktop scroll-mt-32"
       id="shows"
     >
       <div className="max-w-container-max mx-auto">
-        <h2 className="text-center font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase mb-16">
-          Experience <span className="text-primary">Our Shows</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredShows.map((show) => (
-            <article
+        <SectionHeading
+          title={
+            <>
+              Experience <span className="text-primary">Our Shows</span>
+            </>
+          }
+          description="A catalogue of productions — theatre, adventure and high-energy African acrobatics."
+          className="mb-16"
+        />
+
+        <article className="group relative mb-8 overflow-hidden border border-primary/30 min-h-[70vh] md:min-h-[80vh]">
+          <CoverImage
+            src={tokomileFlagship.image}
+            alt={tokomileFlagship.alt}
+            className="hover-media-slow group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-stage via-stage/40 to-transparent" />
+          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-14 max-w-3xl">
+            <p className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4">
+              {tokomileFlagship.label}
+            </p>
+            <h3 className="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface uppercase mb-4">
+              {tokomileFlagship.title}
+            </h3>
+            <p className="font-headline-md text-xl md:text-2xl text-on-surface-variant uppercase tracking-widest mb-6">
+              {tokomileFlagship.welcome}
+            </p>
+            <p className="font-label-caps text-[0.65rem] md:text-label-caps text-primary/90 uppercase tracking-[0.15em] mb-8">
+              {tokomileFlagship.meta}
+            </p>
+            <Link
+              href={tokomileFlagship.href}
+              className="inline-flex self-start items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1 opacity-100 md:opacity-0 md:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,translate] duration-500"
+            >
+              {tokomileFlagship.cta} →
+            </Link>
+          </div>
+        </article>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {galleryShows.map((show) => (
+            <Link
               key={show.slug}
+              href={show.href}
               className={cn(
-                "group bg-surface-container border-t border-primary/30 hover:border-primary transition-colors flex flex-col h-full overflow-hidden",
-                show.featured && "md:col-span-2 lg:col-span-2",
+                "group relative block overflow-hidden border border-primary/20 hover:border-primary transition-colors duration-500 min-h-[50vh] md:min-h-[56vh]",
               )}
             >
-              <div
-                className={cn(
-                  "relative w-full overflow-hidden",
-                  show.featured ? "aspect-video" : "aspect-4/5",
-                )}
-              >
-                <CoverImage
-                  src={show.image}
-                  alt={show.alt}
-                  className="hover-media group-hover:scale-105"
-                />
-              </div>
-              <div className="p-8 flex flex-col flex-1">
-                <h3 className="font-headline-lg text-headline-md text-primary uppercase mb-4">
+              <CoverImage
+                src={show.image}
+                alt={show.alt}
+                className="hover-media group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-stage via-stage/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
+                <h3 className="font-headline-lg text-headline-md text-primary uppercase mb-3">
                   {show.title}
                 </h3>
-                <p className="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-6 border-b border-primary/20 pb-4">
+                <p className="font-body-md text-on-surface-variant mb-6 max-w-md">
                   {show.subtitle}
                 </p>
-                <p className="text-on-surface-variant font-body-lg mb-6 flex-1">
-                  {show.description}
-                </p>
-                <Button href={show.href} variant="ghost" className="self-start">
-                  Discover Show
-                </Button>
+                <span className="inline-flex self-start font-label-caps text-label-caps uppercase tracking-widest text-on-surface border-b border-primary/60 pb-1 opacity-100 md:opacity-0 md:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,translate] duration-500">
+                  Discover the Show →
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

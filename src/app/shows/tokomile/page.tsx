@@ -15,6 +15,7 @@ import {
   tokomileTechnical,
 } from "@/constants/shows";
 import { CtaBanner } from "@/features/shows/components/CtaBanner";
+import { ShowHero } from "@/features/shows/components/ShowHero";
 
 export const metadata: Metadata = {
   title: "TOKOMILE SHOW — Zaramu Kingdom",
@@ -23,39 +24,25 @@ export const metadata: Metadata = {
 export default function TokomilePage() {
   return (
     <>
-      <header className="relative h-screen w-full flex flex-col justify-end items-center md:items-start text-center md:text-left px-margin-mobile md:px-margin-desktop pb-stack-xl max-w-container-max mx-auto pt-32">
-        <div className="absolute inset-0 z-[-1]">
-          <CoverImage
-            src={showImages.tokomile.hero}
-            alt="Dramatic silhouette of African acrobats in mid-air under a theatrical spotlight"
-            priority
-            className="opacity-40"
-          />
-          <div className="vignette-overlay absolute inset-0" />
-          <div className="absolute inset-0 bg-linear-to-t from-stage to-transparent" />
+      <ShowHero
+        image={showImages.tokomile.hero}
+        alt="Tokomile theatrical ensemble on stage in the Kingdom of Zaramu"
+        eyebrow="Our Flagship Theatre Production"
+        title="TOKOMILE"
+        titlePrimary
+        align="start"
+        subtitle="Welcome to the Kingdom of Zaramu. 80 minutes of theatre, live music, acrobatics, dance, drama and family entertainment."
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <Button href="#trailer" size="lg" className="gap-2">
+            <Icon name="play_arrow" filled />
+            Watch Tokomile Trailer
+          </Button>
+          <Button href={site.inquiryHref} variant="ghost" size="lg">
+            Book TOKOMILE
+          </Button>
         </div>
-        <div className="z-10 w-full md:w-2/3">
-          <p className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4">
-            Afrikan Warriors Presents
-          </p>
-          <h1 className="font-display-lg text-display-lg text-primary uppercase leading-none mb-6">
-            TOKOMILE
-          </h1>
-          <p className="font-headline-lg text-headline-md text-on-surface-variant mb-4 uppercase tracking-widest">
-            An African Adventure Like No Other
-          </p>
-          <HeritageDivider className="mb-8" />
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button href="#trailer" size="lg" className="gap-2">
-              <Icon name="play_arrow" filled />
-              Watch Trailer
-            </Button>
-            <Button href={site.inquiryHref} variant="ghost" size="lg">
-              Book TOKOMILE
-            </Button>
-          </div>
-        </div>
-      </header>
+      </ShowHero>
 
       <nav
         aria-label="Tokomile sections"

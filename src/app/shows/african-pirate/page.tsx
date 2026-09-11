@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import type { IconName } from "@/components/ui/Icon";
+import { Button } from "@/components/ui/Button";
+import { CoverImage } from "@/components/ui/CoverImage";
 import { Icon } from "@/components/ui/Icon";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { showImages } from "@/constants/shows";
 import { CtaBanner } from "@/features/shows/components/CtaBanner";
 import { ShowHero } from "@/features/shows/components/ShowHero";
-import { TrailerPlaceholder } from "@/features/shows/components/TrailerPlaceholder";
 
 export const metadata: Metadata = { title: "AFRICAN PIRATE" };
 
@@ -34,21 +36,41 @@ export default function AfricanPiratePage() {
         alt="African acrobats dressed as pirates performing a high-energy leap"
         eyebrow="Family Entertainment Production"
         title="AFRICAN PIRATE"
+        titlePrimary
         subtitle="An African Twist on a Classic Adventure. Filled with colourful characters, physical comedy, spectacular skills and a unique personality."
       >
-        <div className="w-full max-w-3xl mx-auto">
-          <TrailerPlaceholder
-            image={showImages.pirate.trailer}
-            alt="African pirate character mid-laugh during a comedic physical stunt"
-          />
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+          <Button href="/#inquiry" size="lg">
+            Book The Show
+          </Button>
+          <Button href="/about#promoters" variant="ghost" size="lg">
+            Request Press Kit
+          </Button>
         </div>
       </ShowHero>
 
       <section className="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">
-          The Experience
-        </h2>
-        <div className="heritage-divider w-24 mt-4 mb-stack-lg" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center mb-stack-xl">
+          <div className="relative w-full aspect-video overflow-hidden border border-primary/20">
+            <CoverImage
+              src={showImages.pirate.trailer}
+              alt="African pirate character mid-performance on stage"
+            />
+          </div>
+          <div>
+            <SectionHeading
+              align="left"
+              title={
+                <>
+                  The <span className="text-primary">Experience</span>
+                </>
+              }
+              description="Ideal for theatres, festivals, and premium family attractions seeking high-impact, culturally rich entertainment."
+              className="mb-0"
+            />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
           {cards.map((card) => (
             <article

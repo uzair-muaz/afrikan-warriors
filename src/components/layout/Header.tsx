@@ -77,7 +77,7 @@ function HeaderBar({
 
         <Button
           href={site.inquiryHref}
-          className="hidden xl:inline-flex"
+          className="hidden lg:inline-flex"
           size="md"
         >
           Book Us

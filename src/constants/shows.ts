@@ -22,56 +22,76 @@ export type ShowCard = {
 export const featuredShows: ShowCard[] = [
   {
     slug: "tokomile",
-    title: "TOKOMILE SHOW",
-    subtitle: "African Theatre • Culture • Acrobatics • Adventure",
+    title: "TOKOMILE",
+    subtitle: "An African Kingdom. A Battle for the Throne.",
     description:
-      "Our signature African pantomime-style theatre production. Set in the fictional African kingdom of Zaramu and inspired by the traditions and culture of Tanzania, the story follows a theatrical adventure filled with rivalry, humour, celebration, and spectacular African performance.",
+      "Our flagship theatre production. Set in the fictional African kingdom of Zaramu — rivalry, humour, celebration, and spectacular African performance.",
     href: "/shows/tokomile",
     image: tokomile[0],
-    alt: "Dramatic silhouette of African acrobats in mid-air under a theatrical spotlight",
+    alt: "Tokomile theatrical ensemble on stage in the Kingdom of Zaramu",
     featured: true,
   },
   {
     slug: "rizombe-king",
     title: "RIZOMBE KING",
-    subtitle: "Power • Rhythm • African Storytelling",
+    subtitle: "Power. Rhythm. African Storytelling.",
     description:
-      "An original theatrical production bringing African storytelling together with acrobatics, dance, music, drama and spectacular physical performance. Created for audiences who want more than a traditional acrobatic act, combining powerful movement, humour, and extraordinary physical skill.",
+      "An original theatrical production bringing African storytelling together with acrobatics, dance, music, drama and spectacular physical performance.",
     href: "/shows/rizombe-king",
     image: rizombe[0],
-    alt: "Lead performer in the Rizombe King production",
+    alt: "Lead performers in the Rizombe King production",
   },
   {
     slug: "african-pirate",
     title: "AFRICAN PIRATE",
-    subtitle: "An African Adventure for the Whole Family",
+    subtitle: "An African Adventure for the Whole Family.",
     description:
-      "Prepare for an energetic theatrical adventure as Afrikan Warriors brings the world of pirates together with African music, dance, comedy and acrobatics. A family entertainment production filled with colourful characters and the unique African personality of our team.",
+      "Pirates meet African music, dance, comedy and acrobatics — colourful family entertainment with the personality of our team.",
     href: "/shows/african-pirate",
     image: pirate[0],
-    alt: "African Pirate production on stage",
+    alt: "High-energy Afrikan Warriors acrobatics — African Pirate adventure",
   },
   {
     slug: "freedom",
     title: "FREEDOM",
-    subtitle: "Movement • Music • Culture • Expression",
+    subtitle: "Movement. Music. Culture. Expression.",
     description:
-      "FREEDOM celebrates the power of movement, African culture, music and human expression. Combining acrobatics, dance, theatre, rhythm and storytelling, the production presents the dynamic performance style that Afrikan Warriors has developed through decades of international touring.",
+      "Acrobatics, dance, theatre, rhythm and storytelling — the dynamic performance style forged through decades of international touring.",
     href: "/shows/freedom",
     image: freedom[0],
     alt: "FREEDOM production with live percussion and dance",
   },
   {
     slug: "regular-show",
-    title: "REGULAR SHOW",
-    subtitle: "High-Energy African Acrobatics & Entertainment",
+    title: "AFRIKAN WARRIORS LIVE",
+    subtitle: "The Original High-Energy African Acrobatics Experience.",
     description:
-      "Our flexible core performance offering raw, high-energy African acrobatics. Perfect for galas, festivals, and corporate events requiring spectacular visual impact and fast-paced entertainment without a full narrative structure.",
+      "Our original core act — raw, high-energy African acrobatics for galas, festivals, theatres and corporate events.",
     href: "/shows/regular-show",
     image: regular[0],
     alt: "High-energy African acrobatics on stage",
   },
 ];
+
+export const tokomileFlagship = {
+  label: "Our Flagship Theatre Production",
+  title: "TOKOMILE",
+  welcome: "Welcome to the Kingdom of Zaramu.",
+  meta: "80 Minutes • Theatre • Live Music • Acrobatics • Dance • Drama • Family Entertainment",
+  cta: "Enter the Kingdom",
+  href: "/shows/tokomile",
+  image: tokomile[0],
+  alt: "Tokomile theatrical ensemble on stage in the Kingdom of Zaramu",
+} as const;
+
+export const showInterestOptions = [
+  "Tokomile Show",
+  "Rizombe King",
+  "African Pirate",
+  "Freedom",
+  "Afrikan Warriors Live",
+  "Not Sure",
+] as const;
 
 export const showImages = {
   tokomile: { hero: tokomile[0], video: tokomile[1], story: tokomile[2] },
