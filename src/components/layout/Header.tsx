@@ -49,75 +49,97 @@ function HeaderBar({
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header
       className={cn(
-        "fixed top-0 w-full z-50 backdrop-blur-md border-b transition-colors duration-300",
-        scrolled
-          ? "bg-stage border-gold-border"
-          : "bg-transparent border-primary/20",
+        "fixed top-0 left-0 right-0 z-50 flex flex-col",
+        open && "bottom-0",
       )}
     >
-      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
-        <Link
-          href="/"
-          className="font-display-lg text-headline-md tracking-tighter text-primary hover:opacity-80 transition-opacity"
-        >
-          {site.name}
-        </Link>
+      <div
+        className={cn(
+          "shrink-0 border-b transition-colors duration-300",
+          open || scrolled
+            ? "bg-stage border-gold-border"
+            : "bg-transparent border-primary/20 backdrop-blur-md",
+        )}
+      >
+        <div className="flex justify-between items-center gap-3 px-margin-mobile md:px-margin-desktop py-3 lg:py-6 max-w-container-max mx-auto">
+          <Link
+            href="/"
+            className="font-display-lg text-lg sm:text-xl lg:text-headline-md tracking-tighter text-primary hover:opacity-80 transition-opacity whitespace-nowrap min-w-0"
+            onClick={() => setOpen(false)}
+          >
+            {site.name}
+          </Link>
 
-        <nav
-          className="hidden lg:flex items-center gap-5 xl:gap-8 font-label-caps text-label-caps"
-          aria-label="Primary"
-        >
-          {navItems.map((item) => (
-            <DesktopNavItem key={item.label} item={item} pathname={pathname} />
-          ))}
-        </nav>
+          <nav
+            className="hidden lg:flex items-center gap-5 xl:gap-8 font-label-caps text-label-caps"
+            aria-label="Primary"
+          >
+            {navItems.map((item) => (
+              <DesktopNavItem key={item.label} item={item} pathname={pathname} />
+            ))}
+          </nav>
 
-        <Button
-          href={site.inquiryHref}
-          className="hidden lg:inline-flex"
-          size="md"
-        >
-          Book Us
-        </Button>
+          <div className="hidden lg:block">
+            <Button href={site.inquiryHref} size="md">
+              Book Us
+            </Button>
+          </div>
 
-        <button
-          type="button"
-          className="lg:hidden text-primary"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <Icon name={open ? "close" : "menu"} filled className="text-3xl" />
-        </button>
+          <button
+            type="button"
+            className="lg:hidden flex items-center justify-center size-11 -mr-2 text-primary"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <Icon name={open ? "close" : "menu"} filled className="text-3xl" />
+          </button>
+        </div>
       </div>
 
       {open ? (
-        <div className="lg:hidden bg-stage border-t border-gold-border px-margin-mobile py-8 flex flex-col gap-6 min-h-screen">
-          <nav className="flex flex-col gap-4 font-label-caps text-label-caps" aria-label="Mobile">
+        <div
+          id="mobile-menu"
+          className="lg:hidden flex-1 min-h-0 bg-stage flex flex-col"
+        >
+          <nav
+            className="flex-1 overflow-y-auto overscroll-contain px-margin-mobile pt-6 pb-4 font-label-caps text-label-caps"
+            aria-label="Mobile"
+          >
             {navItems.map((item) => {
               const active = isActive(pathname, item.href, item.match);
               return (
-                <div key={item.label}>
+                <div key={item.label} className="border-b border-primary/10">
                   <Link
                     href={item.href}
                     className={cn(
-                      "py-2 border-b border-primary/10 block",
-                      active ? "text-primary" : "text-on-surface-variant",
+                      "py-3.5 block",
+                      active ? "text-primary" : "text-on-surface",
                     )}
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
                   </Link>
                   {item.children ? (
-                    <ul className="mt-2 mb-2 flex flex-col gap-2 pl-4">
+                    <ul className="pb-3 flex flex-col gap-0.5 border-l border-primary/20 ml-1 pl-4">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            className="py-1 text-on-surface-variant hover:text-primary block"
+                            className="py-1.5 text-on-surface-variant hover:text-primary block text-[0.7rem] tracking-[0.14em]"
                             onClick={() => setOpen(false)}
                           >
                             {child.label}
@@ -130,9 +152,14 @@ function HeaderBar({
               );
             })}
           </nav>
-          <Button href={site.inquiryHref} size="lg" fullWidth>
-            Book Us
-          </Button>
+          <div
+            className="shrink-0 px-margin-mobile pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] border-t border-gold-border"
+            onClick={() => setOpen(false)}
+          >
+            <Button href={site.inquiryHref} size="lg" fullWidth>
+              Book Us
+            </Button>
+          </div>
         </div>
       ) : null}
     </header>
