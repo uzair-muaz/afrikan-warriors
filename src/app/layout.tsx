@@ -5,6 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ShutterIntro } from "@/components/layout/ShutterIntro";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { BackToTop } from "@/components/layout/BackToTop";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 
@@ -52,6 +54,8 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackToTop />
+        <WhatsAppFloat />
       </body>
     </html>
   );

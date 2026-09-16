@@ -43,6 +43,18 @@ function scrollToTop() {
   document.body.scrollTop = 0;
 }
 
+export function scrollToY(y: number) {
+  if (lenisInstance && !prefersReducedMotion()) {
+    lenisInstance.scrollTo(y, { duration: 0.75 });
+    return;
+  }
+
+  window.scrollTo({
+    top: y,
+    behavior: prefersReducedMotion() ? "auto" : "smooth",
+  });
+}
+
 /**
  * Wait until the route curtain finishes (or skip if none / reduced motion).
  * Defers one frame so a remounted ShutterIntro can appear before we check.

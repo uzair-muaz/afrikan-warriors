@@ -20,7 +20,7 @@ export function ExperienceDiscuss() {
           className="mb-10"
         />
         <Button href={site.inquiryHref} size="lg">
-          Discuss Your Event
+          Build Your Performance →
         </Button>
       </div>
     </section>

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { YouTubeEmbed } from "@/components/ui/YouTubeEmbed";
 import images from "@/constants/images.json";
+import { youtubeVideos } from "@/constants/media";
 import { site } from "@/constants/nav";
 import { GalleryView } from "@/features/gallery/components/GalleryView";
 import { ShowHero } from "@/features/shows/components/ShowHero";
@@ -33,6 +36,23 @@ export default function GalleryPage() {
       <div id="gallery" className="scroll-mt-32">
         <GalleryView />
       </div>
+      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-stack-xl">
+        <SectionHeading
+          eyebrow="Television"
+          title={
+            <>
+              Britain&apos;s Got Talent{" "}
+              <span className="text-primary">2009</span>
+            </>
+          }
+          description="The interview that introduced Afrikan Warriors to millions — kept here in Media / Our History."
+          className="mb-10"
+        />
+        <YouTubeEmbed
+          videoId={youtubeVideos.interview}
+          title="Afrikan Warriors Interview — Britain's Got Talent 2009"
+        />
+      </section>
     </>
   );
 }

@@ -51,7 +51,7 @@ export function ForPromotersSection() {
 
         <div className="text-center">
           <Button href={site.inquiryHref} size="lg">
-            Request Availability
+            Speak to Our Team
           </Button>
         </div>
       </div>

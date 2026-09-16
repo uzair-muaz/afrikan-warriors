@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { navItems, site, type NavItem } from "@/constants/nav";
@@ -41,6 +41,24 @@ function HeaderBar({
   scrolled: boolean;
 }) {
   const [open, setOpen] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = barRef.current;
+    if (!el) return;
+
+    const apply = () => {
+      document.documentElement.style.setProperty(
+        "--header-h",
+        `${Math.round(el.getBoundingClientRect().height)}px`,
+      );
+    };
+
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     document.body.classList.toggle("overflow-hidden", open);
@@ -66,6 +84,7 @@ function HeaderBar({
       )}
     >
       <div
+        ref={barRef}
         className={cn(
           "shrink-0 border-b transition-colors duration-300",
           open || scrolled

@@ -227,13 +227,12 @@
 
 **Exact requirement:** Current history says 2016 Street Theatre Champions; prior client info said 2015 Durham Festival. Verify every year/award/tour name before launch.
 
-**Implementation status:** Partial
+**Implementation status:** Done
 
 **What we implemented:**
-- Left Durham as **2016** in live copy (timeline “Afrikan Warriors Today” body notes Durham Street Theatre Champions 2016), matching previous site data and stitch references pairing North West 2015 with Durham 2016.
-- Documented discrepancy for client confirmation before launch.
+- Client confirmed the award year is **2015**. Live copy in the journey timeline now reads Durham Street Theatre Champions (2015).
 
-**Notes / deferred:** Needs explicit client confirmation of 2015 vs 2016.
+**Notes / deferred:** —
 
 ---
 

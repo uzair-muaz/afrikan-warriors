@@ -1,8 +1,16 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { Icon } from "@/components/ui/Icon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { storyTimeline } from "@/constants/home";
 import { cn } from "@/lib/cn";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 type StoryTimelineProps = {
   variant?: "journey" | "line";
@@ -10,32 +18,45 @@ type StoryTimelineProps = {
 
 export function StoryTimeline({ variant = "journey" }: StoryTimelineProps) {
   if (variant === "line") {
-    return (
-      <section
-        id="story"
-        className="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto scroll-mt-32"
-      >
-        <ol className="relative border-l border-primary/30 ml-3 md:ml-6 space-y-10">
-          {storyTimeline.map((item) => (
-            <li key={item.year} className="pl-8 md:pl-12 relative">
-              <span className="absolute left-[-5px] top-1.5 size-2.5 bg-primary rotate-45" />
-              <h3 className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">
-                {item.year}
-              </h3>
-              <p className="font-body-md text-on-surface-variant">{item.body}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-    );
+    return <LineTimeline />;
   }
 
   return (
+    <div id="story" className="scroll-mt-32">
+      <JourneyDesktop />
+      <JourneyMobile />
+    </div>
+  );
+}
+
+function LineTimeline() {
+  return (
     <section
       id="story"
-      className="py-stack-xl bg-surface-container-lowest border-y border-primary/10 scroll-mt-32"
+      className="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto scroll-mt-32"
     >
-      <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <ol className="relative border-l border-primary/30 ml-3 md:ml-6 space-y-10">
+        {storyTimeline.map((item) => (
+          <li key={item.year} className="pl-8 md:pl-12 relative">
+            <span className="absolute left-[-5px] top-1.5 size-2.5 bg-primary rotate-45" />
+            <h3 className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">
+              {item.year}
+            </h3>
+            <p className="font-body-md text-on-surface-variant">{item.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function JourneyMobile() {
+  return (
+    <section
+      id="story"
+      className="md:hidden py-stack-xl bg-surface-container-lowest border-y border-primary/10"
+    >
+      <div className="px-margin-mobile max-w-container-max mx-auto">
         <SectionHeading
           title={
             <>
@@ -45,70 +66,155 @@ export function StoryTimeline({ variant = "journey" }: StoryTimelineProps) {
           description="From Dar es Salaam to international stages — a story told through touring, television and theatre."
           className="mb-12"
         />
-
-        <div
-          className="flex items-center gap-3 overflow-x-auto pb-6 mb-12 border-b border-primary/20"
-          aria-label="Journey path"
-        >
-          {storyTimeline.map((item, index) => (
-            <div key={item.year} className="flex items-center gap-3 shrink-0">
-              <span className="font-label-caps text-label-caps text-primary uppercase tracking-widest">
+        <ol className="relative border-l border-primary/40 ml-3 space-y-12">
+          {storyTimeline.map((item) => (
+            <li key={item.year} className="pl-8 relative">
+              <span className="absolute left-[-5px] top-1.5 size-2.5 bg-primary rotate-45" />
+              <p className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-2">
+                {item.mark}
+              </p>
+              <h3 className="font-headline-md text-xl text-on-surface uppercase mb-3">
                 {item.year}
-              </span>
-              {index < storyTimeline.length - 1 ? (
-                <Icon
-                  name="arrow_forward"
-                  className="text-primary/50 text-sm"
-                />
+              </h3>
+              {item.image ? (
+                <div className="relative aspect-video mb-4 overflow-hidden border border-primary/20">
+                  <CoverImage src={item.image} alt="" />
+                </div>
               ) : null}
-            </div>
+              <p className="font-body-md text-on-surface-variant">{item.body}</p>
+            </li>
           ))}
-        </div>
-
-        <ol className="space-y-6">
-          {storyTimeline.map((item, index) => {
-            const last = index === storyTimeline.length - 1;
-            return (
-              <li
-                key={item.year}
-                className={cn(
-                  "group relative grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden border-t border-primary/20 hover:border-primary transition-colors duration-500 min-h-72",
-                  last && "border-primary",
-                )}
-              >
-                <div className="relative min-h-56 md:min-h-full order-1 md:order-none">
-                  {item.image ? (
-                    <CoverImage
-                      src={item.image}
-                      alt=""
-                      className="hover-media-slow group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-platform" />
-                  )}
-                  <div className="absolute inset-0 bg-linear-to-r from-transparent to-surface-container-lowest/80 hidden md:block" />
-                </div>
-                <div className="relative flex flex-col justify-center p-8 md:p-12 bg-platform/80">
-                  <div className="flex items-center justify-between gap-4 mb-6">
-                    <Icon
-                      name={item.icon}
-                      className="text-primary text-3xl group-hover:scale-110 transition-[scale] duration-500 ease-in-out"
-                    />
-                    <span className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
-                      {item.mark}
-                    </span>
-                  </div>
-                  <h3 className="font-headline-md text-2xl text-on-surface uppercase mb-4">
-                    {item.year}
-                  </h3>
-                  <p className="font-body-md text-on-surface-variant max-w-lg">
-                    {item.body}
-                  </p>
-                </div>
-              </li>
-            );
-          })}
         </ol>
+      </div>
+    </section>
+  );
+}
+
+function JourneyDesktop() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const fillRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const container = containerRef.current;
+      const sticky = stickyRef.current;
+      const track = trackRef.current;
+      const fill = fillRef.current;
+      if (!container || !sticky || !track || !fill) return;
+
+      const mm = gsap.matchMedia();
+
+      mm.add(
+        "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+        () => {
+          const getDistance = () =>
+            Math.max(1, track.scrollWidth - window.innerWidth);
+
+          const applyHeight = () => {
+            const next = `${sticky.offsetHeight + getDistance()}px`;
+            if (container.style.height !== next) {
+              container.style.height = next;
+            }
+          };
+
+          ScrollTrigger.addEventListener("refreshInit", applyHeight);
+          applyHeight();
+
+          const tween = gsap.to(track, {
+            x: () => -getDistance(),
+            ease: "none",
+            scrollTrigger: {
+              trigger: container,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: 0.6,
+              invalidateOnRefresh: true,
+              onUpdate: (self) => {
+                fill.style.width = `${self.progress * 100}%`;
+              },
+            },
+          });
+
+          return () => {
+            tween.scrollTrigger?.kill();
+            tween.kill();
+            ScrollTrigger.removeEventListener("refreshInit", applyHeight);
+            container.style.removeProperty("height");
+            fill.style.width = "0%";
+          };
+        },
+      );
+
+      return () => mm.revert();
+    },
+    { scope: containerRef },
+  );
+
+  return (
+    <section className="hidden md:block bg-surface-container-lowest border-y border-primary/10 scroll-mt-32">
+      <div ref={containerRef} className="relative w-full">
+        <div
+          ref={stickyRef}
+          className="relative z-10 flex h-auto w-full flex-col overflow-hidden bg-surface-container-lowest md:sticky md:top-0 md:h-svh"
+        >
+          <header className="shrink-0 px-margin-desktop pt-24 pb-6 text-center">
+            <SectionHeading
+              title={
+                <>
+                  Our <span className="text-primary">Journey</span>
+                </>
+              }
+              description="From Dar es Salaam to international stages — a story told through touring, television and theatre."
+            />
+            <div className="relative mx-auto mt-10 h-px max-w-5xl bg-primary/20">
+              <div
+                ref={fillRef}
+                className="absolute inset-y-0 left-0 w-0 bg-primary"
+              />
+            </div>
+          </header>
+
+          <div className="relative min-h-0 flex-1 overflow-hidden">
+            <div
+              ref={trackRef}
+              className="flex h-full w-max items-stretch gap-8 px-margin-desktop will-change-transform"
+            >
+              {storyTimeline.map((item, index) => (
+                <article
+                  key={item.year}
+                  className={cn(
+                    "relative grid w-[72vw] max-w-5xl shrink-0 grid-cols-2 overflow-hidden border border-primary/20",
+                    index === storyTimeline.length - 1 && "border-primary",
+                  )}
+                >
+                  <div className="relative min-h-full">
+                    {item.image ? (
+                      <CoverImage src={item.image} alt="" />
+                    ) : (
+                      <div className="absolute inset-0 bg-platform" />
+                    )}
+                  </div>
+                  <div className="flex flex-col justify-center bg-platform p-12">
+                    <div className="mb-6 flex items-center justify-between gap-4">
+                      <Icon name={item.icon} className="text-primary text-3xl" />
+                      <span className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+                        {item.mark}
+                      </span>
+                    </div>
+                    <h3 className="font-headline-md text-3xl text-on-surface uppercase mb-4">
+                      {item.year}
+                    </h3>
+                    <p className="font-body-md text-on-surface-variant max-w-lg">
+                      {item.body}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -13,6 +13,7 @@ import { KaribuCloser } from "@/features/home/components/KaribuCloser";
 import { StoryTimeline } from "@/features/home/components/StoryTimeline";
 import { TestimonialsSection } from "@/features/home/components/TestimonialsSection";
 import { TeamTeaser } from "@/features/home/components/TeamTeaser";
+import { TokomileKingdomTeaser } from "@/features/home/components/TokomileKingdomTeaser";
 import { VideoShowcase } from "@/features/home/components/VideoShowcase";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function HomePage() {
       <AboutSection />
       <BringAfricaSection />
       <FeaturedShows />
+      <TokomileKingdomTeaser />
       <ExperienceDiscuss />
       <VideoShowcase />
       <ActsTeaser />

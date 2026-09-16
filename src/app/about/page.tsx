@@ -56,11 +56,11 @@ export default function AboutPage() {
           ))}
         </ul>
         <div className="text-center flex flex-col sm:flex-row gap-4 justify-center">
-          <Button href={site.inquiryHref} size="lg">
-            Booking / Production Enquiry
+          <Button href="/promoters" size="lg">
+            Promoter Resources
           </Button>
-          <Button href={`mailto:${site.email}`} variant="ghost" size="lg">
-            Email {site.email}
+          <Button href={site.inquiryHref} variant="ghost" size="lg">
+            Booking / Production Enquiry
           </Button>
         </div>
       </section>

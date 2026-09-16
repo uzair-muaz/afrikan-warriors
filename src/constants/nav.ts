@@ -6,6 +6,8 @@ export const site = {
   tagline: "The Spirit of Africa. The Energy of Live Performance.",
   email: "booking@afrikanwarriors.com",
   inquiryHref: "/#inquiry",
+  /** International format without +. Empty until the client supplies a number. */
+  whatsapp: "+",
 } as const;
 
 export type NavItem = {
@@ -28,7 +30,7 @@ export const navItems: NavItem[] = [
   { href: "/about", label: "About", match: "prefix" },
   { href: "/gallery", label: "Media", match: "prefix" },
   { href: "/workshops", label: "Workshops", match: "prefix" },
-  { href: "/#promoters", label: "For Promoters" },
+  { href: "/promoters", label: "For Promoters", match: "prefix" },
   { href: "/faq", label: "FAQ", match: "prefix" },
   { href: "/#inquiry", label: "Contact" },
 ];
@@ -42,11 +44,11 @@ export const footerExplore = [
   { href: "/workshops", label: "Workshops" },
   { href: "/team", label: "AW-Team" },
   { href: "/faq", label: "FAQ" },
-  { href: "/#promoters", label: "For Promoters" },
+  { href: "/promoters", label: "For Promoters" },
 ] as const;
 
 export const footerLegal = [
-  { href: "/about#promoters", label: "Press Kit" },
+  { href: "/promoters", label: "Press Kit" },
   { href: "/#inquiry", label: "Contact" },
 ] as const;
 

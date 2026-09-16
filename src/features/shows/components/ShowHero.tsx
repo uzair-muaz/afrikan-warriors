@@ -1,7 +1,19 @@
+"use client";
+
 import { CoverImage } from "@/components/ui/CoverImage";
 import { HeritageDivider } from "@/components/ui/HeritageDivider";
+import {
+  HeroPager,
+  HeroSlideshow,
+  useHeroSlides,
+} from "@/features/home/components/HeroSlideshow";
 import { cn } from "@/lib/cn";
 import type { ReactNode } from "react";
+
+type Slide = {
+  src: string;
+  alt: string;
+};
 
 type ShowHeroProps = {
   image: string;
@@ -19,6 +31,7 @@ type ShowHeroProps = {
    * Top-biased so heads/faces stay in frame under the transparent nav.
    */
   imagePositionClassName?: string;
+  slides?: readonly Slide[];
 };
 
 /**
@@ -36,13 +49,17 @@ export function ShowHero({
   className,
   titlePrimary = false,
   imagePositionClassName = "object-[center_28%]",
+  slides,
 }: ShowHeroProps) {
   const centered = align === "center";
+  const rotating = Boolean(slides && slides.length > 1);
+  const { index, setIndex, reduceMotion } = useHeroSlides(slides?.length ?? 0);
 
   return (
     <header
       className={cn(
         "relative w-full min-h-screen flex items-end overflow-hidden pt-28 pb-stack-xl",
+        rotating && "pb-16",
         centered
           ? "justify-center text-center"
           : "justify-end md:justify-start text-center md:text-left",
@@ -50,14 +67,21 @@ export function ShowHero({
       )}
     >
       <div className="absolute inset-0">
-        <CoverImage
-          src={image}
-          alt={alt}
-          priority
-          className={cn("object-cover", imagePositionClassName)}
-        />
-        {/* Bottom fade for copy only — no top black band under the nav */}
-        <div className="absolute inset-0 bg-linear-to-t from-stage via-stage/45 to-transparent" />
+        {rotating && slides ? (
+          <HeroSlideshow
+            slides={slides}
+            index={index}
+            reduceMotion={reduceMotion}
+          />
+        ) : (
+          <CoverImage
+            src={image}
+            alt={alt}
+            priority
+            className={cn("object-cover", imagePositionClassName)}
+          />
+        )}
+        <div className="absolute inset-0 z-10 bg-linear-to-t from-stage via-stage/45 to-transparent pointer-events-none" />
       </div>
       <div
         className={cn(
@@ -96,6 +120,14 @@ export function ShowHero({
           <div className={cn(centered && "flex flex-col items-center")}>
             {children}
           </div>
+        ) : null}
+        {rotating && slides ? (
+          <HeroPager
+            slides={slides}
+            index={index}
+            reduceMotion={reduceMotion}
+            onSelect={setIndex}
+          />
         ) : null}
       </div>
     </header>

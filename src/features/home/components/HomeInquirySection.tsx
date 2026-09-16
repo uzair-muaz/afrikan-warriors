@@ -9,8 +9,8 @@ export function HomeInquirySection() {
     >
       <div className="absolute inset-0 bg-primary/5" />
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-start">
+          <div className="md:col-span-5">
             <SectionHeading
               align="left"
               title="Request Availability"
@@ -24,10 +24,7 @@ export function HomeInquirySection() {
               <li>4. Your contact details</li>
             </ul>
           </div>
-          <div className="bg-stage p-8 border border-primary/20">
-            <h3 className="font-headline-md text-2xl text-primary uppercase mb-6">
-              Booking Journey
-            </h3>
+          <div className="md:col-span-7 border border-primary/25 bg-stage p-6 md:p-8">
             <InquiryForm variant="home" />
           </div>
         </div>

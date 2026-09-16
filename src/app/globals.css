@@ -12,6 +12,13 @@
   --platform: #171717;
   --void: #050505;
   --gold-aura: rgb(212 175 55 / 0.4);
+  --header-h: 4.25rem;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 5.5rem;
+  }
 }
 
 @theme inline {
@@ -271,6 +278,37 @@ body {
   animation: marquee-track 45s linear infinite;
 }
 
+.animate-marquee-track-slow {
+  animation: marquee-track 80s linear infinite;
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 8s ease-out forwards;
+}
+
+@keyframes hero-timer-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-timer-fill {
+  transform-origin: left center;
+  animation: hero-timer-fill 5s linear forwards;
+}
+
 .marquee-mask {
   mask-image: linear-gradient(
     to right,
@@ -283,7 +321,8 @@ body {
 
 .marquee-hover:hover .animate-marquee,
 .marquee-hover:hover .animate-marquee-slow,
-.marquee-hover:hover .animate-marquee-track {
+.marquee-hover:hover .animate-marquee-track,
+.marquee-hover:hover .animate-marquee-track-slow {
   animation-play-state: paused;
 }
 
@@ -431,7 +470,10 @@ body:has(.shutter-intro) {
   .animate-fade-up,
   .animate-marquee,
   .animate-marquee-slow,
-  .animate-marquee-track {
+  .animate-marquee-track,
+  .animate-marquee-track-slow,
+  .animate-ken-burns,
+  .hero-timer-fill {
     animation: none;
   }
 

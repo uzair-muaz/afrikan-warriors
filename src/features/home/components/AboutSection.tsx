@@ -1,15 +1,7 @@
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 import { CoverImage } from "@/components/ui/CoverImage";
-import { Icon } from "@/components/ui/Icon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { homeImages } from "@/constants/home";
-
-const facts = [
-  "Tanzanian-born",
-  "UK-based",
-  "30+ Years Experience",
-  "International Artists",
-];
 
 export function AboutSection() {
   return (
@@ -29,29 +21,25 @@ export function AboutSection() {
             }
             className="mb-8"
           />
+          <p className="font-headline-md text-xl text-primary uppercase tracking-widest mb-6">
+            Born in Tanzania. Built for the world.
+          </p>
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-6">
-            Afrikan Warriors is a Tanzanian-born international performing arts
-            company specialising in African acrobatics, dance, comedy, music and
-            theatrical entertainment.
+            Afrikan Warriors is an international performing arts company bringing
+            together extraordinary African acrobatics, theatre, dance, comedy,
+            music and cultural storytelling.
           </p>
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
-            Our roots can be traced to the street theatres and cultural
-            performance scene of Dar es Salaam, Tanzania, where founder Rahim
-            Saphy began performing as a young acrobat. Now based primarily in
-            the United Kingdom, we continue to honor our heritage while
-            performing on international stages.
+            From the streets and cultural stages of Dar es Salaam to television,
+            theatres, circuses and festivals around the world — our journey has
+            spanned more than three decades.
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-label-caps text-label-caps text-on-surface mb-8">
-            {facts.map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <Icon name="done" className="text-primary" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <Button href="/about" variant="ghost">
-            Our Story
-          </Button>
+          <Link
+            href="/about"
+            className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1 hover:opacity-80"
+          >
+            Discover Our Story →
+          </Link>
         </div>
         <div className="col-span-1 md:col-span-6 order-1 md:order-2">
           <div className="relative w-full h-[500px] border-l border-primary/20 pl-8">

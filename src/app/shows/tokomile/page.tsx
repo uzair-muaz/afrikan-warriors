@@ -86,10 +86,11 @@ export default function TokomilePage() {
             <div className="bg-platform p-8 border-l border-primary">
               <p className="font-body-lg text-body-lg text-on-surface mb-6 leading-relaxed">
                 Set in the fictional African kingdom of Zaramu, inspired by rich
-                Tanzanian traditions. The Tokomile Show chronicles the fierce and
-                captivating rivalry between Prince Zagayo and Prince Zomola. As
-                their father, Chief Zuwadiswa, prepares for succession, the
-                brothers clash in a test of strength, wit, and ancestral right.
+                Tanzanian traditions. Chief Zuwadiswa, the ageing ruler, names
+                Prince Zagayo as the chosen successor. Zomola — the older
+                brother — refuses to accept his father&apos;s decision. The
+                kingdom becomes a contest of strength, wit, music and ancestral
+                right.
               </p>
             </div>
           </div>
@@ -122,23 +123,32 @@ export default function TokomilePage() {
 
         <section id="characters" className="scroll-mt-32">
           <h2 className="font-headline-lg text-headline-lg text-primary uppercase mb-12">
-            Characters
+            Meet the Kingdom
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {tokomileCharacters.map((character) => (
               <article
                 key={character.name}
-                className="bg-surface-container border-t border-primary/30 p-8"
+                className="bg-surface-container border-t border-primary/30 overflow-hidden"
               >
-                <h3 className="font-headline-md text-headline-md text-primary uppercase mb-2">
-                  {character.name}
-                </h3>
-                <p className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-4">
-                  {character.role}
-                </p>
-                <p className="font-body-md text-on-surface-variant">
-                  {character.body}
-                </p>
+                <div className="relative aspect-4/5">
+                  <CoverImage
+                    src={character.image}
+                    alt={character.alt}
+                    className={character.imageClassName}
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-headline-md text-headline-md text-primary uppercase mb-2">
+                    {character.name}
+                  </h3>
+                  <p className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-4">
+                    {character.role}
+                  </p>
+                  <p className="font-body-md text-on-surface-variant">
+                    {character.body}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

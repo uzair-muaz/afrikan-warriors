@@ -5,6 +5,14 @@
     "/media/v1/source/02-storytelling.jpg",
     "/media/v1/home/ensemble.png"
   ],
+  "bringAfrica": [
+    "/media/v1/bring-africa/01-hoop-dive.png",
+    "/media/v1/bring-africa/02-dance.png",
+    "/media/v1/bring-africa/03-fire-show.png",
+    "/media/v1/bring-africa/04-hat-comedy.png",
+    "/media/v1/bring-africa/05-music.png",
+    "/media/v1/bring-africa/06-culture.png"
+  ],
   "acts": [
     "/media/v1/acts/01-pyramids.png",
     "/media/v1/acts/02-fire-limbo.png",
@@ -34,7 +42,7 @@
     "/media/v1/shows/tokomile/03-story.png"
   ],
   "rizombeKing": [
-    "/media/v1/source/02-storytelling.jpg",
+    "/media/v1/source/07-theatre-dance.jpg",
     "/media/v1/shows/rizombe-king/02-portrait.png",
     "/media/v1/shows/rizombe-king/03-trailer.png",
     "/media/v1/shows/rizombe-king/04-acro.png",
@@ -43,7 +51,7 @@
     "/media/v1/shows/rizombe-king/07-drama.png"
   ],
   "africanPirate": [
-    "/media/v1/source/05-tumbling-live.jpg",
+    "/media/v1/source/11-jungle-warriors.jpg",
     "/media/v1/source/01-pyramid.jpg"
   ],
   "freedom": [
@@ -51,7 +59,7 @@
     "/media/v1/shows/freedom/02-drum.png",
     "/media/v1/shows/freedom/03-trailer.png"
   ],
-  "regularShow": ["/media/v1/source/05-tumbling-live.jpg"],
+  "regularShow": ["/media/v1/source/08-orange-pyramid.jpg"],
   "pages": {
     "mediaHero": "/media/v1/pages/media-hero.png",
     "faqHero": "/media/v1/pages/faq-hero.png"
@@ -62,6 +70,11 @@
     "/media/v1/source/03-fire-limbo.jpg",
     "/media/v1/source/04-tokomile-kingdom.jpg",
     "/media/v1/source/05-tumbling-live.jpg",
-    "/media/v1/source/06-freedom-vocal.jpg"
+    "/media/v1/source/06-freedom-vocal.jpg",
+    "/media/v1/source/07-theatre-dance.jpg",
+    "/media/v1/source/08-orange-pyramid.jpg",
+    "/media/v1/source/09-handstand.jpg",
+    "/media/v1/source/10-company-audience.jpg",
+    "/media/v1/source/11-jungle-warriors.jpg"
   ]
 }

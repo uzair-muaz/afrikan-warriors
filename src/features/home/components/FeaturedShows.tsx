@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { VideoLightbox } from "@/components/ui/VideoLightbox";
+import { youtubeVideos } from "@/constants/media";
 import { featuredShows, tokomileFlagship } from "@/constants/shows";
 import { cn } from "@/lib/cn";
 
@@ -43,22 +45,30 @@ export function FeaturedShows() {
             <p className="font-label-caps text-[0.65rem] md:text-label-caps text-primary/90 uppercase tracking-[0.15em] mb-8">
               {tokomileFlagship.meta}
             </p>
-            <Link
-              href={tokomileFlagship.href}
-              className="inline-flex self-start items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1 opacity-100 md:opacity-0 md:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,translate] duration-500"
-            >
-              {tokomileFlagship.cta} →
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start">
+              <Link
+                href={tokomileFlagship.href}
+                className="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1"
+              >
+                {tokomileFlagship.cta} →
+              </Link>
+              <VideoLightbox
+                videoId={youtubeVideos.tokomile}
+                title="Tokomile Trailer"
+                label="Watch Trailer"
+                className="border-0 px-0 py-0 min-h-0 hover:bg-transparent"
+              />
+            </div>
           </div>
         </article>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex md:grid md:grid-cols-2 gap-6 overflow-x-auto snap-x snap-mandatory pb-4 md:overflow-visible md:pb-0 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
           {galleryShows.map((show) => (
             <Link
               key={show.slug}
               href={show.href}
               className={cn(
-                "group relative block overflow-hidden border border-primary/20 hover:border-primary transition-colors duration-500 min-h-[50vh] md:min-h-[56vh]",
+                "group relative block overflow-hidden border border-primary/20 hover:border-primary transition-colors duration-500 min-h-[50vh] md:min-h-[56vh] snap-start shrink-0 w-[85vw] sm:w-[70vw] md:w-auto md:shrink",
               )}
             >
               <CoverImage
@@ -74,7 +84,7 @@ export function FeaturedShows() {
                 <p className="font-body-md text-on-surface-variant mb-6 max-w-md">
                   {show.subtitle}
                 </p>
-                <span className="inline-flex self-start font-label-caps text-label-caps uppercase tracking-widest text-on-surface border-b border-primary/60 pb-1 opacity-100 md:opacity-0 md:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-[opacity,translate] duration-500">
+                <span className="inline-flex self-start font-label-caps text-label-caps uppercase tracking-widest text-on-surface border-b border-primary/60 pb-1">
                   Discover the Show →
                 </span>
               </div>

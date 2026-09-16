@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { useActionState, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input, Select, Textarea } from "@/components/ui/Input";
+import { budgetRanges } from "@/constants/home";
 import { eventTypeOptions } from "@/constants/packages";
 import { showInterestOptions } from "@/constants/shows";
 import { workshopInquiryTypes } from "@/constants/workshops";
@@ -16,9 +17,12 @@ const initial: InquiryState = { ok: false };
 
 const venueSettingOptions = ["Indoor", "Outdoor", "Either / Not Sure"] as const;
 
+const homeSteps = ["Show", "Event", "Details", "Contact"] as const;
+
 export function InquiryForm({ variant }: { variant: Variant }) {
   const [state, action, pending] = useActionState(submitInquiry, initial);
   const [step, setStep] = useState(0);
+  const [interest, setInterest] = useState("");
 
   if (state.ok) {
     return (
@@ -30,48 +34,59 @@ export function InquiryForm({ variant }: { variant: Variant }) {
   }
 
   if (variant === "home") {
-    const steps = [
-      "Show interest",
-      "Event details",
-      "About your event",
-      "Contact",
-    ];
-
     return (
-      <form action={action} className="space-y-6">
+      <form action={action} className="space-y-8">
         <FormError error={state.error} />
-        <ol className="flex flex-wrap gap-2 mb-2">
-          {steps.map((label, i) => (
-            <li
-              key={label}
-              className={cn(
-                "font-label-caps text-[0.65rem] uppercase tracking-widest px-3 py-1 border",
-                i === step
-                  ? "border-primary text-primary"
-                  : i < step
-                    ? "border-primary/40 text-on-surface"
-                    : "border-primary/10 text-on-surface-variant/50",
-              )}
-            >
-              {i + 1}. {label}
+        <ol className="grid grid-cols-4 gap-3">
+          {homeSteps.map((label, i) => (
+            <li key={label}>
+              <span
+                className={cn(
+                  "mb-2 block h-px",
+                  i <= step ? "bg-primary" : "bg-primary/20",
+                )}
+              />
+              <span
+                className={cn(
+                  "font-label-caps text-[0.6rem] uppercase tracking-widest",
+                  i === step
+                    ? "text-primary"
+                    : i < step
+                      ? "text-on-surface"
+                      : "text-on-surface-variant/50",
+                )}
+              >
+                {i + 1}. {label}
+              </span>
             </li>
           ))}
         </ol>
 
         <div className={cn(step !== 0 && "hidden")}>
-          <Field label="What are you interested in?" htmlFor="showInterest">
-            <Select id="showInterest" name="showInterest" required>
-              <option value="">Select a production</option>
-              {showInterestOptions.map((opt) => (
-                <option key={opt} value={opt} className="bg-stage">
-                  {opt}
-                </option>
-              ))}
-            </Select>
-          </Field>
+          <p className="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-4">
+            What are you interested in?
+          </p>
+          <input type="hidden" name="showInterest" value={interest} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {showInterestOptions.map((opt) => (
+              <button
+                key={opt}
+                type="button"
+                onClick={() => setInterest(opt)}
+                className={cn(
+                  "min-h-14 cursor-pointer border px-4 py-4 text-left font-label-caps text-label-caps uppercase tracking-widest transition-colors duration-300",
+                  interest === opt
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-primary/20 text-on-surface hover:border-primary/60",
+                )}
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className={cn("space-y-4", step !== 1 && "hidden")}>
+        <div className={cn("grid grid-cols-1 sm:grid-cols-2 gap-4", step !== 1 && "hidden")}>
           <Field label="Event type" htmlFor="eventType">
             <Select id="eventType" name="eventType">
               <option value="">Select type</option>
@@ -110,6 +125,16 @@ export function InquiryForm({ variant }: { variant: Variant }) {
               ))}
             </Select>
           </Field>
+          <Field label="Estimated budget (optional)" htmlFor="budget">
+            <Select id="budget" name="budget">
+              <option value="">Prefer not to say</option>
+              {budgetRanges.map((opt) => (
+                <option key={opt} value={opt} className="bg-stage">
+                  {opt}
+                </option>
+              ))}
+            </Select>
+          </Field>
         </div>
 
         <div className={cn(step !== 2 && "hidden")}>
@@ -117,13 +142,13 @@ export function InquiryForm({ variant }: { variant: Variant }) {
             <Textarea
               id="message"
               name="message"
-              rows={5}
-              placeholder="Venue, running time, technical notes, budget range…"
+              rows={6}
+              placeholder="Venue, running time, technical notes…"
             />
           </Field>
         </div>
 
-        <div className={cn("space-y-4", step !== 3 && "hidden")}>
+        <div className={cn("grid grid-cols-1 sm:grid-cols-2 gap-4", step !== 3 && "hidden")}>
           <Field label="Your name" htmlFor="name">
             <Input id="name" name="name" type="text" placeholder="Your Name" required />
           </Field>
@@ -138,7 +163,7 @@ export function InquiryForm({ variant }: { variant: Variant }) {
           </Field>
         </div>
 
-        <div className="flex gap-3 pt-2">
+        <div className="flex gap-3">
           {step > 0 ? (
             <Button
               type="button"
@@ -149,16 +174,17 @@ export function InquiryForm({ variant }: { variant: Variant }) {
               Back
             </Button>
           ) : null}
-          {step < steps.length - 1 ? (
+          {step < homeSteps.length - 1 ? (
             <Button
               type="button"
               className="flex-1"
+              disabled={step === 0 && !interest}
               onClick={() => setStep((s) => s + 1)}
             >
               Continue
             </Button>
           ) : (
-            <Button type="submit" fullWidth size="lg" disabled={pending}>
+            <Button type="submit" className="flex-1" size="lg" disabled={pending}>
               {pending ? "Submitting…" : "Request Availability"}
             </Button>
           )}

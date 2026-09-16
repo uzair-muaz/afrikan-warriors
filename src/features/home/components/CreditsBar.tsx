@@ -1,14 +1,19 @@
-import { majorCredits } from "@/constants/home";
+import { creditPhrases } from "@/constants/home";
 
 export function CreditsBar() {
   return (
     <section
-      className="border-y border-primary/30 bg-void py-10 overflow-hidden"
+      className="border-y border-primary/30 bg-void py-8 overflow-hidden"
       aria-label="Major credits"
     >
-      <div className="hidden motion-reduce:flex flex-wrap justify-center gap-x-10 gap-y-6 px-margin-mobile md:px-margin-desktop">
-        {majorCredits.map((item) => (
-          <CreditItem key={item.title} title={item.title} detail={item.detail} />
+      <div className="hidden motion-reduce:flex flex-wrap justify-center gap-x-8 gap-y-4 px-margin-mobile md:px-margin-desktop">
+        {creditPhrases.map((phrase) => (
+          <p
+            key={phrase}
+            className="font-label-caps text-label-caps text-primary uppercase tracking-widest"
+          >
+            {phrase}
+          </p>
         ))}
       </div>
 
@@ -23,30 +28,19 @@ export function CreditsBar() {
 function CreditTrack({ ariaHidden }: { ariaHidden?: boolean }) {
   return (
     <div
-      className="flex shrink-0 items-center animate-marquee-track"
+      className="flex shrink-0 items-center animate-marquee-track-slow"
       aria-hidden={ariaHidden || undefined}
     >
-      {majorCredits.map((item) => (
-        <div key={item.title} className="flex items-center px-4 md:px-8">
-          <span aria-hidden className="size-2 rotate-45 bg-primary shrink-0" />
-          <div className="px-8 md:px-12">
-            <CreditItem title={item.title} detail={item.detail} />
-          </div>
+      {creditPhrases.map((phrase) => (
+        <div key={phrase} className="flex items-center px-3 md:px-5">
+          <span aria-hidden className="text-primary/80 text-xs">
+            ✦
+          </span>
+          <p className="px-6 md:px-10 font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] whitespace-nowrap">
+            {phrase}
+          </p>
         </div>
       ))}
-    </div>
-  );
-}
-
-function CreditItem({ title, detail }: { title: string; detail: string }) {
-  return (
-    <div className="text-center whitespace-nowrap">
-      <p className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-1">
-        {title}
-      </p>
-      <p className="font-headline-md text-on-surface uppercase text-sm tracking-wider">
-        {detail}
-      </p>
     </div>
   );
 }

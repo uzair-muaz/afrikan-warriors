@@ -16,7 +16,7 @@ export function TeamTeaser() {
         <SectionHeading
           title={
             <>
-              Meet the <span className="text-primary">AW-Team</span>
+              Meet the <span className="text-primary">Warriors</span>
             </>
           }
           description="Founders and lead artists behind three decades of African theatre and acrobatics."
@@ -30,21 +30,14 @@ export function TeamTeaser() {
               className="group bg-surface-container border-t border-primary/30 hover:border-primary transition-colors overflow-hidden flex flex-col"
             >
               <div className="relative aspect-3/4 overflow-hidden bg-stage">
-                <CoverImage
-                  src={placeholder}
-                  alt=""
-                  className="opacity-90"
-                />
+                <CoverImage src={placeholder} alt="" className="opacity-90" />
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-headline-md text-xl text-primary uppercase mb-2">
                   {member.name}
                 </h3>
-                <p className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-4">
+                <p className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
                   {member.role}
-                </p>
-                <p className="font-body-md text-on-surface-variant line-clamp-4">
-                  {member.bio}
                 </p>
               </div>
             </article>
@@ -56,7 +49,7 @@ export function TeamTeaser() {
             href="/team"
             className="font-label-caps text-label-caps uppercase tracking-widest text-primary border-b border-primary pb-1 hover:opacity-80"
           >
-            View Full AW-Team →
+            Meet the Warriors →
           </Link>
         </div>
       </div>

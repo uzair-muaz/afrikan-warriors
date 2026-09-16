@@ -77,7 +77,7 @@ export const tokomileFlagship = {
   label: "Our Flagship Theatre Production",
   title: "TOKOMILE",
   welcome: "Welcome to the Kingdom of Zaramu.",
-  meta: "80 Minutes • Theatre • Live Music • Acrobatics • Dance • Drama • Family Entertainment",
+  meta: "80 Minutes • Theatre • Live Music • Acrobatics • Dance • Drama",
   cta: "Enter the Kingdom",
   href: "/shows/tokomile",
   image: tokomile[0],
@@ -134,19 +134,28 @@ export const tokomileSections = [
 
 export const tokomileCharacters = [
   {
-    name: "Prince Zagayo",
-    role: "The Rival Heir",
-    body: "A fierce competitor whose strength and pride drive the succession contest.",
-  },
-  {
-    name: "Prince Zomola",
-    role: "The Rival Heir",
-    body: "Wit, rhythm and theatrical daring — the other half of the brothers' clash.",
-  },
-  {
     name: "Chief Zuwadiswa",
-    role: "King of Zaramu",
-    body: "The father preparing for succession, around whom the kingdom's fate turns.",
+    role: "The ageing ruler",
+    body: "The King of Zaramu, preparing the kingdom for succession.",
+    image: tokomile[0],
+    alt: "The Kingdom of Zaramu on stage",
+    imageClassName: "object-[70%_center]",
+  },
+  {
+    name: "Prince Zagayo",
+    role: "The chosen successor",
+    body: "Named by his father to inherit the throne — strength, pride and ancestral right.",
+    image: "/stitch/shows/tokomile/02.jpg",
+    alt: "Tokomile company dancing on a grand stage",
+    imageClassName: "object-center",
+  },
+  {
+    name: "Zomola",
+    role: "The older brother who refuses to accept his father's decision",
+    body: "Wit, rhythm and theatrical daring — he will not yield the kingdom without a fight.",
+    image: tokomile[2],
+    alt: "Two warriors in a dramatic stare-down",
+    imageClassName: "object-center",
   },
 ];
 

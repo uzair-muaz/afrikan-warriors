@@ -18,6 +18,7 @@ export async function submitInquiry(
   const location = String(formData.get("location") ?? "").trim();
   const audience = String(formData.get("audience") ?? "").trim();
   const venueSetting = String(formData.get("venueSetting") ?? "").trim();
+  const budget = String(formData.get("budget") ?? "").trim();
 
   if (!name || !email) {
     return { ok: false, error: "Please provide your name and email." };
@@ -34,6 +35,7 @@ export async function submitInquiry(
   void location;
   void audience;
   void venueSetting;
+  void budget;
 
   return { ok: true };
 }
