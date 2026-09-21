@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 /* --------------------------------------------------------------------------
    Aureum Kinetic design tokens
@@ -77,6 +78,17 @@
   --color-gold-border: rgb(212 175 55 / 0.2);
   --color-gold: #d4af37;
   --color-gold-veil: rgb(212 175 55 / 0.05);
+
+  --color-foreground: #e2e2e2;
+  --color-popover: var(--platform);
+  --color-popover-foreground: #e2e2e2;
+  --color-muted: #282a2b;
+  --color-muted-foreground: #d0c5af;
+  --color-accent: rgb(242 202 80 / 0.14);
+  --color-accent-foreground: #f2ca50;
+  --color-border: rgb(212 175 55 / 0.2);
+  --color-input: rgb(212 175 55 / 0.2);
+  --color-ring: #f2ca50;
 
   --color-error: #ffb4ab;
   --color-on-error: #690005;
@@ -307,6 +319,74 @@ body {
 .hero-timer-fill {
   transform-origin: left center;
   animation: hero-timer-fill 5s linear forwards;
+}
+
+.aw-daypicker.rdp-root {
+  --rdp-accent-color: var(--color-primary);
+  --rdp-accent-background-color: rgb(242 202 80 / 0.14);
+  --rdp-day_button-border-radius: 0;
+  --rdp-day-height: 2.375rem;
+  --rdp-day-width: 2.375rem;
+  --rdp-day_button-height: 2.25rem;
+  --rdp-day_button-width: 2.25rem;
+  --rdp-today-color: var(--color-primary);
+  --rdp-selected-border: 2px solid var(--color-primary);
+  --rdp-background-color: transparent;
+  color: var(--color-on-surface);
+  font-family: var(--font-hanken), sans-serif;
+}
+
+.aw-daypicker .rdp-caption_label,
+.aw-daypicker .rdp-month_caption {
+  font-family: var(--font-space);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.aw-daypicker .rdp-weekday {
+  font-family: var(--font-space);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+}
+
+.aw-daypicker .rdp-day_button {
+  font-family: var(--font-hanken);
+  color: var(--color-on-surface);
+  border-radius: 0;
+}
+
+.aw-daypicker .rdp-day_button:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: rgb(242 202 80 / 0.12);
+}
+
+.aw-daypicker .rdp-selected .rdp-day_button {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.aw-daypicker .rdp-today:not(.rdp-selected) .rdp-day_button {
+  border: 1px solid var(--color-primary);
+}
+
+.aw-daypicker .rdp-button_previous,
+.aw-daypicker .rdp-button_next {
+  border: 1px solid rgb(242 202 80 / 0.25);
+  border-radius: 0;
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.aw-daypicker .rdp-button_previous:hover,
+.aw-daypicker .rdp-button_next:hover {
+  background: rgb(242 202 80 / 0.12);
+}
+
+.aw-daypicker .rdp-chevron {
+  fill: var(--color-primary);
 }
 
 .marquee-mask {

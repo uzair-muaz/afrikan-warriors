@@ -20,6 +20,7 @@ type ShowHeroProps = {
   alt: string;
   eyebrow?: string;
   title: string;
+  lead?: string;
   subtitle?: string;
   children?: ReactNode;
   align?: "center" | "start";
@@ -43,6 +44,7 @@ export function ShowHero({
   alt,
   eyebrow,
   title,
+  lead,
   subtitle,
   children,
   align = "center",
@@ -102,6 +104,11 @@ export function ShowHero({
         >
           {title}
         </h1>
+        {lead ? (
+          <p className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4">
+            {lead}
+          </p>
+        ) : null}
         {subtitle ? (
           <p
             className={cn(

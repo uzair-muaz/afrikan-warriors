@@ -122,24 +122,30 @@ function JourneyDesktop() {
           ScrollTrigger.addEventListener("refreshInit", applyHeight);
           applyHeight();
 
-          const tween = gsap.to(track, {
-            x: () => -getDistance(),
-            ease: "none",
-            scrollTrigger: {
-              trigger: container,
-              start: "top top",
-              end: "bottom bottom",
-              scrub: 0.6,
-              invalidateOnRefresh: true,
-              onUpdate: (self) => {
-                fill.style.width = `${self.progress * 100}%`;
+          const tween = gsap.fromTo(
+            track,
+            { x: () => -getDistance() },
+            {
+              x: 0,
+              ease: "none",
+              immediateRender: true,
+              scrollTrigger: {
+                trigger: container,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.6,
+                invalidateOnRefresh: true,
+                onUpdate: (self) => {
+                  fill.style.width = `${self.progress * 100}%`;
+                },
               },
             },
-          });
+          );
 
           return () => {
             tween.scrollTrigger?.kill();
             tween.kill();
+            gsap.set(track, { clearProps: "transform" });
             ScrollTrigger.removeEventListener("refreshInit", applyHeight);
             container.style.removeProperty("height");
             fill.style.width = "0%";
@@ -171,7 +177,7 @@ function JourneyDesktop() {
             <div className="relative mx-auto mt-10 h-px max-w-5xl bg-primary/20">
               <div
                 ref={fillRef}
-                className="absolute inset-y-0 left-0 w-0 bg-primary"
+                className="absolute inset-y-0 right-0 w-0 bg-primary"
               />
             </div>
           </header>
@@ -179,7 +185,7 @@ function JourneyDesktop() {
           <div className="relative min-h-0 flex-1 overflow-hidden">
             <div
               ref={trackRef}
-              className="flex h-full w-max items-stretch gap-8 px-margin-desktop will-change-transform"
+              className="flex h-full w-max flex-row-reverse items-stretch gap-8 px-margin-desktop will-change-transform"
             >
               {storyTimeline.map((item, index) => (
                 <article

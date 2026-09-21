@@ -3,7 +3,9 @@
 import type { ReactNode } from "react";
 import { useActionState, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { Input, Select, Textarea } from "@/components/ui/Input";
+import { DatePicker } from "@/components/ui/DatePicker";
+import { Input, Textarea } from "@/components/ui/Input";
+import { SelectField } from "@/components/ui/select";
 import { budgetRanges } from "@/constants/home";
 import { eventTypeOptions } from "@/constants/packages";
 import { showInterestOptions } from "@/constants/shows";
@@ -88,22 +90,18 @@ export function InquiryForm({ variant }: { variant: Variant }) {
 
         <div className={cn("grid grid-cols-1 sm:grid-cols-2 gap-4", step !== 1 && "hidden")}>
           <Field label="Event type" htmlFor="eventType">
-            <Select id="eventType" name="eventType">
-              <option value="">Select type</option>
-              {eventTypeOptions.map((opt) => (
-                <option key={opt} value={opt} className="bg-stage">
-                  {opt}
-                </option>
-              ))}
-            </Select>
+            <SelectField
+              id="eventType"
+              name="eventType"
+              placeholder="Select type"
+              options={eventTypeOptions.map((opt) => ({
+                value: opt,
+                label: opt,
+              }))}
+            />
           </Field>
           <Field label="Event date" htmlFor="date">
-            <Input
-              id="date"
-              name="date"
-              type="date"
-              className="[color-scheme:dark]"
-            />
+            <DatePicker id="date" name="date" />
           </Field>
           <Field label="Location" htmlFor="location">
             <Input id="location" name="location" placeholder="City / venue" />
@@ -116,24 +114,26 @@ export function InquiryForm({ variant }: { variant: Variant }) {
             />
           </Field>
           <Field label="Indoor / Outdoor" htmlFor="venueSetting">
-            <Select id="venueSetting" name="venueSetting">
-              <option value="">Select</option>
-              {venueSettingOptions.map((opt) => (
-                <option key={opt} value={opt} className="bg-stage">
-                  {opt}
-                </option>
-              ))}
-            </Select>
+            <SelectField
+              id="venueSetting"
+              name="venueSetting"
+              placeholder="Select"
+              options={venueSettingOptions.map((opt) => ({
+                value: opt,
+                label: opt,
+              }))}
+            />
           </Field>
           <Field label="Estimated budget (optional)" htmlFor="budget">
-            <Select id="budget" name="budget">
-              <option value="">Prefer not to say</option>
-              {budgetRanges.map((opt) => (
-                <option key={opt} value={opt} className="bg-stage">
-                  {opt}
-                </option>
-              ))}
-            </Select>
+            <SelectField
+              id="budget"
+              name="budget"
+              placeholder="Prefer not to say"
+              options={budgetRanges.map((opt) => ({
+                value: opt,
+                label: opt,
+              }))}
+            />
           </Field>
         </div>
 
@@ -148,7 +148,7 @@ export function InquiryForm({ variant }: { variant: Variant }) {
           </Field>
         </div>
 
-        <div className={cn("grid grid-cols-1 sm:grid-cols-2 gap-4", step !== 3 && "hidden")}>
+        <div className={cn("space-y-4", step !== 3 && "hidden")}>
           <Field label="Your name" htmlFor="name">
             <Input id="name" name="name" type="text" placeholder="Your Name" required />
           </Field>
@@ -220,23 +220,19 @@ export function InquiryForm({ variant }: { variant: Variant }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Field label="Event Type" htmlFor="eventType">
-            <Select id="eventType" name="eventType" fieldVariant="underline">
-              <option value="">Select type</option>
-              {workshopInquiryTypes.map((opt) => (
-                <option key={opt.value} value={opt.value} className="bg-stage">
-                  {opt.label}
-                </option>
-              ))}
-            </Select>
+            <SelectField
+              id="eventType"
+              name="eventType"
+              fieldVariant="underline"
+              placeholder="Select type"
+              options={workshopInquiryTypes.map((opt) => ({
+                value: opt.value,
+                label: opt.label,
+              }))}
+            />
           </Field>
           <Field label="Estimated Date" htmlFor="date">
-            <Input
-              id="date"
-              name="date"
-              type="date"
-              fieldVariant="underline"
-              className="[color-scheme:dark]"
-            />
+            <DatePicker id="date" name="date" fieldVariant="underline" />
           </Field>
         </div>
         <Field label="Project Details" htmlFor="message">
@@ -265,7 +261,7 @@ export function InquiryForm({ variant }: { variant: Variant }) {
             name="name"
             placeholder="Your Name"
             required
-            className="bg-surface-container-low p-4"
+            className="bg-surface-container-low"
           />
         </Field>
         <Field label="Email Address" htmlFor="pkg-email" gold>
@@ -275,30 +271,28 @@ export function InquiryForm({ variant }: { variant: Variant }) {
             type="email"
             placeholder="email@example.com"
             required
-            className="bg-surface-container-low p-4"
+            className="bg-surface-container-low"
           />
         </Field>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Field label="Event Type" htmlFor="pkg-type" gold>
-          <Select
+          <SelectField
             id="pkg-type"
             name="eventType"
-            className="bg-surface-container-low p-4"
-          >
-            {eventTypeOptions.map((opt) => (
-              <option key={opt} value={opt} className="bg-stage">
-                {opt}
-              </option>
-            ))}
-          </Select>
+            placeholder="Select type"
+            className="bg-surface-container-low"
+            options={eventTypeOptions.map((opt) => ({
+              value: opt,
+              label: opt,
+            }))}
+          />
         </Field>
         <Field label="Estimated Date" htmlFor="pkg-date" gold>
-          <Input
+          <DatePicker
             id="pkg-date"
             name="date"
-            type="date"
-            className="bg-surface-container-low p-4 [color-scheme:dark]"
+            className="bg-surface-container-low"
           />
         </Field>
       </div>
@@ -308,7 +302,7 @@ export function InquiryForm({ variant }: { variant: Variant }) {
           name="message"
           rows={4}
           placeholder="Location, duration, and specific requirements..."
-          className="bg-surface-container-low p-4"
+          className="bg-surface-container-low"
         />
       </Field>
       <Button type="submit" fullWidth size="lg" disabled={pending}>

@@ -7,14 +7,6 @@ import { ShowHero } from "@/features/shows/components/ShowHero";
 
 export const metadata: Metadata = { title: "Promoter Resources" };
 
-function requestHref(label: string) {
-  const subject = encodeURIComponent(`Request: ${label} — Afrikan Warriors`);
-  const body = encodeURIComponent(
-    `Hello Afrikan Warriors,\n\nPlease send the ${label} for a professional booking enquiry.\n\nVenue / organisation:\nDate:\n`,
-  );
-  return `mailto:${site.email}?subject=${subject}&body=${body}`;
-}
-
 export default function PromotersPage() {
   return (
     <>
@@ -62,7 +54,12 @@ export default function PromotersPage() {
                   {item.format}
                 </p>
               </div>
-              <Button href={requestHref(item.label)} variant="ghost">
+              <Button
+                type="button"
+                variant="ghost"
+                disabled
+                className="pointer-events-none cursor-not-allowed opacity-50 grayscale border-on-surface-variant/30 text-on-surface-variant hover:translate-y-0 hover:bg-transparent"
+              >
                 Request ↓
               </Button>
             </li>

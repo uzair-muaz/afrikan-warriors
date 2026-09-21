@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { Icon } from "@/components/ui/Icon";
 import { youtubeEmbedSrc } from "@/constants/media";
+import { cn } from "@/lib/cn";
 
 type TrailerPlaceholderProps = {
   image: string;
@@ -24,6 +25,7 @@ export function TrailerPlaceholder({
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const titleId = useId();
+  const ready = Boolean(videoId);
 
   useEffect(() => {
     setMounted(true);
@@ -47,34 +49,66 @@ export function TrailerPlaceholder({
       <CoverImage
         src={image}
         alt={alt}
-        className="opacity-50 group-hover:opacity-30 vignette"
+        className={cn(
+          "vignette",
+          ready
+            ? "opacity-50 group-hover:opacity-30"
+            : "opacity-40 grayscale",
+        )}
       />
+      {ready ? null : <div className="absolute inset-0 bg-stage/55" />}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-20 h-20 rounded-full border-2 border-primary flex items-center justify-center bg-background/50 backdrop-blur-sm group-hover:scale-110 transition-[scale] duration-700 ease-in-out gold-glow">
-          <Icon name="play_arrow" filled className="text-primary text-4xl ml-2" />
+        <div
+          className={cn(
+            "w-20 h-20 rounded-full border-2 flex items-center justify-center bg-background/50 backdrop-blur-sm",
+            ready
+              ? "border-primary group-hover:scale-110 transition-[scale] duration-700 ease-in-out gold-glow"
+              : "border-on-surface-variant/40",
+          )}
+        >
+          <Icon
+            name="play_arrow"
+            filled
+            className={cn(
+              "text-4xl ml-2",
+              ready ? "text-primary" : "text-on-surface-variant/50",
+            )}
+          />
         </div>
       </div>
-      {label ? (
-        <p className="absolute bottom-6 left-6 font-label-caps text-label-caps text-on-surface z-10">
-          {label}
+      {label || !ready ? (
+        <p
+          className={cn(
+            "absolute bottom-6 left-6 font-label-caps text-label-caps z-10 uppercase tracking-widest",
+            ready ? "text-on-surface" : "text-on-surface-variant/70",
+          )}
+        >
+          {ready ? label : label || "Coming soon"}
         </p>
       ) : null}
     </>
   );
 
+  const frameClass = cn(
+    "relative w-full aspect-video overflow-hidden",
+    ready
+      ? "border border-primary/20 bg-surface-container-lowest group text-left"
+      : "border border-primary/10 bg-surface-container-lowest pointer-events-none cursor-not-allowed",
+  );
+
   return (
     <>
-      {videoId ? (
+      {ready ? (
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="relative w-full aspect-video border border-primary/20 bg-surface-container-lowest overflow-hidden group text-left"
+          className={frameClass}
           aria-label={videoTitle}
         >
           {inner}
         </button>
       ) : (
-        <div className="relative w-full aspect-video border border-primary/20 bg-surface-container-lowest overflow-hidden group">
+        <div className={frameClass} aria-disabled="true">
           {inner}
         </div>
       )}
@@ -85,7 +119,7 @@ export function TrailerPlaceholder({
               role="dialog"
               aria-modal="true"
               aria-labelledby={titleId}
-              className="fixed inset-0 z-[100] flex items-center justify-center bg-void/95 p-4 md:p-10"
+              className="fixed inset-0 z-100 flex items-center justify-center bg-void/95 p-4 md:p-10"
               onClick={() => setOpen(false)}
             >
               <button

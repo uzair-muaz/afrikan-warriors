@@ -183,7 +183,11 @@ export const tokomileTechnical = [
   { label: "Height", value: "Minimum 4m ceiling clearance" },
 ];
 
-export const regularElements: { icon: IconName; title: string; body: string }[] = [
+export const regularElements: {
+  icon: IconName;
+  title: string;
+  body: string;
+}[] = [
   {
     icon: "group",
     title: "Human Pyramids",
