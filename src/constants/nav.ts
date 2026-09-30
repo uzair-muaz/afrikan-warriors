@@ -10,14 +10,17 @@ export const site = {
   whatsapp: "+",
 } as const;
 
+export type NavChild = { href: string; label: string };
+
 export type NavItem = {
-  href: string;
+  href?: string;
   label: string;
-  match?: "exact" | "prefix" | "shows";
-  children?: { href: string; label: string }[];
+  match?: "exact" | "prefix" | "shows" | "children";
+  children?: NavChild[];
 };
 
-export const navItems: NavItem[] = [
+/** The company. These stay in the main row. */
+export const primaryNav: NavItem[] = [
   {
     href: "/#shows",
     label: "Shows",
@@ -27,29 +30,55 @@ export const navItems: NavItem[] = [
       label: show.title,
     })),
   },
-  { href: "/about", label: "About", match: "prefix" },
-  { href: "/media", label: "Media", match: "prefix" },
-  { href: "/workshops", label: "Workshops", match: "prefix" },
-  { href: "/promoters", label: "For Promoters", match: "prefix" },
-  { href: "/faq", label: "FAQ", match: "prefix" },
-  { href: "/#inquiry", label: "Contact" },
+  {
+    label: "Company",
+    match: "children",
+    children: [
+      { href: "/about", label: "About" },
+      { href: "/media", label: "Media" },
+      { href: "/workshops", label: "Workshops" },
+      { href: "/tour", label: "Tour" },
+      { href: "/team", label: "AW-Team" },
+    ],
+  },
 ];
 
-export const footerExplore = [
-  { href: "/", label: "Home" },
-  { href: "/#shows", label: "Shows" },
-  { href: "/about", label: "About" },
-  { href: "/media", label: "Media" },
-  { href: "/acts", label: "Acts" },
-  { href: "/workshops", label: "Workshops" },
-  { href: "/team", label: "AW-Team" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/promoters", label: "For Promoters" },
-] as const;
+/** Audience links. Quieter, so they don't compete with the shows. */
+export const utilityNav: NavItem[] = [
+  { href: "/shop", label: "Shop", match: "prefix" },
+  { href: "/support", label: "Support", match: "prefix" },
+  { href: "/promoters", label: "Promoters", match: "prefix" },
+];
 
-export const footerLegal = [
-  { href: "/promoters", label: "Press Kit" },
-  { href: "/#inquiry", label: "Contact" },
+export const footerColumns = [
+  {
+    title: "Shows",
+    links: featuredShows.map((show) => ({
+      href: show.href,
+      label: show.title,
+    })),
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About" },
+      { href: "/media", label: "Media" },
+      { href: "/workshops", label: "Workshops" },
+      { href: "/tour", label: "Tour" },
+      { href: "/acts", label: "Acts" },
+      { href: "/team", label: "AW-Team" },
+      { href: "/faq", label: "FAQ" },
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      { href: "/shop", label: "Shop" },
+      { href: "/support", label: "Support Us" },
+      { href: "/promoters", label: "For Promoters" },
+      { href: site.inquiryHref, label: "Contact" },
+    ],
+  },
 ] as const;
 
 export const footerSocial: {

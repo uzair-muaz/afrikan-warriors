@@ -62,7 +62,13 @@
   "regularShow": ["/media/v1/source/08-orange-pyramid.jpg"],
   "pages": {
     "mediaHero": "/media/v1/pages/media-hero.png",
-    "faqHero": "/media/v1/pages/faq-hero.png"
+    "faqHero": "/media/v1/pages/faq-hero.png",
+    "tourHero": "/media/v1/source/10-company-audience.jpg",
+    "tourEnergy": "/media/v1/source/05-tumbling-live.jpg",
+    "tourCompany": "/media/v1/source/01-pyramid.jpg",
+    "supportHero": "/media/v1/source/06-freedom-vocal.jpg",
+    "supportCompany": "/media/v1/home/ensemble.png",
+    "shopHero": "/media/v1/source/08-orange-pyramid.jpg"
   },
   "source": [
     "/media/v1/source/01-pyramid.jpg",

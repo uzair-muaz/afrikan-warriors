@@ -189,6 +189,9 @@ function SelectField({
   placeholder = "Select",
   fieldVariant = "boxed",
   className,
+  defaultValue = "",
+  value: valueProp,
+  onValueChange,
 }: {
   id?: string;
   name: string;
@@ -196,8 +199,17 @@ function SelectField({
   placeholder?: string;
   fieldVariant?: FieldVariant;
   className?: string;
+  defaultValue?: string;
+  value?: string;
+  onValueChange?: (value: string) => void;
 }) {
-  const [value, setValue] = React.useState("");
+  const [uncontrolled, setUncontrolled] = React.useState(defaultValue);
+  const value = valueProp ?? uncontrolled;
+
+  function setValue(next: string) {
+    onValueChange?.(next);
+    if (valueProp === undefined) setUncontrolled(next);
+  }
 
   return (
     <>

@@ -25,9 +25,14 @@ export function KaribuCloser() {
         <p className="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-10">
           Karibu Sana.
         </p>
-        <Button href={site.inquiryHref} size="lg">
-          Bring Afrikan Warriors to Your Stage →
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href={site.inquiryHref} size="lg">
+            Bring Afrikan Warriors to Your Stage →
+          </Button>
+          <Button href="/support" variant="ghost" size="lg">
+            Support the Journey →
+          </Button>
+        </div>
       </div>
     </section>
   );

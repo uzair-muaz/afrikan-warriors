@@ -5,13 +5,28 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
-import { navItems, site, type NavItem } from "@/constants/nav";
+import {
+  primaryNav,
+  site,
+  utilityNav,
+  type NavItem,
+} from "@/constants/nav";
 import { cn } from "@/lib/cn";
 
-function isActive(pathname: string, href: string, match?: string) {
-  if (match === "shows") return pathname.startsWith("/shows");
-  if (match === "prefix") {
-    const path = href.split("#")[0];
+function pathOf(href: string) {
+  return href.split("#")[0];
+}
+
+function isActive(pathname: string, item: NavItem) {
+  if (item.match === "shows") return pathname.startsWith("/shows");
+  if (item.match === "children") {
+    return (item.children ?? []).some((child) => {
+      const path = pathOf(child.href);
+      return path !== "/" && pathname.startsWith(path);
+    });
+  }
+  if (item.match === "prefix" && item.href) {
+    const path = pathOf(item.href);
     return path !== "/" && pathname.startsWith(path);
   }
   return false;
@@ -92,33 +107,47 @@ function HeaderBar({
             : "bg-transparent border-primary/20 backdrop-blur-md",
         )}
       >
-        <div className="flex justify-between items-center gap-3 px-margin-mobile md:px-margin-desktop py-3 lg:py-6 max-w-container-max mx-auto">
+        <div className="flex items-center gap-6 px-margin-mobile md:px-margin-desktop py-3 lg:py-5 max-w-container-max mx-auto">
           <Link
             href="/"
-            className="font-display-lg text-lg sm:text-xl lg:text-headline-md tracking-tighter text-primary hover:opacity-80 transition-opacity whitespace-nowrap min-w-0"
+            className="font-display-lg text-lg sm:text-xl lg:text-2xl tracking-tighter text-primary hover:opacity-80 transition-opacity whitespace-nowrap"
             onClick={() => setOpen(false)}
           >
             {site.name}
           </Link>
 
           <nav
-            className="hidden lg:flex items-center gap-5 xl:gap-8 font-label-caps text-label-caps"
+            className="hidden lg:flex flex-1 items-center font-label-caps text-label-caps"
             aria-label="Primary"
           >
-            {navItems.map((item) => (
-              <DesktopNavItem key={item.label} item={item} pathname={pathname} />
-            ))}
+            <div className="flex items-center gap-7 xl:gap-9">
+              {primaryNav.map((item) => (
+                <DesktopNavItem
+                  key={item.label}
+                  item={item}
+                  pathname={pathname}
+                />
+              ))}
+            </div>
+            <div className="ml-auto flex items-center gap-5 xl:gap-7">
+              {utilityNav.map((item) => (
+                <DesktopNavItem
+                  key={item.label}
+                  item={item}
+                  pathname={pathname}
+                  quiet
+                />
+              ))}
+              <span aria-hidden className="h-4 w-px bg-primary/40" />
+              <Button href={site.inquiryHref} size="md">
+                Book Us
+              </Button>
+            </div>
           </nav>
-
-          <div className="hidden lg:block">
-            <Button href={site.inquiryHref} size="md">
-              Book Us
-            </Button>
-          </div>
 
           <button
             type="button"
-            className="lg:hidden flex items-center justify-center size-11 -mr-2 text-primary"
+            className="lg:hidden ml-auto flex items-center justify-center size-11 -mr-2 text-primary"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -138,38 +167,24 @@ function HeaderBar({
             className="flex-1 overflow-y-auto overscroll-contain px-margin-mobile pt-6 pb-4 font-label-caps text-label-caps"
             aria-label="Mobile"
           >
-            {navItems.map((item) => {
-              const active = isActive(pathname, item.href, item.match);
-              return (
-                <div key={item.label} className="border-b border-primary/10">
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "py-3.5 block",
-                      active ? "text-primary" : "text-on-surface",
-                    )}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.children ? (
-                    <ul className="pb-3 flex flex-col gap-0.5 border-l border-primary/20 ml-1 pl-4">
-                      {item.children.map((child) => (
-                        <li key={child.href}>
-                          <Link
-                            href={child.href}
-                            className="py-1.5 text-on-surface-variant hover:text-primary block text-[0.7rem] tracking-[0.14em]"
-                            onClick={() => setOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </div>
-              );
-            })}
+            {primaryNav.map((item) => (
+              <MobileGroup
+                key={item.label}
+                item={item}
+                pathname={pathname}
+                onNavigate={() => setOpen(false)}
+              />
+            ))}
+            <div className="mt-8 border-t border-primary/20 pt-4">
+              {utilityNav.map((item) => (
+                <MobileGroup
+                  key={item.label}
+                  item={item}
+                  pathname={pathname}
+                  onNavigate={() => setOpen(false)}
+                />
+              ))}
+            </div>
           </nav>
           <div
             className="shrink-0 px-margin-mobile pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] border-t border-gold-border"
@@ -188,47 +203,129 @@ function HeaderBar({
 function DesktopNavItem({
   item,
   pathname,
+  quiet = false,
 }: {
   item: NavItem;
   pathname: string;
+  quiet?: boolean;
 }) {
-  const active = isActive(pathname, item.href, item.match);
+  const active = isActive(pathname, item);
   const linkClass = cn(
-    "transition-colors duration-500 ease-in-out hover:text-primary hover:opacity-80 inline-flex items-center gap-1",
+    "transition-colors duration-500 ease-in-out hover:text-primary inline-flex items-center gap-1",
     active
-      ? "text-primary border-b-2 border-primary pb-1"
-      : "text-on-surface-variant",
+      ? "text-primary"
+      : quiet
+        ? "text-on-surface-variant/80"
+        : "text-on-surface",
   );
 
   if (!item.children) {
     return (
-      <Link href={item.href} className={linkClass}>
+      <Link href={item.href ?? "/"} className={linkClass}>
+        {item.label}
+      </Link>
+    );
+  }
+
+  const trigger = (
+    <>
+      {item.label}
+      <Icon name="expand_more" className="text-sm" />
+    </>
+  );
+
+  return (
+    <div className="relative group">
+      {item.href ? (
+        <Link href={item.href} className={linkClass} aria-haspopup="true">
+          {trigger}
+        </Link>
+      ) : (
+        <button type="button" className={linkClass} aria-haspopup="true">
+          {trigger}
+        </button>
+      )}
+      <ul className="absolute left-0 top-full pt-4 hidden group-hover:block group-focus-within:block min-w-52 z-50">
+        <li>
+          <ul className="bg-stage border border-gold-border py-3 px-2 flex flex-col shadow-lg">
+            {item.children.map((child) => {
+              const childActive =
+                pathOf(child.href) !== "/" &&
+                pathname.startsWith(pathOf(child.href));
+              return (
+                <li key={child.href}>
+                  <Link
+                    href={child.href}
+                    className={cn(
+                      "block px-3 py-2.5 whitespace-nowrap hover:text-primary hover:bg-primary/10",
+                      childActive ? "text-primary" : "text-on-surface-variant",
+                    )}
+                  >
+                    {child.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+function MobileGroup({
+  item,
+  pathname,
+  onNavigate,
+}: {
+  item: NavItem;
+  pathname: string;
+  onNavigate: () => void;
+}) {
+  const active = isActive(pathname, item);
+
+  if (!item.children) {
+    return (
+      <Link
+        href={item.href ?? "/"}
+        className={cn(
+          "py-3.5 block border-b border-primary/10",
+          active ? "text-primary" : "text-on-surface",
+        )}
+        onClick={onNavigate}
+      >
         {item.label}
       </Link>
     );
   }
 
   return (
-    <div className="relative group">
-      <Link href={item.href} className={linkClass}>
-        {item.label}
-        <Icon name="expand_more" className="text-sm" />
-      </Link>
-      <ul className="absolute left-0 top-full pt-3 hidden group-hover:block group-focus-within:block min-w-56">
-        <li>
-          <ul className="bg-stage border border-gold-border py-3 px-4 flex flex-col gap-3 shadow-lg">
-            {item.children.map((child) => (
-              <li key={child.href}>
-                <Link
-                  href={child.href}
-                  className="text-on-surface-variant hover:text-primary block whitespace-nowrap"
-                >
-                  {child.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </li>
+    <div className="border-b border-primary/10 py-3">
+      {item.href ? (
+        <Link
+          href={item.href}
+          className={cn("block py-1", active ? "text-primary" : "text-on-surface")}
+          onClick={onNavigate}
+        >
+          {item.label}
+        </Link>
+      ) : (
+        <p className={cn("py-1", active ? "text-primary" : "text-on-surface")}>
+          {item.label}
+        </p>
+      )}
+      <ul className="mt-1 flex flex-col border-l border-primary/20 ml-1 pl-4">
+        {item.children.map((child) => (
+          <li key={child.href}>
+            <Link
+              href={child.href}
+              className="py-1.5 text-on-surface-variant hover:text-primary block text-[0.7rem] tracking-[0.14em]"
+              onClick={onNavigate}
+            >
+              {child.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
