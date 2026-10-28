@@ -11,7 +11,14 @@ import {
 import { InquiryForm } from "@/features/inquiry/InquiryForm";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 
-export const metadata: Metadata = { title: "Workshops & Events" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "Workshops",
+  description:
+    "Workshops and events with Afrikan Warriors. Acrobatics, dance and performance for groups and venues.",
+  path: "/workshops",
+});
 
 export default function WorkshopsPage() {
   return (

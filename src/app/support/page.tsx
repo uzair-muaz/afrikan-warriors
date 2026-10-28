@@ -2,19 +2,33 @@ import type { Metadata } from "next";
 import { CoverImage } from "@/components/ui/CoverImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import images from "@/constants/images.json";
-import { supportUses } from "@/constants/support";
+import { support, supportUses } from "@/constants/support";
 import { SupportForm } from "@/features/support/SupportForm";
 import { ShowHero } from "@/features/shows/components/ShowHero";
+import { isStripeConfigured } from "@/lib/payments/config";
 
-export const metadata: Metadata = { title: "Support Afrikan Warriors" };
+import { pageSeo } from "@/lib/seo";
 
-export default function SupportPage() {
+export const metadata: Metadata = pageSeo({
+  title: "Support",
+  description:
+    "A voluntary contribution toward Afrikan Warriors productions, performers, costumes, equipment and touring.",
+  path: "/support",
+});
+
+export default async function SupportPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ cancelled?: string | string[] }>;
+}) {
+  const query = await searchParams;
+  const cancelled = (Array.isArray(query.cancelled) ? query.cancelled[0] : query.cancelled) === "1";
   return (
     <>
       <ShowHero
         image={images.pages.supportHero}
         alt="Afrikan Warriors performers on stage under gold light"
-        eyebrow="Support Afrikan Warriors"
+        eyebrow={support.title}
         title="Keep the Spirit Moving."
         lead="Support the next generation of Afrikan Warriors."
         subtitle="More than three decades of African acrobatics, theatre, dance, music and storytelling. Your support builds the next chapter."
@@ -49,7 +63,10 @@ export default function SupportPage() {
             </ul>
           </div>
           <div className="lg:col-span-7">
-            <SupportForm />
+            <SupportForm
+              paymentsReady={isStripeConfigured()}
+              cancelled={cancelled}
+            />
           </div>
         </div>
       </section>

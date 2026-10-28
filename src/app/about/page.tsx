@@ -6,8 +6,14 @@ import { site } from "@/constants/nav";
 import { CreditsBar } from "@/features/home/components/CreditsBar";
 import { StoryTimeline } from "@/features/home/components/StoryTimeline";
 import { ShowHero } from "@/features/shows/components/ShowHero";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "About Afrikan Warriors" };
+export const metadata: Metadata = pageSeo({
+  title: "About",
+  description:
+    "The story of Afrikan Warriors, a Tanzanian-born company based in the UK, with more than 30 years of African acrobatics, theatre and live entertainment.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
@@ -42,7 +48,7 @@ export default function AboutPage() {
               For Promoters <span className="text-primary">&amp; Venues</span>
             </>
           }
-          description="Request technical and promotional materials. We will send what your venue needs to book Afrikan Warriors with confidence."
+          description="Download the risk assessment, logo and insurance letter, or ask the team for a technical rider and press material."
           className="mb-12"
         />
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">

@@ -10,7 +10,14 @@ import { tourStages } from "@/constants/tour";
 import { CreditsBar } from "@/features/home/components/CreditsBar";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 
-export const metadata: Metadata = { title: "Tour" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "Tour",
+  description:
+    "Circuses, resorts and festivals Afrikan Warriors have performed with across the UK, Ireland and beyond.",
+  path: "/tour",
+});
 
 export default function TourPage() {
   return (

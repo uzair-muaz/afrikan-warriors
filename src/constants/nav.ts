@@ -74,8 +74,9 @@ export const footerColumns = [
     title: "Connect",
     links: [
       { href: "/shop", label: "Shop" },
-      { href: "/support", label: "Support Us" },
+      { href: "/support", label: "Support Afrikan Warriors" },
       { href: "/promoters", label: "For Promoters" },
+      { href: "/legal", label: "Legal" },
       { href: site.inquiryHref, label: "Contact" },
     ],
   },

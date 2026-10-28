@@ -138,6 +138,7 @@ export function ShopCatalogue() {
           </p>
         ) : (
           <form action={action} className="flex flex-col gap-4">
+            <fieldset disabled={pending} className="flex min-w-0 flex-col gap-4 border-0 p-0">
             <input type="hidden" name="items" value={JSON.stringify(cart)} />
             <ul className="divide-y divide-primary/15 border-y border-primary/15 mb-2">
               {cart.map((line, index) => {
@@ -171,7 +172,7 @@ export function ShopCatalogue() {
                     <button
                       type="button"
                       onClick={() => remove(index)}
-                      className="font-label-caps text-xs uppercase tracking-widest text-primary"
+                      className="font-label-caps text-xs uppercase tracking-widest text-primary disabled:cursor-not-allowed"
                     >
                       Remove
                     </button>
@@ -247,6 +248,7 @@ export function ShopCatalogue() {
                 {pending ? "Sending…" : "Request this Order"}
               </Button>
             </div>
+            </fieldset>
           </form>
         )}
       </section>

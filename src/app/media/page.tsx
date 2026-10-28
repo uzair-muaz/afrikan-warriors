@@ -2,21 +2,24 @@ import type { Metadata } from "next";
 import { GalleryView } from "@/features/gallery/components/GalleryView";
 import { MediaArchives } from "@/features/gallery/components/MediaArchives";
 import { MediaCloser } from "@/features/gallery/components/MediaCloser";
-import { MediaOnScreen } from "@/features/gallery/components/MediaOnScreen";
 import { MediaPress } from "@/features/gallery/components/MediaPress";
-import {
-  MediaFeaturedShowreel,
-  MediaVideos,
-} from "@/features/gallery/components/MediaVideos";
+import { MediaVideos } from "@/features/gallery/components/MediaVideos";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 import images from "@/constants/images.json";
 
-export const metadata: Metadata = { title: "Media" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "Media",
+  description:
+    "Photographs and video of Afrikan Warriors on stage, plus the logo for programmes and press.",
+  path: "/media",
+});
 
 const jumps = [
   { href: "#photos", label: "Photos" },
   { href: "#videos", label: "Videos" },
-  { href: "#screen", label: "Television & Press" },
+  { href: "#press", label: "Press" },
 ] as const;
 
 export default function MediaPage() {
@@ -46,10 +49,8 @@ export default function MediaPage() {
           ))}
         </nav>
       </ShowHero>
-      <MediaFeaturedShowreel />
       <GalleryView />
       <MediaVideos />
-      <MediaOnScreen />
       <MediaArchives />
       <MediaPress />
       <MediaCloser />

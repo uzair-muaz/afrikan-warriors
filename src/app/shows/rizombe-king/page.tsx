@@ -10,7 +10,14 @@ import { CtaBanner } from "@/features/shows/components/CtaBanner";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 import { TrailerPlaceholder } from "@/features/shows/components/TrailerPlaceholder";
 
-export const metadata: Metadata = { title: "RIZOMBE KING" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "Rizombe King",
+  description:
+    "An original production of African storytelling with acrobatics, dance, music, drama and physical performance.",
+  path: "/shows/rizombe-king",
+});
 
 const experience: {
   title: string;

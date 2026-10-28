@@ -8,7 +8,14 @@ import { showImages } from "@/constants/shows";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 import { TrailerPlaceholder } from "@/features/shows/components/TrailerPlaceholder";
 
-export const metadata: Metadata = { title: "FREEDOM" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "Freedom",
+  description:
+    "Acrobatics, dance, theatre, rhythm and storytelling, built through decades of international touring.",
+  path: "/shows/freedom",
+});
 
 const pillars: {
   n: string;

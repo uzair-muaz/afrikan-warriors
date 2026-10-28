@@ -1,6 +1,11 @@
 "use server";
 
+import { redirect } from "next/navigation";
 import { deliveryCountries, shopProducts } from "@/constants/shop";
+import { sendInboxEmail } from "@/lib/email";
+import { poundsToPence } from "@/lib/money";
+import { allowFormSubmit, rateLimitMessage } from "@/lib/rate-limit";
+import { createShopCheckout, createSupportCheckout, shopIsOpen } from "@/lib/payments/checkout";
 
 export type AudienceState = {
   ok: boolean;
@@ -26,25 +31,36 @@ export async function submitSupport(
   _prev: AudienceState,
   formData: FormData,
 ): Promise<AudienceState> {
-  const { error } = readEmail(formData);
+  const { name, email, error } = readEmail(formData);
   if (error) return { ok: false, error };
 
   const preset = String(formData.get("amount") ?? "").trim();
   const other = String(formData.get("otherAmount") ?? "").trim();
   const amount = preset === "other" ? other : preset;
+  const amountPence = poundsToPence(amount);
 
-  if (!amount || Number(amount) <= 0 || Number.isNaN(Number(amount))) {
-    return { ok: false, error: "Choose a support amount." };
+  if (amountPence == null) {
+    return { ok: false, error: "Choose an amount from £1 to £10,000." };
   }
 
-  return { ok: true };
+  const note = String(formData.get("note") ?? "").trim().slice(0, 450);
+
+  if (!(await allowFormSubmit("support"))) {
+    return { ok: false, error: rateLimitMessage };
+  }
+
+  const result = await createSupportCheckout({ name, email, note, amountPence });
+
+  if ("error" in result) return { ok: false, error: result.error };
+
+  redirect(`/support/checkout?session_id=${encodeURIComponent(result.sessionId)}`);
 }
 
 export async function submitShopInterest(
   _prev: AudienceState,
   formData: FormData,
 ): Promise<AudienceState> {
-  const { error } = readEmail(formData);
+  const { name, email, error } = readEmail(formData);
   if (error) return { ok: false, error };
 
   let items: { id?: string; size?: string }[] = [];
@@ -74,5 +90,103 @@ export async function submitShopInterest(
     return { ok: false, error: "Choose a delivery country." };
   }
 
+  const phone = String(formData.get("phone") ?? "").trim();
+  const line2 = String(formData.get("line2") ?? "").trim();
+  const county = String(formData.get("county") ?? "").trim();
+  const pieces = valid
+    .map((item) => {
+      const product = shopProducts.find((entry) => entry.id === item.id);
+      const size = item.size ? ` (${item.size})` : "";
+      return `${product?.name ?? item.id}${size}`;
+    })
+    .join("\n");
+
+  const address = [
+    line1,
+    line2,
+    city,
+    county,
+    postcode,
+    country,
+  ]
+    .filter(Boolean)
+    .join(", ");
+
+  if (!(await allowFormSubmit("shop-interest"))) {
+    return { ok: false, error: rateLimitMessage };
+  }
+
+  const sent = await sendInboxEmail({
+    subject: `Shop request from ${name.replace(/[\r\n]+/g, " ").slice(0, 80)}`,
+    eyebrow: "Shop request",
+    title: "New shop interest",
+    intro: "A visitor requested pieces from the shop. Nothing has been charged.",
+    rows: [
+      { label: "Name", value: name },
+      { label: "Email", value: email },
+      ...(phone ? [{ label: "Phone", value: phone }] : []),
+      { label: "Pieces", value: pieces },
+      { label: "Delivery", value: address },
+    ],
+    replyTo: email,
+  });
+
+  if (!sent.ok) return { ok: false, error: sent.error };
+
   return { ok: true };
+}
+
+type CartRequest = { id?: string; size?: string };
+
+export async function startShopCheckout(
+  _prev: AudienceState,
+  formData: FormData,
+): Promise<AudienceState> {
+  if (!shopIsOpen()) {
+    return { ok: false, error: "The shop is not open yet." };
+  }
+
+  const { name, email, error } = readEmail(formData);
+  if (error) return { ok: false, error };
+
+  let items: CartRequest[] = [];
+  try {
+    const parsed = JSON.parse(String(formData.get("items") ?? "[]")) as unknown;
+    items = Array.isArray(parsed) ? parsed : [];
+  } catch {
+    items = [];
+  }
+
+  const known = new Map(shopProducts.map((product) => [product.id, product]));
+  const grouped = new Map<string, { id: string; size?: string; quantity: number }>();
+
+  for (const item of items) {
+    if (!item?.id || !known.has(item.id)) continue;
+    const product = known.get(item.id);
+    const size = product?.sizes ? String(item.size ?? "") : undefined;
+    const key = `${item.id}:${size ?? ""}`;
+    const current = grouped.get(key);
+    if (current) current.quantity += 1;
+    else grouped.set(key, { id: item.id, size, quantity: 1 });
+  }
+
+  const lines = [...grouped.values()];
+  const units = lines.reduce((sum, line) => sum + line.quantity, 0);
+
+  if (lines.length === 0) {
+    return { ok: false, error: "Add at least one piece before checkout." };
+  }
+
+  if (units > 20) {
+    return { ok: false, error: "An order can include up to 20 pieces." };
+  }
+
+  if (!(await allowFormSubmit("shop-checkout"))) {
+    return { ok: false, error: rateLimitMessage };
+  }
+
+  const result = await createShopCheckout({ name, email, lines });
+  if ("error" in result) return { ok: false, error: result.error };
+
+  redirect(result.url);
 }

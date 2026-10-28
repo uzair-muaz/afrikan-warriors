@@ -6,7 +6,14 @@ import images from "@/constants/images.json";
 import { site } from "@/constants/nav";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 
-export const metadata: Metadata = { title: "Frequently Asked Questions" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "FAQ",
+  description:
+    "Answers on booking Afrikan Warriors, stage requirements, and what to expect from a performance.",
+  path: "/faq",
+});
 
 const faqHero = images.pages.faqHero;
 

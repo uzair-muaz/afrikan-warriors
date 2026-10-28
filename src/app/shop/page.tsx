@@ -2,10 +2,19 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import images from "@/constants/images.json";
+import { ComingSoonModal } from "@/features/shop/ComingSoonModal";
 import { ShopCatalogue } from "@/features/shop/ShopCatalogue";
 import { ShowHero } from "@/features/shows/components/ShowHero";
+import { shopIsOpen } from "@/lib/payments/checkout";
 
-export const metadata: Metadata = { title: "Shop" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "Shop",
+  description:
+    "Official Afrikan Warriors merchandise. The shop opens for UK and international orders when the collection is ready.",
+  path: "/shop",
+});
 
 const showMerch = [
   "Tokomile",
@@ -18,6 +27,7 @@ const showMerch = [
 export default function ShopPage() {
   return (
     <>
+      {shopIsOpen() ? null : <ComingSoonModal />}
       <ShowHero
         image={images.pages.shopHero}
         alt="Afrikan Warriors in a human pyramid under warm stage light"

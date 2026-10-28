@@ -8,7 +8,14 @@ import { showImages } from "@/constants/shows";
 import { CtaBanner } from "@/features/shows/components/CtaBanner";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 
-export const metadata: Metadata = { title: "AFRICAN PIRATE" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "African Pirate",
+  description:
+    "A family adventure where pirates meet African music, dance, comedy and acrobatics.",
+  path: "/shows/african-pirate",
+});
 
 const cards: { icon: IconName; title: string; body: string }[] = [
   {

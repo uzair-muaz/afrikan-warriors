@@ -10,6 +10,9 @@ type VideoLightboxProps = {
   videoId: string;
   title: string;
   label: string;
+  /** Seconds. Used when only part of a long film should play. */
+  start?: number;
+  end?: number;
   className?: string;
   children?: ReactNode;
 };
@@ -18,6 +21,8 @@ export function VideoLightbox({
   videoId,
   title,
   label,
+  start,
+  end,
   className,
   children,
 }: VideoLightboxProps) {
@@ -89,7 +94,7 @@ export function VideoLightbox({
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"
-                    src={`${youtubeEmbedSrc(videoId)}&autoplay=1`}
+                    src={`${youtubeEmbedSrc(videoId, { start, end })}&autoplay=1`}
                     title={title}
                   />
                 </div>

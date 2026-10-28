@@ -5,9 +5,17 @@ import { VideoLightbox } from "@/components/ui/VideoLightbox";
 import { youtubeVideos } from "@/constants/media";
 import { regularChecklist, regularElements, showImages } from "@/constants/shows";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { LiveFeatures } from "@/features/shows/components/LiveFeatures";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 
-export const metadata: Metadata = { title: "Afrikan Warriors Live" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "Afrikan Warriors Live",
+  description:
+    "The original high-energy African acrobatics act for galas, festivals, theatres and corporate events.",
+  path: "/shows/regular-show",
+});
 
 export default function RegularShowPage() {
   return (
@@ -68,6 +76,8 @@ export default function RegularShowPage() {
           </div>
         </div>
       </section>
+
+      <LiveFeatures />
 
       <section className="py-stack-xl px-margin-mobile md:px-margin-desktop relative overflow-hidden flex items-center justify-center min-h-[512px]">
         <div className="absolute inset-0 bg-surface-container-lowest">

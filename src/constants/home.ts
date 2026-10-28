@@ -185,30 +185,42 @@ export const promoterBookingTypes: { icon: IconName; label: string }[] = [
 
 export const promoterLinks = [
   { label: "Promoter Resources", href: "/promoters" },
-  { label: "Technical Requirements", href: "/promoters" },
-  { label: "Risk & Safety Information", href: "/promoters" },
+  { label: "Risk & Safety", href: "/promoters#documents" },
+  { label: "Company Information", href: "/legal" },
   { label: "Speak to Our Team", href: "/#inquiry" },
 ] as const;
 
 export const promoterAssets = [
-  "Technical Rider",
-  "Company Biography",
-  "Press Photos",
-  "Logos",
-  "Risk Assessments",
-  "Insurance Information",
-  "Promotional Material",
+  "Risk Assessment 2026/27",
+  "Company Logo",
+  "Insurance Confirmation",
 ] as const;
 
 export const promoterResources = [
-  { label: "Company Profile", format: "PDF" },
-  { label: "Production Catalogue", format: "PDF" },
-  { label: "Press Kit", format: "ZIP / PDF" },
-  { label: "Technical Rider", format: "PDF" },
-  { label: "Stage Requirements", format: "PDF" },
-  { label: "Risk Assessments", format: "PDF" },
-  { label: "Public Liability Insurance", format: "PDF" },
-  { label: "High-Resolution Press Images", format: "ZIP" },
+  {
+    label: "Risk Assessment 2026/27",
+    format: "DOCX",
+    note: "Stage hazards and the controls in place for the 2026/27 season. Reviewed 20 October 2026.",
+    href: "/documents/promoters/afrikan-warriors-risk-assessment-2026-27.docx",
+  },
+  {
+    label: "Company Logo",
+    format: "PNG",
+    note: "Transparent logo for programmes, websites and print.",
+    href: "/documents/promoters/afrikan-warriors-logo.png",
+  },
+  {
+    label: "Company Logo",
+    format: "JPG",
+    note: "The same logo on a black background.",
+    href: "/documents/promoters/afrikan-warriors-logo.jpg",
+  },
+  {
+    label: "Insurance Confirmation",
+    format: "PDF",
+    note: "To Whom It May Concern letter for policy STM3/2189. Policyholder: Rahim Saphy trading as Afrikan Warriors. Public liability £5,000,000. The period on this letter is 17 September 2024 to 16 September 2025.",
+    href: "/documents/promoters/showtime-insurance-confirmation.pdf",
+  },
 ] as const;
 
 export const budgetRanges = [

@@ -8,7 +8,14 @@ import { site } from "@/constants/nav";
 import { teamMembers } from "@/constants/team";
 import { ShowHero } from "@/features/shows/components/ShowHero";
 
-export const metadata: Metadata = { title: "Meet the AW-Team" };
+import { pageSeo } from "@/lib/seo";
+
+export const metadata: Metadata = pageSeo({
+  title: "The team",
+  description:
+    "The performers and directors of Afrikan Warriors, led by founder Rahim Saphy.",
+  path: "/team",
+});
 
 export default function TeamPage() {
   return (

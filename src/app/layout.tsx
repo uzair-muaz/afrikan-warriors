@@ -6,7 +6,9 @@ import { Header } from "@/components/layout/Header";
 import { ShutterIntro } from "@/components/layout/ShutterIntro";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { BackToTop } from "@/components/layout/BackToTop";
+import { CloudflareBeacon } from "@/components/analytics/CloudflareBeacon";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
+import { organizationJsonLd, pageSeo, publicSiteUrl } from "@/lib/seo";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 
@@ -31,13 +33,33 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "AFRIKAN WARRIORS - Extraordinary African Acrobatics",
-    template: "%s | AFRIKAN WARRIORS",
-  },
+const homeSeo = pageSeo({
+  title: "Afrikan Warriors | African acrobatics and live theatre",
   description:
-    "World-class African acrobatic performances combining breathtaking stunts, traditional dance, incredible balance, and audience interaction.",
+    "Tanzanian-born company based in Northern Ireland. African acrobatics, dance, theatre and live music for festivals, theatres and events in the UK and Ireland.",
+  path: "/",
+  absolute: true,
+});
+
+export const metadata: Metadata = {
+  ...homeSeo,
+  metadataBase: new URL(publicSiteUrl()),
+  title: {
+    default: "Afrikan Warriors | African acrobatics and live theatre",
+    template: "%s | Afrikan Warriors",
+  },
+  applicationName: "Afrikan Warriors",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -49,6 +71,12 @@ export default function RootLayout({
       className={`${anybody.variable} ${hanken.variable} ${spaceGrotesk.variable} h-full dark antialiased`}
     >
       <body className="min-h-full flex flex-col bg-stage font-body-md text-body-md text-on-surface">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd()).replaceAll("<", "\\u003c"),
+          }}
+        />
         <SmoothScroll />
         <ShutterIntro />
         <Header />
@@ -56,6 +84,7 @@ export default function RootLayout({
         <Footer />
         <BackToTop />
         <WhatsAppFloat />
+        <CloudflareBeacon />
       </body>
     </html>
   );

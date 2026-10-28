@@ -5,17 +5,27 @@ type YouTubeEmbedProps = {
   videoId: string;
   title: string;
   className?: string;
+  /** Seconds. Used when only part of a long film should play. */
+  start?: number;
+  end?: number;
 };
 
-export function YouTubeEmbed({ videoId, title, className }: YouTubeEmbedProps) {
+export function YouTubeEmbed({
+  videoId,
+  title,
+  className,
+  start,
+  end,
+}: YouTubeEmbedProps) {
   return (
     <div className={cn("w-full relative", className)}>
       <div className="aspect-video w-full bg-platform relative border-l border-primary/20 overflow-hidden">
         <iframe
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          loading="lazy"
           className="absolute top-0 left-0 w-full h-full z-10"
-          src={youtubeEmbedSrc(videoId)}
+          src={youtubeEmbedSrc(videoId, { start, end })}
           title={title}
         />
       </div>

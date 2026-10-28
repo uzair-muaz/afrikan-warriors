@@ -16,10 +16,14 @@ import {
 } from "@/constants/shows";
 import { CtaBanner } from "@/features/shows/components/CtaBanner";
 import { ShowHero } from "@/features/shows/components/ShowHero";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "TOKOMILE SHOW — Zaramu Kingdom",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Tokomile",
+  description:
+    "Flagship theatre production set in the kingdom of Zaramu, with rivalry, humour, celebration and African acrobatics, dance and live music.",
+  path: "/shows/tokomile",
+});
 
 export default function TokomilePage() {
   return (

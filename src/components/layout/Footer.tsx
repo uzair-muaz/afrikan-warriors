@@ -63,17 +63,25 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 pt-6 border-t border-primary/20 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-primary/20 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-on-surface-variant">
             © {new Date().getFullYear()} Afrikan Warriors Ltd. All rights
             reserved.
           </p>
-          <a
-            href={`mailto:${site.email}`}
-            className="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
-          >
-            {site.email}
-          </a>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link
+              href="/legal"
+              className="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant transition-colors hover:text-primary"
+            >
+              Legal
+            </Link>
+            <a
+              href={`mailto:${site.email}`}
+              className="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant transition-colors hover:text-primary"
+            >
+              {site.email}
+            </a>
+          </div>
         </div>
       </div>
     </footer>

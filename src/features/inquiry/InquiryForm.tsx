@@ -38,6 +38,8 @@ export function InquiryForm({ variant }: { variant: Variant }) {
   if (variant === "home") {
     return (
       <form action={action} className="space-y-8">
+        <fieldset disabled={pending} className="min-w-0 space-y-8 border-0 p-0">
+        <input type="hidden" name="source" value="Booking enquiry" />
         <FormError error={state.error} />
         <ol className="grid grid-cols-4 gap-3">
           {homeSteps.map((label, i) => (
@@ -189,6 +191,7 @@ export function InquiryForm({ variant }: { variant: Variant }) {
             </Button>
           )}
         </div>
+        </fieldset>
       </form>
     );
   }
@@ -196,6 +199,8 @@ export function InquiryForm({ variant }: { variant: Variant }) {
   if (variant === "workshops") {
     return (
       <form action={action} className="space-y-6">
+        <fieldset disabled={pending} className="min-w-0 space-y-6 border-0 p-0">
+        <input type="hidden" name="source" value="Workshop enquiry" />
         <FormError error={state.error} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Field label="Name / Organization" htmlFor="name">
@@ -247,12 +252,15 @@ export function InquiryForm({ variant }: { variant: Variant }) {
         <Button type="submit" fullWidth size="lg" disabled={pending}>
           {pending ? "Submitting…" : "Submit Inquiry"}
         </Button>
+        </fieldset>
       </form>
     );
   }
 
   return (
     <form action={action} className="space-y-6">
+      <fieldset disabled={pending} className="min-w-0 space-y-6 border-0 p-0">
+      <input type="hidden" name="source" value="Enquiry" />
       <FormError error={state.error} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Field label="Name / Organization" htmlFor="pkg-name" gold>
@@ -308,6 +316,7 @@ export function InquiryForm({ variant }: { variant: Variant }) {
       <Button type="submit" fullWidth size="lg" disabled={pending}>
         {pending ? "Submitting…" : "Submit Enquiry"}
       </Button>
+      </fieldset>
     </form>
   );
 }

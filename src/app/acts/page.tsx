@@ -4,10 +4,14 @@ import { acts } from "@/constants/acts";
 import { site } from "@/constants/nav";
 import { ActGrid } from "@/features/acts/components/ActGrid";
 import { ShowHero } from "@/features/shows/components/ShowHero";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Acts",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Acts",
+  description:
+    "Fire limbo, human pyramids, tumbling, dance and the other acts Afrikan Warriors bring to the stage.",
+  path: "/acts",
+});
 
 export default function ActsPage() {
   const heroImage = acts.find((a) => a.featured)?.image ?? acts[0].image;

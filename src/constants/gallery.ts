@@ -1,5 +1,6 @@
 import images from "@/constants/images.json";
-import { youtubeVideos } from "@/constants/media";
+import { liveFeatures } from "@/constants/live-features";
+import { youtubeThumbnail, youtubeVideos } from "@/constants/media";
 
 const gallery = images.gallery;
 const source = images.source;
@@ -8,7 +9,6 @@ const tokomile = images.tokomile;
 const rizombe = images.rizombeKing;
 const pirate = images.africanPirate;
 const freedom = images.freedom;
-const home = images.home;
 
 export const showFilters = [
   "All",
@@ -224,73 +224,55 @@ export type MediaVideo = {
   image: string;
   alt: string;
   videoId?: string;
-  featured?: boolean;
+  start?: number;
+  end?: number;
+  href?: string;
 };
 
-export const mediaVideos: MediaVideo[] = [
-  {
-    title: "Official Showreel",
-    subtitle: "Afrikan Warriors — Tanzania to the World",
-    image: home[0],
-    alt: "Afrikan Warriors company in performance",
-    featured: true,
-  },
+const performanceVideos: MediaVideo[] = liveFeatures.flatMap((feature) =>
+  feature.clips.map((clip) => ({
+    title: feature.title,
+    subtitle:
+      feature.clips.length > 1
+        ? clip.label
+        : (feature.note ?? clip.label),
+    image: clip.videoId ? youtubeThumbnail(clip.videoId) : source[4],
+    alt: feature.title,
+    videoId: clip.videoId,
+    start: clip.start,
+    end: clip.end,
+    href: clip.href,
+  })),
+);
+
+const catalogueVideos: MediaVideo[] = [
   {
     title: "Tokomile Trailer",
     subtitle: "Enter the Kingdom of Zaramu",
-    image: tokomile[0],
-    alt: "Tokomile theatrical ensemble",
+    image: youtubeThumbnail(youtubeVideos.tokomile),
+    alt: "Tokomile trailer",
     videoId: youtubeVideos.tokomile,
   },
   {
-    title: "Afrikan Warriors Live",
-    subtitle: "Acrobatics • Dance • Fire • Comedy",
-    image: source[4],
-    alt: "Live acrobatics tumbling",
-  },
-  {
-    title: "African Pirate",
-    subtitle: "Family Theatre Adventure",
-    image: pirate[0],
-    alt: "African Pirate still",
-  },
-  {
-    title: "Rizombe King",
-    subtitle: "Trailer",
-    image: rizombe[2],
-    alt: "Rizombe King trailer still",
-  },
-  {
-    title: "Freedom",
-    subtitle: "Trailer",
-    image: freedom[2],
-    alt: "Freedom trailer still",
-  },
-];
-
-export type OnScreenItem = {
-  title: string;
-  subtitle: string;
-  image: string;
-  alt: string;
-  videoId?: string;
-};
-
-export const onScreenItems: OnScreenItem[] = [
-  {
     title: "Britain's Got Talent",
     subtitle: "Semi-Finalists",
-    image: source[1],
-    alt: "Afrikan Warriors theatrical performance still",
+    image: youtubeThumbnail(youtubeVideos.interview),
+    alt: "Britain's Got Talent interview",
     videoId: youtubeVideos.interview,
   },
-  {
-    title: "Australia's Got Talent",
-    subtitle: "Semi-Finalists",
-    image: source[5],
-    alt: "Afrikan Warriors vocal performance still",
-  },
 ];
+
+export const mediaVideos: MediaVideo[] = [
+  ...performanceVideos,
+  ...catalogueVideos,
+].filter((item, index, all) => {
+  const key = item.videoId ?? item.href ?? `${item.title}-${item.subtitle}`;
+  return (
+    all.findIndex(
+      (other) => (other.videoId ?? other.href ?? `${other.title}-${other.subtitle}`) === key,
+    ) === index
+  );
+});
 
 export const archiveChapters: {
   era: string;
@@ -333,9 +315,3 @@ export const archiveChapters: {
     alt: "The company on stage today",
   },
 ];
-
-export const pressDownloads = [
-  { label: "Download Press Images", file: "High-Resolution Press Images" },
-  { label: "Download Afrikan Warriors Logo", file: "Logos" },
-  { label: "Download Company Biography", file: "Company Biography" },
-] as const;

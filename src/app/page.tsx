@@ -14,17 +14,24 @@ import { StoryTimeline } from "@/features/home/components/StoryTimeline";
 import { TestimonialsSection } from "@/features/home/components/TestimonialsSection";
 import { TeamTeaser } from "@/features/home/components/TeamTeaser";
 import { TokomileKingdomTeaser } from "@/features/home/components/TokomileKingdomTeaser";
+import { HomeLiveClips } from "@/features/home/components/HomeLiveClips";
 import { VideoShowcase } from "@/features/home/components/VideoShowcase";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "AFRIKAN WARRIORS - Extraordinary African Acrobatics",
-};
+export const metadata: Metadata = pageSeo({
+  title: "Afrikan Warriors | African acrobatics and live theatre",
+  description:
+    "Tanzanian-born company based in Northern Ireland. African acrobatics, dance, theatre and live music for festivals, theatres and events in the UK and Ireland.",
+  path: "/",
+  absolute: true,
+});
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
       <CreditsBar />
+      <HomeLiveClips />
       <AboutSection />
       <BringAfricaSection />
       <FeaturedShows />

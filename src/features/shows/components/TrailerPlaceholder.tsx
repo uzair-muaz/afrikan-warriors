@@ -13,6 +13,11 @@ type TrailerPlaceholderProps = {
   label?: string;
   videoId?: string;
   videoTitle?: string;
+  /** Seconds. Used when only part of a long film should play. */
+  start?: number;
+  end?: number;
+  /** Opens in a new tab when the film cannot be embedded. */
+  href?: string;
 };
 
 export function TrailerPlaceholder({
@@ -21,11 +26,14 @@ export function TrailerPlaceholder({
   label,
   videoId,
   videoTitle = "Watch Trailer",
+  start,
+  end,
+  href,
 }: TrailerPlaceholderProps) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const titleId = useId();
-  const ready = Boolean(videoId);
+  const ready = Boolean(videoId || href);
 
   useEffect(() => {
     setMounted(true);
@@ -46,7 +54,7 @@ export function TrailerPlaceholder({
 
   const inner = (
     <>
-      <CoverImage
+      <Poster
         src={image}
         alt={alt}
         className={cn(
@@ -98,7 +106,17 @@ export function TrailerPlaceholder({
 
   return (
     <>
-      {ready ? (
+      {ready && href && !videoId ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={frameClass}
+          aria-label={videoTitle}
+        >
+          {inner}
+        </a>
+      ) : ready ? (
         <button
           type="button"
           onClick={() => setOpen(true)}
@@ -142,7 +160,7 @@ export function TrailerPlaceholder({
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"
-                    src={`${youtubeEmbedSrc(videoId)}&autoplay=1`}
+                    src={`${youtubeEmbedSrc(videoId, { start, end })}&autoplay=1`}
                     title={videoTitle}
                   />
                 </div>
@@ -152,5 +170,40 @@ export function TrailerPlaceholder({
           )
         : null}
     </>
+  );
+}
+
+function Poster({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  const [current, setCurrent] = useState(src);
+  const remote = current.startsWith("http");
+
+  if (!remote) {
+    return <CoverImage src={src} alt={alt} className={className} />;
+  }
+
+  return (
+    <img
+      src={current}
+      alt={alt}
+      className={cn("absolute inset-0 h-full w-full object-cover", className)}
+      onLoad={(event) => {
+        const img = event.currentTarget;
+        if (img.naturalWidth > 120 || !current.includes("maxresdefault")) return;
+        setCurrent(current.replace("maxresdefault", "hqdefault"));
+      }}
+      onError={() => {
+        if (current.includes("maxresdefault")) {
+          setCurrent(current.replace("maxresdefault", "hqdefault"));
+        }
+      }}
+    />
   );
 }

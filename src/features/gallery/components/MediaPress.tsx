@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { pressDownloads } from "@/constants/gallery";
 
 export function MediaPress() {
   return (
@@ -18,19 +17,15 @@ export function MediaPress() {
         className="mb-10"
       />
 
-      <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
-        {pressDownloads.map((item) => (
-          <Button
-            key={item.label}
-            type="button"
-            variant="ghost"
-            disabled
-            className="pointer-events-none cursor-not-allowed opacity-50 grayscale border-on-surface-variant/30 text-on-surface-variant hover:translate-y-0 hover:bg-transparent"
-          >
-            {item.label} ↓
-          </Button>
-        ))}
-        <Button href="/promoters">View Press Kit →</Button>
+      <div className="flex flex-col flex-wrap justify-center gap-4 sm:flex-row">
+        <a
+          href="/documents/promoters/afrikan-warriors-logo.png"
+          download
+          className="inline-flex items-center justify-center whitespace-nowrap border border-primary px-6 py-3 text-center font-label-caps text-label-caps uppercase tracking-widest text-primary transition-colors hover:bg-primary/10"
+        >
+          Download Logo
+        </a>
+        <Button href="/promoters">Promoter Resources</Button>
       </div>
     </section>
   );
