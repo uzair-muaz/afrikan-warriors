@@ -195,8 +195,9 @@ function PaymentPanel({
         setSubmitting(false);
       }
       // On success Stripe redirects — leave submitting true until navigation
-    } catch {
-      setMessage("Payment was cancelled. You can try again with another method.");
+    } catch (error) {
+      const detail = error instanceof Error ? error.message.trim() : "";
+      setMessage(detail || "Payment could not be completed. Please try again.");
       setSubmitting(false);
     }
   }
@@ -263,7 +264,9 @@ function PaymentPanel({
                 billingDetails: {
                   name: customerName ? "never" : "auto",
                   email: customerEmail ? "never" : "auto",
-                  phone: "never",
+                  // "never" means we will pass the value ourselves. Phone is not
+                  // collected, so leave it on auto or Stripe rejects confirm().
+                  phone: "auto",
                 },
               },
               wallets: {
