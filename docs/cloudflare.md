@@ -32,12 +32,15 @@ Cloudflare Web Analytics for this zone was already created. It is the free, cook
 
 | Field | Value |
 | --- | --- |
-| Site | `afrikanwarriors.com` |
-| Beacon token | `5871600fe4f841a4903f9bf58852905b` |
+| Site | `afrikanwarriors.com` (gray-cloud / DNS-only host setup) |
+| Beacon token | `9af837a0c08b483b8901fc7ad6e1bb15` |
 | Env var | `NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN` |
 | Script | `https://static.cloudflareinsights.com/beacon.min.js` |
+| Report URL | `https://cloudflareinsights.com/cdn-cgi/rum` |
 
 The token is public. Cloudflare’s own snippet prints it in the HTML. It is not an API token and it cannot change the account.
+
+The older zone-linked analytics site is left with **automatic installation** off. That site only injects when the website is proxied. With DNS-only records the site uses the gray-cloud token above and the manual beacon in Next.js.
 
 ### How the site loads it
 
@@ -52,4 +55,4 @@ The content security policy in `next.config.ts` allows the script host `https://
 
 Vercel Web Analytics is loaded from the root layout with `@vercel/analytics/next`. It is also cookieless. On Vercel it uses `/_vercel/insights/script.js`. Enable Web Analytics in the Vercel project or that script does not load.
 
-Automatic installation in Cloudflare only inserts the script when the website is proxied. With DNS-only records it does nothing. Counting depends on the beacon in the Next.js app, which still reports to Cloudflare Web Analytics after the token is set on Vercel and the site is redeployed. Turn **automatic installation** off in Cloudflare → Web Analytics so a later proxy change cannot count the same visit twice.
+Automatic installation only inserts the script when the website is proxied. With DNS-only records it does nothing, so counting depends on the beacon in the Next.js app after `NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN` is set on Vercel and the site is redeployed. Keep **automatic installation** off on the zone-linked site so turning the proxy back on cannot count the same visit twice.
