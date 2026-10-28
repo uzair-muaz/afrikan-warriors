@@ -3,12 +3,12 @@ import path from "node:path";
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.js.stripe.com https://static.cloudflareinsights.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.js.stripe.com https://static.cloudflareinsights.com https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https://*.stripe.com https://i.ytimg.com https://*.ytimg.com",
   "font-src 'self' data: https://fonts.gstatic.com",
   "frame-src 'self' https://js.stripe.com https://hooks.stripe.com https://*.js.stripe.com https://checkout.stripe.com https://www.youtube.com https://www.youtube-nocookie.com",
-  "connect-src 'self' https://api.stripe.com https://*.stripe.com https://*.stripe.network https://cloudflareinsights.com",
+  "connect-src 'self' https://api.stripe.com https://*.stripe.com https://*.stripe.network https://cloudflareinsights.com https://va.vercel-scripts.com https://vitals.vercel-insights.com",
   "media-src 'self' blob: https://www.youtube.com",
   "object-src 'none'",
   "base-uri 'self'",

@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { ShutterIntro } from "@/components/layout/ShutterIntro";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { BackToTop } from "@/components/layout/BackToTop";
+import { Analytics } from "@vercel/analytics/next";
 import { CloudflareBeacon } from "@/components/analytics/CloudflareBeacon";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { organizationJsonLd, pageSeo, publicSiteUrl } from "@/lib/seo";
@@ -85,6 +86,7 @@ export default function RootLayout({
         <BackToTop />
         <WhatsAppFloat />
         <CloudflareBeacon />
+        <Analytics />
       </body>
     </html>
   );

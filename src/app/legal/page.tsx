@@ -164,9 +164,9 @@ export default function LegalPage() {
               </h3>
               <p>
                 The company, at {site.email}. Resend delivers the enquiry and
-                payment emails. Stripe processes support payments. Cloudflare
-                counts page views without a cookie and does not receive your
-                name or email. People in
+                payment emails. Stripe processes support payments. Vercel and
+                Cloudflare count page views without a cookie and do not receive
+                your name or email. People in
                 the United Kingdom are covered by UK data protection law.
                 People in Ireland can rely on the same notice, and can also
                 contact the Irish Data Protection Commission.
@@ -228,11 +228,11 @@ export default function LegalPage() {
             className="mb-8"
           />
           <p className="font-body-md text-body-md text-on-surface-variant">
-            Visit counts use Cloudflare Web Analytics. That does not set a
-            cookie. When you open a support payment, Stripe sets cookies that
-            are needed to take the payment and reduce fraud. Those cookies are
-            part of the payment. We do not set optional cookies of our own, so
-            there is no cookie banner.
+            Visit counts use Vercel Web Analytics and Cloudflare Web Analytics.
+            Neither sets a cookie. When you open a support payment, Stripe sets
+            cookies that are needed to take the payment and reduce fraud. Those
+            cookies are part of the payment. We do not set optional cookies of
+            our own, so there is no cookie banner.
           </p>
         </section>
 
